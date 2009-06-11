@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/59/trunk/XcodeConfig/Target
+END
+ReleaseUnittest.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/19/trunk/XcodeConfig/Target/ReleaseUnittest.xcconfig
+END
+DebugUnittest.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/19/trunk/XcodeConfig/Target/DebugUnittest.xcconfig
+END
+SharedLibrary.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/59/trunk/XcodeConfig/Target/SharedLibrary.xcconfig
+END
+SharedLibraryGCSupported.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/59/trunk/XcodeConfig/Target/SharedLibraryGCSupported.xcconfig
+END
+StaticLibrary.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/59/trunk/XcodeConfig/Target/StaticLibrary.xcconfig
+END
+StaticLibraryGCSupported.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/59/trunk/XcodeConfig/Target/StaticLibraryGCSupported.xcconfig
+END
+LoadableBundle.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/59/trunk/XcodeConfig/Target/LoadableBundle.xcconfig
+END
+LoadableBundleGCSupported.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/59/trunk/XcodeConfig/Target/LoadableBundleGCSupported.xcconfig
+END

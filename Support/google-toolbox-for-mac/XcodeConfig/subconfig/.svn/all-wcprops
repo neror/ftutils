@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/95/trunk/XcodeConfig/subconfig
+END
+Release.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/64/trunk/XcodeConfig/subconfig/Release.xcconfig
+END
+TigerOrLater.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/59/trunk/XcodeConfig/subconfig/TigerOrLater.xcconfig
+END
+iPhone20.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/73/trunk/XcodeConfig/subconfig/iPhone20.xcconfig
+END
+iPhone21.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/73/trunk/XcodeConfig/subconfig/iPhone21.xcconfig
+END
+Debug.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/73/trunk/XcodeConfig/subconfig/Debug.xcconfig
+END
+CodeCoverage.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/5/trunk/XcodeConfig/subconfig/CodeCoverage.xcconfig
+END
+SnowLeopardOrLater.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/64/trunk/XcodeConfig/subconfig/SnowLeopardOrLater.xcconfig
+END
+GTMMerge.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/95/trunk/XcodeConfig/subconfig/GTMMerge.xcconfig
+END
+General.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/73/trunk/XcodeConfig/subconfig/General.xcconfig
+END
+CodeCoverageStatic.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/5/trunk/XcodeConfig/subconfig/CodeCoverageStatic.xcconfig
+END
+Unittest.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/19/trunk/XcodeConfig/subconfig/Unittest.xcconfig
+END
+LeopardOrLater.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/64/trunk/XcodeConfig/subconfig/LeopardOrLater.xcconfig
+END
+GCSupported.xcconfig
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/24/trunk/XcodeConfig/subconfig/GCSupported.xcconfig
+END
