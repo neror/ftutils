@@ -60,7 +60,7 @@ FTJSONParser
     
 Like yajl, `FTJSONParser` is an event driven JSON parser. It can be used to parse JSON directly from the network via a GET request or to parse an `NSString` already in memory. The parser properly decodes JSON types into `NSDictionary`, `NSArray` or `NSValue` objects. Its usage is simple:
 
-    NSString *json = @"{\"id\": 2, \"name\":\"Nathan\", \"superuser\":true}"
+    NSString *json = @"{\"id\": 2, \"name\":\"Nathan\", \"superuser\":true}";
     FTJSONParser *parser = [[[FTJSONParser alloc] init] autorelease];
     [parser parseString:json error:NULL];
     NSDictionary *result = [parser dictionary];
@@ -77,7 +77,7 @@ The result from the previous code block is equivalent to:
 FTJSONWriter
 ------------
 
-The JSON writer does its best to encode what you give it. The primary requirement is that the root object passed to `- (FTJSONEncodingStatus)encodeObject:(id)obj error:(NSError **)error` be either an NSArray or NSDictionary. The encoder does the "right thing" with `NSValue`, `NSDictionary`, and `NSArray` objects when it encounters them. Numbers, booleans, strings, dictionaries, and arrays are encoded into their respective JSON types. There are plans to make the encoder more flexible so that it may accept arbitrary objects. Here is an example of how to use `FTJSONWriter`:
+The JSON writer does its best to encode what you give it. The primary requirement is that the root object passed to `encodeObject:error:` be either an NSArray or NSDictionary. The encoder does the "right thing" with `NSValue`, `NSDictionary`, and `NSArray` objects when it encounters them. Numbers, booleans, strings, dictionaries, and arrays are encoded into their respective JSON types. There are plans to make the encoder more flexible so that it may accept arbitrary objects. Here is an example of how to use `FTJSONWriter`:
     
     NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:
                            [NSNumber numberWithInt:2], @"id",
@@ -92,7 +92,7 @@ The JSON writer does its best to encode what you give it. The primary requiremen
 Contributors
 ------------
 
-FTUtils was written solely by [Nathan Eror](http://www.neror.com/ "neror.com") ([@neror](http://twitter.com/neror)) for use in iPhone games built and distributed by [Free Time Studios](http://www.freetimestudios.com/ "Free Time Studios") ([@freetimestudios](http://twitter.com/freetimestudios)).
+FTUtils was written by [Nathan Eror](http://www.neror.com/ "neror.com") ([@neror](http://twitter.com/neror)) for use in iPhone games built and distributed by [Free Time Studios](http://www.freetimestudios.com/ "Free Time Studios") ([@freetimestudios](http://twitter.com/freetimestudios)).
 
 FTUtils also makes use of some other open source libraries:
   
