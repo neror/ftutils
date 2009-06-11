@@ -67,7 +67,6 @@
 		AA747D9E0F9514B9006C5449 /* FTUtils_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTUtils_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		D2AAC07E0554694100DB518D /* libFTUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFTUtils.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF2879B50FE192A1001E9F62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DF287A860FE1949E001E9F62 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DF287AA20FE19638001E9F62 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		DF287AA30FE19638001E9F62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DF287AA40FE19638001E9F62 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -265,7 +264,7 @@
 		DF2963170FE18F3D00B9D71D /* yajl_iphone.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = yajl_iphone.xcodeproj; path = Support/yajl/yajl_iphone/yajl_iphone.xcodeproj; sourceTree = SOURCE_ROOT; };
 		DF6D061C0FE1A4B700CC44C6 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		DF6D061D0FE1A4B700CC44C6 /* ReleaseNotes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReleaseNotes.txt; sourceTree = "<group>"; };
-		DF6D06470FE1A6F200CC44C6 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		DF6D06470FE1A6F200CC44C6 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,7 +307,7 @@
 		0867D691FE84028FC02AAC07 /* FTUtils */ = {
 			isa = PBXGroup;
 			children = (
-				DF6D06470FE1A6F200CC44C6 /* README */,
+				DF6D06470FE1A6F200CC44C6 /* README.mdown */,
 				DF2962E30FE18E0000B9D71D /* Headers */,
 				DF2962E80FE18E0000B9D71D /* Classes */,
 				DF29630D0FE18F2600B9D71D /* Support */,
@@ -336,7 +335,6 @@
 			isa = PBXGroup;
 			children = (
 				AA747D9E0F9514B9006C5449 /* FTUtils_Prefix.pch */,
-				DF287A860FE1949E001E9F62 /* main.m */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";

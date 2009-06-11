@@ -1,0 +1,127 @@
+FTUtils iPhone Utility Code Library
+===================================
+
+The code in FTUtils is common utility code extracted from [Free Time Studios](http://www.freetimestudios.com/) iPhone projects. Currently, there are two primary utilities (`FTAnimationManager` and `FTJSON`) and some simple preprocessor macros. Most of the library is unit tested using [Google Toolbox for Mac](http://code.google.com/p/google-toolbox-for-mac/ "google-toolbox-for-mac - Google Code"). The documentation is still under development. Hopefully, the following will help in its stead.
+
+Using FTUtils
+-------------
+
+FTUtils is designed to be added as a static library to your own iPhone project. Here's the process to add the FTUtils static library to your Xcode project (these steps were borrowed from the [three20 project](http://github.com/joehewitt/three20/tree/master "joehewitt's three20 at master - GitHub") and modified):
+
+ 1. Clone the ftutils git repository: `git clone git://github.com/neror/ftutils.git`. Make sure you store the repository in a permanent place because Xcode will need to reference the files every time you compile your project.
+
+ 1. Locate the "FTUtils.xcodeproj" file under "ftutils". Drag FTUtils.xcodeproj and drop it onto the root of your Xcode project's "Groups and Files" sidebar. A dialog will appear -- make sure "Copy items" is unchecked and "Reference Type" is "Relative to Project" before clicking "Add".
+
+ 1. Now you need to link the FTUtils static library to your project. Click the "FTUtils.xcodeproj" item that has just been added to the sidebar. Under the "Details" table, you will see a single item: libFTUtils.a. Check the checkbox on the far right of libFTUtils.a.
+
+ 1. Now you need to add FTUtils as a dependency of your project, so Xcode compiles it whenever you compile your project. Expand the "Targets" section of the sidebar and double-click your application's target. Under the "General" tab you will see a "Direct Dependencies" section. Click the "+" button, select "FTUtils", and click "Add Target".
+
+ 1. Now you need to add the Core Animation framework to your project. Right click on the "Frameworks" group in your project (or equivalent) and select Add > Existing Frameworks. Then locate QuartzCore.framework and add it to the project.
+
+ 1. Finally, we need to tell your project where to find the FTUtils headers. Open your "Project Settings" and go to the "Build" tab. Look for "Header Search Paths" and double-click it. Add the relative path from your project's directory to the "ftutils/Headers" directory.
+
+ 1. While you are in Project Settings, go to "Other Linker Flags" under the "Linker" section, and add "-ObjC" and "-all_load" to the list of flags.
+
+You're ready to go! Just import the headers in your code for the parts of the library you'd like to use. Here they are for easy reference:
+
+    #import <FTUtils/FTMacros.h>
+    #import <FTUtils/FTAnimationManager.h>
+    #import <FTUtils/FTJSONParser.h>
+    #import <FTUtils/FTJSONWriter.h>
+
+Enjoy! And extra super special thanks to [Joe Hewitt](http://www.joehewitt.com/ "Joe Hewitt") for writing those steps out for his [three20 project](http://github.com/joehewitt/three20/tree/master "joehewitt's three20 at master - GitHub")! I don't think I have the patience to pull it off.
+
+FTAnimationManager
+------------------
+
+The animation manager was designed to make complex Core Animation based animations simple to create and use. The primary interface into the pre-built animations is a category on `UIView`. Animating a view is as simple as:
+
+    [myView slideInFrom:kFTAnimationBottom duration:.33f delegate:self];
+    
+You can also access the `CAAnimation` instances that power the category methods via the `FTAnimationManager` singleton like so:
+
+    CAAnimation *anim = [[FTAnimationManager sharedManager] slideInAnimationFor:myView direction:kFTAnimationBottom
+                                                            duration:.33f delegate:self];
+                                                            
+modify it to your satisfaction and/or add it to a `CAAnimationGroup` and add it to the view's layer when you're ready to use it:
+
+    anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInOut];
+    [myView.layer addAnimation:anim forKey:@"MySpecialAnimation"];
+    
+See the code for details.
+
+FTJSON
+------
+
+The JSON library is an Objective-C wrapper around the fast and tiny [yajl](http://lloyd.github.com/yajl/ "yajl") library. yajl is distributed with this project, but it didn't come from us. Please give all credit to Lloyd Hilaiel for any blazing speed you might encounter when parsing JSON.
+
+FTJSONParser
+------------
+    
+Like yajl, `FTJSONParser` is an event driven JSON parser. It can be used to parse JSON directly from the network via a GET request or to parse an `NSString` already in memory. The parser properly decodes JSON types into `NSDictionary`, `NSArray` or `NSValue` objects. Its usage is simple:
+
+    NSString *json = @"{\"id\": 2, \"name\":\"Nathan\", \"superuser\":true}"
+    FTJSONParser *parser = [[[FTJSONParser alloc] init] autorelease];
+    [parser parseString:json error:NULL];
+    NSDictionary *result = [parser dictionary];
+    
+The result from the previous code block is equivalent to:
+    
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
+                           [NSNumber numberWithInt:2], @"id",
+                           @"Nathan", @"name",
+                           [NSNumber numberWithBOOL:YES], @"superuser",
+                           nil];
+    
+    
+FTJSONWriter
+------------
+
+The JSON writer does its best to encode what you give it. The primary requirement is that the root object passed to `- (FTJSONEncodingStatus)encodeObject:(id)obj error:(NSError **)error` be either an NSArray or NSDictionary. The encoder does the "right thing" with `NSValue`, `NSDictionary`, and `NSArray` objects when it encounters them. Numbers, booleans, strings, dictionaries, and arrays are encoded into their respective JSON types. There are plans to make the encoder more flexible so that it may accept arbitrary objects. Here is an example of how to use `FTJSONWriter`:
+    
+    NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:
+                           [NSNumber numberWithInt:2], @"id",
+                           @"Nathan", @"name",
+                           nil];
+    FTJSONWriter *jsonWriter = [[[FTJSONWriter alloc] init] autorelease];
+    [jsonWriter prepareWriter];
+    [jsonWriter encodeObject:data error:NULL];
+    NSLog(@"Encoded String:\n%@", [jsonWriter encodedString]);
+
+
+Contributors
+------------
+
+FTUtils was written solely by [Nathan Eror](http://www.neror.com/ "neror.com") ([@neror](http://twitter.com/neror)) for use in iPhone games built and distributed by [Free Time Studios](http://www.freetimestudios.com/ "Free Time Studios") ([@freetimestudios](http://twitter.com/freetimestudios)).
+
+FTUtils also makes use of some other open source libraries:
+  
+  * [yajl](http://lloyd.github.com/yajl/ "yajl") - from Lloyd Hilaiel
+  * [Google Toolbox for Mac](http://code.google.com/p/google-toolbox-for-mac/) - from [Google
+  ](http://www.google.com/)
+
+License
+-------
+    The MIT License
+    
+    Copyright (c) 2009 Free Time Studios and Nathan Eror
+    
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+    
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+    THE SOFTWARE.
+     
+    
