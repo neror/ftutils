@@ -93,7 +93,7 @@ The JSON writer does its best to encode what you give it. The primary requiremen
 
 This will result in JSON like the following:
     
-    {"id":2, "name":"Nathan"m "superuser":true}
+    {"id":2, "name":"Nathan", "superuser":true}
 
 Contributors
 ------------
