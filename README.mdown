@@ -84,12 +84,16 @@ The JSON writer does its best to encode what you give it. The primary requiremen
     NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:
                            [NSNumber numberWithInt:2], @"id",
                            @"Nathan", @"name",
+                           [NSNumber numberWithBOOL:YES], @"superuser",
                            nil];
     FTJSONWriter *jsonWriter = [[[FTJSONWriter alloc] init] autorelease];
     [jsonWriter prepareWriter];
     [jsonWriter encodeObject:data error:NULL];
     NSLog(@"Encoded String:\n%@", [jsonWriter encodedString]);
 
+This will result in JSON like the following:
+    
+    {"id":2, "name":"Nathan"m "superuser":true}
 
 Contributors
 ------------
