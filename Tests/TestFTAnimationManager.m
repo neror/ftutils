@@ -1,31 +1,7 @@
-/*
- The MIT License
- 
- Copyright (c) 2009 Free Time Studios and Nathan Eror
- 
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to deal
- in the Software without restriction, including without limitation the rights
- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
- 
- The above copyright notice and this permission notice shall be included in
- all copies or substantial portions of the Software.
- 
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- THE SOFTWARE.
-*/ 
+#import <SenTestingKit/SenTestingKit.h>
+#import "FTAnimationManager.h"
 
-#import "GTMSenTestCase.h"
-#import <FTUtils/FTAnimationManager.h>
-
-@interface TestFTAnimationManager : GTMTestCase {
+@interface TestFTAnimationManager : SenTestCase {
   UIView *rootView;
   UIView *dummyView;
 }
@@ -41,8 +17,10 @@
 
 - (void)tearDown {
   [dummyView removeFromSuperview];
-  FTRELEASE(dummyView);
-  FTRELEASE(rootView);
+  [dummyView release];
+  dummyView = nil;
+  [rootView release];
+  rootView = nil;
 }
 
 - (void)testOffscreenCenterFor {
@@ -75,12 +53,11 @@
   STAssertEquals(leftExpected, leftActual, @"Left x should be %f, was %f", leftExpected, leftActual);
 }
 
-- (void)verifyBackAnimation:(CAAnimation *)animation uses:(int)count pathPoints:(CGPoint[])points {
+- (void)verifyBounceAnimation:(CAAnimation *)animation uses:(int)count pathPoints:(CGPoint[])points {
   CAAnimationGroup *group = (CAAnimationGroup *)animation;
   CAKeyframeAnimation *keyframeAnimation = [[group animations] objectAtIndex:0];
   CGMutablePathRef expectedPath = CGPathCreateMutable();
   CGPathAddLines(expectedPath, NULL, points, count);
-  FTLOG(@"%d", CGPathEqualToPath(expectedPath, keyframeAnimation.path));
   STAssertTrue(CGPathEqualToPath(expectedPath, keyframeAnimation.path), @"Incorrect animation path for animation %@", animation);
   CGPathRelease(expectedPath);
 }
@@ -89,44 +66,59 @@
   FTAnimationManager *animationManager = [FTAnimationManager sharedManager];
   CGRect screenBounds = [[UIScreen mainScreen] bounds];
 
-  CGPoint backOutBottomPoints[] = {
+  CGPoint bounceOutBottomPoints[] = {
     dummyView.center,
     CGPointMake(dummyView.center.x, dummyView.center.y - [animationManager overshootThreshold]),
     CGPointMake(dummyView.center.x, screenBounds.size.height + dummyView.frame.size.height / 2)
   };
-  CAAnimation *backOutBottom = [animationManager backOutAnimationFor:dummyView direction:kFTAnimationBottom duration:0.1f delegate:nil];
-  [self verifyBackAnimation:backOutBottom uses:3 pathPoints:backOutBottomPoints];
+  CAAnimation *bounceOutBottom = [animationManager backOutAnimationFor:dummyView direction:kFTAnimationBottom 
+                                                              duration:0.1f delegate:nil 
+                                                         startSelector:nil stopSelector:nil];
+  [self verifyBounceAnimation:bounceOutBottom uses:3 pathPoints:bounceOutBottomPoints];
 
-  CGPoint backOutTopPoints[] = {
+  CGPoint bounceOutTopPoints[] = {
     dummyView.center,
     CGPointMake(dummyView.center.x, dummyView.center.y + [animationManager overshootThreshold]),
     CGPointMake(dummyView.center.x, screenBounds.origin.y - dummyView.frame.size.height / 2)
   };
-  CAAnimation *backOutTop = [animationManager backOutAnimationFor:dummyView direction:kFTAnimationTop duration:0.1f delegate:nil];
-  [self verifyBackAnimation:backOutTop uses:3 pathPoints:backOutTopPoints];
+  CAAnimation *bounceOutTop = [animationManager backOutAnimationFor:dummyView direction:kFTAnimationTop 
+                                                           duration:0.1f delegate:nil 
+                                                      startSelector:nil stopSelector:nil];
+  [self verifyBounceAnimation:bounceOutTop uses:3 pathPoints:bounceOutTopPoints];
   
-  CGPoint backOutLeftPoints[] = {
+  CGPoint bounceOutLeftPoints[] = {
     dummyView.center,
     CGPointMake(dummyView.center.x + [animationManager overshootThreshold], dummyView.center.y),
     CGPointMake(screenBounds.origin.x - dummyView.frame.size.width / 2, dummyView.center.y)
   };
-  CAAnimation *backOutLeft = [animationManager backOutAnimationFor:dummyView direction:kFTAnimationLeft duration:0.1f delegate:nil];
-  [self verifyBackAnimation:backOutLeft uses:3 pathPoints:backOutLeftPoints];
+  CAAnimation *bounceOutLeft = [animationManager backOutAnimationFor:dummyView direction:kFTAnimationLeft
+                                                            duration:0.1f delegate:nil
+                                                       startSelector:nil stopSelector:nil];
+  [self verifyBounceAnimation:bounceOutLeft uses:3 pathPoints:bounceOutLeftPoints];
 
-  CGPoint backOutRightPoints[] = {
+  CGPoint bounceOutRightPoints[] = {
     dummyView.center,
     CGPointMake(dummyView.center.x - [animationManager overshootThreshold], dummyView.center.y),
     CGPointMake(screenBounds.size.width + dummyView.frame.size.width / 2, dummyView.center.y)
   };
-  CAAnimation *backOutRight = [animationManager backOutAnimationFor:dummyView direction:kFTAnimationRight duration:0.1f delegate:nil];
-  [self verifyBackAnimation:backOutRight uses:3 pathPoints:backOutRightPoints];
+  CAAnimation *bounceOutRight = [animationManager backOutAnimationFor:dummyView direction:kFTAnimationRight 
+                                                             duration:0.1f delegate:nil 
+                                                        startSelector:nil stopSelector:nil];
+  [self verifyBounceAnimation:bounceOutRight uses:3 pathPoints:bounceOutRightPoints];
   
 }
 
 - (void)testPopInAnimationBuilder {
-  CAAnimationGroup *group = (CAAnimationGroup *)[[FTAnimationManager sharedManager] popInAnimationFor:dummyView duration:0.1f delegate:nil];
+  CAAnimationGroup *group = (CAAnimationGroup *)[[FTAnimationManager sharedManager] popInAnimationFor:dummyView 
+                                                                                             duration:0.1f
+                                                                                             delegate:nil
+                                                                                        startSelector:nil
+                                                                                         stopSelector:nil];
   CAKeyframeAnimation *keyframeAnimation = [[group animations] objectAtIndex:0];
-  NSArray *expectedScales = [NSArray arrayWithObjects:[NSNumber numberWithFloat:.5f], [NSNumber numberWithFloat:1.2f], [NSNumber numberWithFloat:.85f], [NSNumber numberWithFloat:1.f], nil];
+  NSArray *expectedScales = [NSArray arrayWithObjects:[NSNumber numberWithFloat:.5f], 
+                                                      [NSNumber numberWithFloat:1.2f], 
+                                                      [NSNumber numberWithFloat:.85f],
+                                                      [NSNumber numberWithFloat:1.f], nil];
   STAssertEqualObjects(expectedScales, keyframeAnimation.values, nil);
 }
 

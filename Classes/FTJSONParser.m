@@ -1,35 +1,11 @@
-/*
- The MIT License
- 
- Copyright (c) 2009 Free Time Studios and Nathan Eror
- 
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to deal
- in the Software without restriction, including without limitation the rights
- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
- 
- The above copyright notice and this permission notice shall be included in
- all copies or substantial portions of the Software.
- 
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- THE SOFTWARE.
-*/ 
-
-#import <FTUtils/FTJSONParser.h>
+#import "FTJSONParser.h"
 
 #define SAFE_RELEASE_HANDLE if(handle_ != NULL) { yajl_free(handle_), handle_ = NULL; }
 
 NSString *const FTJSONParserErrorDomain = @"FTJSONParserError";
 
 //Forward declaration, the struct is defined at the bottom of the file
-static yajl_callbacks scjsonCallbacks;
+static yajl_callbacks ftjsonCallbacks;
 
 @interface FTJSONParser (YAJLParserCallbacks)
 
@@ -163,7 +139,7 @@ static yajl_callbacks scjsonCallbacks;
 - (BOOL)prepareParser {
   SAFE_RELEASE_HANDLE
   yajl_parser_config parserConfig = {allowComments_, forceUTF8_};
-  handle_ = yajl_alloc(&scjsonCallbacks, &parserConfig, NULL, self);
+  handle_ = yajl_alloc(&ftjsonCallbacks, &parserConfig, NULL, self);
   return (handle_ != NULL);
 }
 
@@ -240,70 +216,70 @@ static yajl_callbacks scjsonCallbacks;
 
 static NSString *currentKey;
 
-static int scjson_null(void *ctx) {
+static int ftjson_null(void *ctx) {
   [(FTJSONParser *)ctx addObject:nil forKey:currentKey];
   return 1;
 }
 
-static int scjson_boolean(void *ctx, int boolean) {
+static int ftjson_boolean(void *ctx, int boolean) {
   [(FTJSONParser *)ctx addObject:[NSNumber numberWithBool:boolean] forKey:currentKey];
   return 1;
 }
 
-static int scjson_integer(void *ctx, long value) {
+static int ftjson_integer(void *ctx, long value) {
   [(FTJSONParser *)ctx addObject:[NSNumber numberWithLong:value] forKey:currentKey];
   return 1;
   
 }
 
-static int scjson_double(void *ctx, double value) {
+static int ftjson_double(void *ctx, double value) {
   [(FTJSONParser *)ctx addObject:[NSNumber numberWithDouble:value] forKey:currentKey];
   return 1;
 }
 
-static int scjson_string(void *ctx, const unsigned char *stringVal, unsigned int stringLen) {
+static int ftjson_string(void *ctx, const unsigned char *stringVal, unsigned int stringLen) {
   NSString *value = [[NSString alloc] initWithBytes:stringVal length:stringLen encoding:NSUTF8StringEncoding];
   [(FTJSONParser *)ctx addObject:value forKey:currentKey];
   [value release];
   return 1;
 }
 
-static int scjson_map_key(void *ctx, const unsigned char *stringVal, unsigned int stringLen) {
+static int ftjson_map_key(void *ctx, const unsigned char *stringVal, unsigned int stringLen) {
   FTRELEASE(currentKey);
 	currentKey = [[NSString alloc] initWithBytes:stringVal length:stringLen encoding:NSUTF8StringEncoding];
   return 1;
 }
 
-static int scjson_start_map(void *ctx) {
+static int ftjson_start_map(void *ctx) {
   [(FTJSONParser *)ctx startDictionaryWithKey:currentKey];
   return 1;
 }
 
-static int scjson_end_map(void *ctx) {
+static int ftjson_end_map(void *ctx) {
   [(FTJSONParser *)ctx endDictionary];
   return 1;
 }
 
-static int scjson_start_array(void *ctx) {
+static int ftjson_start_array(void *ctx) {
   [(FTJSONParser *)ctx startArrayWithKey:currentKey];
   return 1;
 }
 
-static int scjson_end_array(void *ctx) {
+static int ftjson_end_array(void *ctx) {
   [(FTJSONParser *)ctx endArray];
   return 1;
 }
 
-static yajl_callbacks scjsonCallbacks = {
-  scjson_null,
-  scjson_boolean,
-  scjson_integer,
-  scjson_double,
+static yajl_callbacks ftjsonCallbacks = {
+  ftjson_null,
+  ftjson_boolean,
+  ftjson_integer,
+  ftjson_double,
   NULL,
-  scjson_string,
-  scjson_start_map,
-  scjson_map_key,
-  scjson_end_map,
-  scjson_start_array,
-  scjson_end_array
+  ftjson_string,
+  ftjson_start_map,
+  ftjson_map_key,
+  ftjson_end_map,
+  ftjson_start_array,
+  ftjson_end_array
 };
