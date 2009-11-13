@@ -6,7 +6,7 @@ The code in FTUtils is common utility code extracted from [Free Time Studios](ht
 Using FTUtils
 -------------
 
-Because of an external dependency on yajl, FTUtils is most easily used as a static library in your iPhone project. If you are only planning to use the `FTAnaimationManager` and not the JSON component, the static library method is not necessary. You can simply copy `FTMacros.h`, `FTAnimationManager.h` and `FTAnimationManager.m` into your project. Be sure to add the QuartzCore framework to your project as well (step 5 below).
+Because of an external dependency on yajl, FTUtils is most easily used as a static library in your iPhone project. If you are only planning to use the `FTAnaimationManager` and not the JSON component, the static library method is not necessary. You can simply copy `FTUtils.h`, `FTAnimationManager.h` and `FTAnimationManager.m` into your project. Be sure to add the QuartzCore framework to your project as well (step 5 below).
 
 The following is the process to add the FTUtils static library to your Xcode project (these steps were borrowed from the [three20 project](http://github.com/joehewitt/three20/tree/master "joehewitt's three20 at master - GitHub") and modified):
 
@@ -26,7 +26,7 @@ The following is the process to add the FTUtils static library to your Xcode pro
 
 You're ready to go! Just import the headers in your code for the parts of the library you'd like to use. Here they are for easy reference:
 
-    #import <FTUtils/FTMacros.h>
+    #import <FTUtils/FTUtils.h>
     #import <FTUtils/FTAnimationManager.h>
     #import <FTUtils/FTJSONParser.h>
     #import <FTUtils/FTJSONWriter.h>
