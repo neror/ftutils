@@ -15,7 +15,6 @@
 		DF2962EE0FE18E0000B9D71D /* FTAnimationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2962E40FE18E0000B9D71D /* FTAnimationManager.h */; };
 		DF2962EF0FE18E0000B9D71D /* FTJSONParser.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2962E50FE18E0000B9D71D /* FTJSONParser.h */; };
 		DF2962F00FE18E0000B9D71D /* FTJSONWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2962E60FE18E0000B9D71D /* FTJSONWriter.h */; };
-		DF2962F10FE18E0000B9D71D /* FTMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2962E70FE18E0000B9D71D /* FTMacros.h */; };
 		DF2962F20FE18E0000B9D71D /* FTAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2962E90FE18E0000B9D71D /* FTAnimationManager.m */; };
 		DF2962F30FE18E0000B9D71D /* FTJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2962EA0FE18E0000B9D71D /* FTJSONParser.m */; };
 		DF2962F40FE18E0000B9D71D /* FTJSONWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2962EB0FE18E0000B9D71D /* FTJSONWriter.m */; };
@@ -33,6 +32,7 @@
 		DFF7F0611035CE350067ED5B /* FTJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2962EA0FE18E0000B9D71D /* FTJSONParser.m */; };
 		DFF7F0621035CE350067ED5B /* FTJSONWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2962EB0FE18E0000B9D71D /* FTJSONWriter.m */; };
 		DFF7F0641035CE440067ED5B /* libyajl_iphone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF29631E0FE18F3D00B9D71D /* libyajl_iphone.a */; };
+		DFFBF80A10ADF405008DB0B9 /* FTUtils+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFBF80910ADF405008DB0B9 /* FTUtils+NSObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,11 +57,11 @@
 			remoteGlobalIDString = D2AAC045055464E500DB518D;
 			remoteInfo = libyajl;
 		};
-		DFF7F0871035CE6E0067ED5B /* PBXContainerItemProxy */ = {
+		DFFBF86110ADF7A1008DB0B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DFE4EF0A1035CBCB006A7598;
+			remoteGlobalIDString = DFE4EF0A1035CBCB006A7598 /* UnitTests */;
 			remoteInfo = UnitTests;
 		};
 /* End PBXContainerItemProxy section */
@@ -94,7 +94,6 @@
 		DF2962E40FE18E0000B9D71D /* FTAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTAnimationManager.h; path = FTUtils/FTAnimationManager.h; sourceTree = "<group>"; };
 		DF2962E50FE18E0000B9D71D /* FTJSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTJSONParser.h; path = FTUtils/FTJSONParser.h; sourceTree = "<group>"; };
 		DF2962E60FE18E0000B9D71D /* FTJSONWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTJSONWriter.h; path = FTUtils/FTJSONWriter.h; sourceTree = "<group>"; };
-		DF2962E70FE18E0000B9D71D /* FTMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTMacros.h; path = FTUtils/FTMacros.h; sourceTree = "<group>"; };
 		DF2962E90FE18E0000B9D71D /* FTAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAnimationManager.m; sourceTree = "<group>"; };
 		DF2962EA0FE18E0000B9D71D /* FTJSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTJSONParser.m; sourceTree = "<group>"; };
 		DF2962EB0FE18E0000B9D71D /* FTJSONWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTJSONWriter.m; sourceTree = "<group>"; };
@@ -103,6 +102,9 @@
 		DFE4EF0B1035CBCB006A7598 /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE4EF0C1035CBCB006A7598 /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
 		DFE4EF131035CC4D006A7598 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = Support/OCMock.framework; sourceTree = "<group>"; };
+		DFFBF80810ADF405008DB0B9 /* FTUtils+NSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FTUtils+NSObject.h"; path = "FTUtils/FTUtils+NSObject.h"; sourceTree = "<group>"; };
+		DFFBF80910ADF405008DB0B9 /* FTUtils+NSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTUtils+NSObject.m"; sourceTree = "<group>"; };
+		DFFBF82610ADF55A008DB0B9 /* FTUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTUtils.h; path = FTUtils/FTUtils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,10 +202,11 @@
 		DF2962E30FE18E0000B9D71D /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				DF2962E70FE18E0000B9D71D /* FTMacros.h */,
+				DFFBF82610ADF55A008DB0B9 /* FTUtils.h */,
 				DF2962E40FE18E0000B9D71D /* FTAnimationManager.h */,
 				DF2962E50FE18E0000B9D71D /* FTJSONParser.h */,
 				DF2962E60FE18E0000B9D71D /* FTJSONWriter.h */,
+				DFFBF80810ADF405008DB0B9 /* FTUtils+NSObject.h */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				DF2962E90FE18E0000B9D71D /* FTAnimationManager.m */,
 				DF2962EA0FE18E0000B9D71D /* FTJSONParser.m */,
 				DF2962EB0FE18E0000B9D71D /* FTJSONWriter.m */,
+				DFFBF80910ADF405008DB0B9 /* FTUtils+NSObject.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -242,7 +246,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF2962F10FE18E0000B9D71D /* FTMacros.h in Headers */,
 				AA747D9F0F9514B9006C5449 /* FTUtils_Prefix.pch in Headers */,
 				DF2962EE0FE18E0000B9D71D /* FTAnimationManager.h in Headers */,
 				DF2962EF0FE18E0000B9D71D /* FTJSONParser.h in Headers */,
@@ -264,8 +267,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				DFF7F0881035CE6E0067ED5B /* PBXTargetDependency */,
 				DF287F350FE19DAA001E9F62 /* PBXTargetDependency */,
+				DFFBF86210ADF7A1008DB0B9 /* PBXTargetDependency */,
 			);
 			name = FTUtils;
 			productName = FTUtils;
@@ -374,6 +377,7 @@
 				DFF7F0601035CE350067ED5B /* FTAnimationManager.m in Sources */,
 				DFF7F0611035CE350067ED5B /* FTJSONParser.m in Sources */,
 				DFF7F0621035CE350067ED5B /* FTJSONWriter.m in Sources */,
+				DFFBF80A10ADF405008DB0B9 /* FTUtils+NSObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,10 +394,10 @@
 			name = libyajl;
 			targetProxy = DFF7F0651035CE540067ED5B /* PBXContainerItemProxy */;
 		};
-		DFF7F0881035CE6E0067ED5B /* PBXTargetDependency */ = {
+		DFFBF86210ADF7A1008DB0B9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DFE4EF0A1035CBCB006A7598 /* UnitTests */;
-			targetProxy = DFF7F0871035CE6E0067ED5B /* PBXContainerItemProxy */;
+			targetProxy = DFFBF86110ADF7A1008DB0B9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

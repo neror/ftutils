@@ -38,6 +38,9 @@ NSString *const kFTAnimationFadeBackgroundOut = @"kFTAnimationFadeBackgroundOut"
 NSString *const kFTAnimationFadeBackgroundIn = @"kFTAnimationFadeBackgroundIn";
 NSString *const kFTAnimationPopIn = @"kFTAnimationPopIn";
 NSString *const kFTAnimationPopOut = @"kFTAnimationPopOut";
+NSString *const kFTAnimationFallIn = @"kFTAnimationFallIn";
+NSString *const kFTAnimationFallOut = @"kFTAnimationFallOut";
+NSString *const kFTAnimationFlyOut = @"kFTAnimationFlyOut";
 
 NSString *const kFTAnimationCallerDelegateKey = @"kFTAnimationCallerDelegateKey";
 NSString *const kFTAnimationCallerStartSelectorKey = @"kFTAnimationCallerStartSelectorKey";
@@ -47,13 +50,9 @@ NSString *const kFTAnimationIsChainedKey = @"kFTAnimationIsChainedKey";
 NSString *const kFTAnimationNextAnimationKey = @"kFTAnimationNextAnimationKey";
 NSString *const kFTAnimationPrevAnimationKey = @"kFTAnimationPrevAnimationKey";
 
-@interface FTAnimationManager (Private)
+@interface FTAnimationManager ()
 
 - (CGPoint)overshootPointFor:(CGPoint)point withDirection:(FTAnimationDirection)direction threshold:(CGFloat)threshold;
-- (CAAnimationGroup *)animationGroupFor:(NSArray *)animations withView:(UIView *)view 
-                               duration:(NSTimeInterval)duration delegate:(id)delegate 
-                          startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector 
-                                   name:(NSString *)name type:(NSString *)type;
 
 @end
 
@@ -62,10 +61,59 @@ NSString *const kFTAnimationPrevAnimationKey = @"kFTAnimationPrevAnimationKey";
 
 @synthesize overshootThreshold = overshootThreshold_;
 
+- (CAAnimationGroup *)delayStartOfAnimation:(CAAnimation *)animation withDelay:(CFTimeInterval)delayTime {
+  animation.fillMode = kCAFillModeBoth;
+  animation.beginTime = delayTime;
+  UIView *targetView = [animation valueForKey:kFTAnimationTargetViewKey];
+  NSString *name = [animation valueForKey:kFTAnimationName];
+  NSString *type = [animation valueForKey:kFTAnimationType];
+  id delegate = [animation valueForKey:kFTAnimationCallerDelegateKey];
+  NSString *startSelectorString = [animation valueForKey:kFTAnimationCallerStartSelectorKey];
+  NSString *stopSelectorString = [animation valueForKey:kFTAnimationCallerStopSelectorKey];
+  SEL startSelector = nil;
+  SEL stopSelector = nil;
+  if(startSelectorString != nil) {
+    startSelector = NSSelectorFromString(startSelectorString);
+  }
+  if(stopSelectorString != nil) {
+    stopSelector = NSSelectorFromString(stopSelectorString);
+  }
+  CAAnimationGroup *group = [[FTAnimationManager sharedManager] 
+                             animationGroupFor:[NSArray arrayWithObject:animation] 
+                             withView:targetView duration:animation.duration + delayTime 
+                             delegate:delegate startSelector:startSelector stopSelector:stopSelector 
+                             name:name type:type];
+  return group;
+}
+
+- (CAAnimationGroup *)pauseAtEndOfAnimation:(CAAnimation *)animation withDelay:(CFTimeInterval)delayTime {
+  animation.fillMode = kCAFillModeForwards;
+  UIView *targetView = [animation valueForKey:kFTAnimationTargetViewKey];
+  NSString *name = [animation valueForKey:kFTAnimationName];
+  NSString *type = [animation valueForKey:kFTAnimationType];
+  id delegate = [animation valueForKey:kFTAnimationCallerDelegateKey];
+  NSString *startSelectorString = [animation valueForKey:kFTAnimationCallerStartSelectorKey];
+  NSString *stopSelectorString = [animation valueForKey:kFTAnimationCallerStopSelectorKey];
+  SEL startSelector = nil;
+  SEL stopSelector = nil;
+  if(startSelectorString != nil) {
+    startSelector = NSSelectorFromString(startSelectorString);
+  }
+  if(stopSelectorString != nil) {
+    stopSelector = NSSelectorFromString(stopSelectorString);
+  }
+  CAAnimationGroup *group = [[FTAnimationManager sharedManager] 
+                             animationGroupFor:[NSArray arrayWithObject:animation] 
+                             withView:targetView duration:animation.duration + delayTime 
+                             delegate:delegate startSelector:startSelector stopSelector:stopSelector 
+                             name:name type:type];
+  return group;
+}
+
 #pragma mark -
 #pragma mark Chained Animations
 
-- (CAAnimation *)chainAnimations:(NSArray *)animations run:(BOOL)run{
+- (CAAnimation *)chainAnimations:(NSArray *)animations run:(BOOL)run {
   CAAnimation *head = nil;
   CAAnimation *prev = nil;
   
@@ -154,7 +202,7 @@ NSString *const kFTAnimationPrevAnimationKey = @"kFTAnimationPrevAnimationKey";
   return overshootPoint;
 }
 
-- (CAAnimation *)backOutAnimationFor:(UIView *)view direction:(FTAnimationDirection)direction 
+- (CAAnimation *)backOutAnimationFor:(UIView *)view withFade:(BOOL)fade direction:(FTAnimationDirection)direction 
                             duration:(NSTimeInterval)duration delegate:(id)delegate 
                        startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
   CGPoint path[3] = {
@@ -168,12 +216,21 @@ NSString *const kFTAnimationPrevAnimationKey = @"kFTAnimationPrevAnimationKey";
   CGPathAddLines(thePath, NULL, path, 3);
   animation.path = thePath;
   CGPathRelease(thePath);
-  return [self animationGroupFor:[NSArray arrayWithObject:animation] withView:view duration:duration 
+  NSArray *animations;
+  if(fade) {
+    CAAnimation *fade = [self fadeAnimationFor:view duration:duration * .5f delegate:nil startSelector:nil stopSelector:nil fadeOut:YES];
+    fade.beginTime = duration * .5f;
+    fade.fillMode = kCAFillModeForwards;
+    animations = [NSArray arrayWithObjects:animation, fade, nil];
+  } else {
+    animations = [NSArray arrayWithObject:animation];
+  }
+  return [self animationGroupFor:animations withView:view duration:duration 
                         delegate:delegate startSelector:startSelector stopSelector:stopSelector 
                             name:kFTAnimationBackOut type:kFTAnimationTypeOut];
 }
 
-- (CAAnimation *)backInAnimationFor:(UIView *)view direction:(FTAnimationDirection)direction 
+- (CAAnimation *)backInAnimationFor:(UIView *)view withFade:(BOOL)fade direction:(FTAnimationDirection)direction 
                            duration:(NSTimeInterval)duration delegate:(id)delegate 
                       startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
   CGPoint path[3] = {
@@ -187,7 +244,16 @@ NSString *const kFTAnimationPrevAnimationKey = @"kFTAnimationPrevAnimationKey";
   CGPathAddLines(thePath, NULL, path, 3);
   animation.path = thePath;
   CGPathRelease(thePath);
-  return [self animationGroupFor:[NSArray arrayWithObject:animation] withView:view duration:duration 
+  NSArray *animations;
+  if(fade) {
+    CAAnimation *fade = [self fadeAnimationFor:view duration:duration * .5f delegate:nil startSelector:nil stopSelector:nil fadeOut:NO];
+    fade.fillMode = kCAFillModeForwards;
+    
+    animations = [NSArray arrayWithObjects:animation, fade, nil];
+  } else {
+    animations = [NSArray arrayWithObject:animation];
+  }
+  return [self animationGroupFor:animations withView:view duration:duration 
                         delegate:delegate startSelector:startSelector stopSelector:stopSelector 
                             name:kFTAnimationBackIn type:kFTAnimationTypeIn];
 }
@@ -222,7 +288,7 @@ NSString *const kFTAnimationPrevAnimationKey = @"kFTAnimationPrevAnimationKey";
 
 
 - (CAAnimation *)fadeBackgroundColorAnimationFor:(UIView *)view duration:(NSTimeInterval)duration 
-                                   delegate:(id)delegate startSelector:(SEL)startSelector 
+                                        delegate:(id)delegate startSelector:(SEL)startSelector 
                                     stopSelector:(SEL)stopSelector fadeOut:(BOOL)fadeOut {
   CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
   
@@ -253,10 +319,10 @@ NSString *const kFTAnimationPrevAnimationKey = @"kFTAnimationPrevAnimationKey";
   CAKeyframeAnimation *scale = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
   scale.duration = duration;
   scale.values = [NSArray arrayWithObjects:[NSNumber numberWithFloat:.5f],
-                      [NSNumber numberWithFloat:1.2f],
-                      [NSNumber numberWithFloat:.85f],
-                      [NSNumber numberWithFloat:1.f],
-                      nil];
+                  [NSNumber numberWithFloat:1.2f],
+                  [NSNumber numberWithFloat:.85f],
+                  [NSNumber numberWithFloat:1.f],
+                  nil];
   
   CABasicAnimation *fadeIn = [CABasicAnimation animationWithKeyPath:@"opacity"];
   fadeIn.duration = duration * .66f;
@@ -277,10 +343,10 @@ NSString *const kFTAnimationPrevAnimationKey = @"kFTAnimationPrevAnimationKey";
   scale.duration = duration;
   scale.removedOnCompletion = NO;
   scale.values = [NSArray arrayWithObjects:[NSNumber numberWithFloat:1.f],
-                      [NSNumber numberWithFloat:1.2f],
-                      [NSNumber numberWithFloat:.75f],
-                      nil];
-
+                  [NSNumber numberWithFloat:1.2f],
+                  [NSNumber numberWithFloat:.75f],
+                  nil];
+  
   CABasicAnimation *fadeOut = [CABasicAnimation animationWithKeyPath:@"opacity"];
   fadeOut.duration = duration;
   fadeOut.fromValue = [NSNumber numberWithFloat:1.f];
@@ -293,26 +359,88 @@ NSString *const kFTAnimationPrevAnimationKey = @"kFTAnimationPrevAnimationKey";
 }
 
 #pragma mark -
+#pragma mark Fall In and Fly Out Builders
+
+- (CAAnimation *)fallInAnimationFor:(UIView *)view duration:(NSTimeInterval)duration delegate:(id)delegate 
+                      startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
+  
+  CABasicAnimation *fall = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+  fall.fromValue = [NSNumber numberWithFloat:2.f];
+  fall.toValue = [NSNumber numberWithFloat:1.f];
+  fall.duration = duration;
+  
+  CABasicAnimation *fade = [CABasicAnimation animationWithKeyPath:@"opacity"];
+  fade.fromValue = [NSNumber numberWithFloat:0.f];
+  fade.toValue = [NSNumber numberWithFloat:1.f];
+  fade.duration = duration;
+  
+  CAAnimationGroup *group = [self animationGroupFor:[NSArray arrayWithObjects:fall, fade, nil] withView:view duration:duration 
+                                           delegate:delegate startSelector:startSelector stopSelector:stopSelector 
+                                               name:kFTAnimationFallIn type:kFTAnimationTypeIn];
+  group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+  return group;
+}
+
+- (CAAnimation *)fallOutAnimationFor:(UIView *)view duration:(NSTimeInterval)duration delegate:(id)delegate 
+                       startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
+  
+  CABasicAnimation *fall = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+  fall.fromValue = [NSNumber numberWithFloat:1.f];
+  fall.toValue = [NSNumber numberWithFloat:.15f];
+  fall.duration = duration;
+  
+  CABasicAnimation *fade = [CABasicAnimation animationWithKeyPath:@"opacity"];
+  fade.fromValue = [NSNumber numberWithFloat:1.f];
+  fade.toValue = [NSNumber numberWithFloat:0.f];
+  fade.duration = duration;
+  
+  CAAnimationGroup *group = [self animationGroupFor:[NSArray arrayWithObjects:fall, fade, nil] withView:view duration:duration 
+                                           delegate:delegate startSelector:startSelector stopSelector:stopSelector 
+                                               name:kFTAnimationFallOut type:kFTAnimationTypeOut];
+  group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+  return group;
+}
+
+
+- (CAAnimation *)flyOutAnimationFor:(UIView *)view duration:(NSTimeInterval)duration delegate:(id)delegate 
+                      startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
+  
+  CABasicAnimation *fly = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+  fly.toValue = [NSNumber numberWithFloat:2.f];
+  fly.duration = duration;
+  
+  CABasicAnimation *fade = [CABasicAnimation animationWithKeyPath:@"opacity"];
+  fade.toValue = [NSNumber numberWithFloat:0.f];
+  
+  CAAnimationGroup *group = [self animationGroupFor:[NSArray arrayWithObjects:fly, fade, nil] withView:view duration:duration 
+                                           delegate:delegate startSelector:startSelector stopSelector:stopSelector 
+                                               name:kFTAnimationFlyOut type:kFTAnimationTypeOut];
+  group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+  return group;
+}
+
+
+#pragma mark -
 #pragma mark Animation Delegate Methods
 
 - (void)animationDidStart:(CAAnimation *)theAnimation {
   UIView *targetView = [theAnimation valueForKey:kFTAnimationTargetViewKey];
   [targetView setUserInteractionEnabled:NO];
-
+  
   if([[theAnimation valueForKey:kFTAnimationType] isEqualToString:kFTAnimationTypeIn]) {
     [targetView setHidden:NO];
   }
   
   //Check for chaining and forward the delegate call if necessary
-  id callerDelegate = [theAnimation valueForKey:kFTAnimationCallerDelegateKey];
+  NSObject *callerDelegate = [theAnimation valueForKey:kFTAnimationCallerDelegateKey];
   SEL startSelector = NSSelectorFromString([theAnimation valueForKey:kFTAnimationCallerStartSelectorKey]);
-
+  
   FT_CALL_DELEGATE_WITH_ARG(callerDelegate, startSelector, theAnimation)
 }
 - (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)finished {
   UIView *targetView = [theAnimation valueForKey:kFTAnimationTargetViewKey];
   [targetView setUserInteractionEnabled:YES];
-
+  
   if([[theAnimation valueForKey:kFTAnimationType] isEqualToString:kFTAnimationTypeOut]) {
     [targetView setHidden:YES];
     [targetView.layer removeAnimationForKey:[theAnimation valueForKey:kFTAnimationName]];
@@ -325,23 +453,24 @@ NSString *const kFTAnimationPrevAnimationKey = @"kFTAnimationPrevAnimationKey";
   if([theAnimation valueForKey:kFTAnimationIsChainedKey]) {
     CAAnimation *next = [theAnimation valueForKey:kFTAnimationNextAnimationKey];
     if(next) {
-      //Add the next animation to it's layer
+      //Add the next animation to its layer
       UIView *nextTarget = [next valueForKey:kFTAnimationTargetViewKey];
       [nextTarget.layer addAnimation:next forKey:[next valueForKey:kFTAnimationName]];
     }
   }
   
-  FT_CALL_DELEGATE_WITH_ARGS(callerDelegate, stopSelector, theAnimation, [NSNumber numberWithBool:finished])
+  void *arguments[] = { &theAnimation, &finished };
+  [callerDelegate performSelector:stopSelector withArguments:arguments];
 }
 
-#pragma mark Singleton Boilerplate
+#pragma mark Singleton
 
 static FTAnimationManager *sharedAnimationManager = nil;
 
 + (FTAnimationManager *)sharedManager {
   @synchronized(self) {
     if (sharedAnimationManager == nil) {
-      [[self alloc] init]; // assignment not done here
+      sharedAnimationManager = [[self alloc] init]; // assignment not done here
     }
   }
   return sharedAnimationManager;
@@ -355,38 +484,24 @@ static FTAnimationManager *sharedAnimationManager = nil;
   return self;
 }
 
+@end
 
-+ (id)allocWithZone:(NSZone *)zone {
-  @synchronized(self) {
-    if (sharedAnimationManager == nil) {
-      sharedAnimationManager = [super allocWithZone:zone];
-      return sharedAnimationManager;
-    }
-  }
-  return nil;
+#pragma mark -
+
+@implementation CAAnimation (FTAnimationAdditions)
+
+- (void)setStartSelector:(SEL)selector withTarget:(id)target {
+  [self setValue:target forKey:kFTAnimationCallerDelegateKey];
+  [self setValue:NSStringFromSelector(selector) forKey:kFTAnimationCallerStartSelectorKey];
 }
 
-- (id)copyWithZone:(NSZone *)zone {
-  return self;
-}
-
-- (id)retain {
-  return self;
-}
-
-- (unsigned)retainCount {
-  return UINT_MAX;  //denotes an object that cannot be released
-}
-
-- (void)release {
-  
-}
-
-- (id)autorelease {
-  return self;
+- (void)setStopSelector:(SEL)selector withTarget:(id)target {
+  [self setValue:target forKey:kFTAnimationCallerDelegateKey];
+  [self setValue:NSStringFromSelector(selector) forKey:kFTAnimationCallerStopSelectorKey];
 }
 
 @end
+
 
 #pragma mark -
 
@@ -396,14 +511,10 @@ static FTAnimationManager *sharedAnimationManager = nil;
 
 - (void)slideInFrom:(FTAnimationDirection)direction duration:(NSTimeInterval)duration delegate:(id)delegate 
       startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
-  [CATransaction begin];
-  {    
-    CAAnimation *slideInAnim = [[FTAnimationManager sharedManager] slideInAnimationFor:self direction:direction 
-                                                                              duration:duration delegate:delegate 
-                                                                         startSelector:startSelector stopSelector:stopSelector];
-    [self.layer addAnimation:slideInAnim forKey:kFTAnimationSlideIn];
-  }
-  [CATransaction commit];
+  CAAnimation *slideInAnim = [[FTAnimationManager sharedManager] slideInAnimationFor:self direction:direction 
+                                                                            duration:duration delegate:delegate 
+                                                                       startSelector:startSelector stopSelector:stopSelector];
+  [self.layer addAnimation:slideInAnim forKey:kFTAnimationSlideIn];
 }
 
 - (void)slideInFrom:(FTAnimationDirection)direction duration:(NSTimeInterval)duration delegate:(id)delegate {
@@ -412,14 +523,10 @@ static FTAnimationManager *sharedAnimationManager = nil;
 
 - (void)slideOutTo:(FTAnimationDirection)direction duration:(NSTimeInterval)duration 
           delegate:(id)delegate startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
-  [CATransaction begin];
-  {    
-    CAAnimation *slideOutAnim = [[FTAnimationManager sharedManager] slideOutAnimationFor:self direction:direction 
-                                                                                duration:duration delegate:delegate 
-                                                                           startSelector:startSelector stopSelector:stopSelector];
-    [self.layer addAnimation:slideOutAnim forKey:kFTAnimationSlideOut];
-  }
-  [CATransaction commit];
+  CAAnimation *slideOutAnim = [[FTAnimationManager sharedManager] slideOutAnimationFor:self direction:direction 
+                                                                              duration:duration delegate:delegate 
+                                                                         startSelector:startSelector stopSelector:stopSelector];
+  [self.layer addAnimation:slideOutAnim forKey:kFTAnimationSlideOut];
 }
 
 
@@ -429,49 +536,37 @@ static FTAnimationManager *sharedAnimationManager = nil;
 
 #pragma mark Back In/Out Animations
 
-- (void)backOutTo:(FTAnimationDirection)direction duration:(NSTimeInterval)duration delegate:(id)delegate 
+- (void)backOutTo:(FTAnimationDirection)direction withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(id)delegate 
     startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
-  [CATransaction begin];
-  {    
-    CAAnimation *backOutAnim = [[FTAnimationManager sharedManager] backOutAnimationFor:self direction:direction 
-                                                                              duration:duration delegate:delegate 
-                                                                         startSelector:startSelector stopSelector:stopSelector];
-    [self.layer addAnimation:backOutAnim forKey:kFTAnimationBackOut];
-  }
-  [CATransaction commit];
-}
-
-- (void)backOutTo:(FTAnimationDirection)direction duration:(NSTimeInterval)duration delegate:(id)delegate {
-  [self backOutTo:direction duration:duration delegate:delegate startSelector:nil stopSelector:nil];
-}
-
-- (void)backInFrom:(FTAnimationDirection)direction duration:(NSTimeInterval)duration delegate:(id)delegate 
-     startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
-  [CATransaction begin];
-  {    
-    CAAnimation *backInAnim = [[FTAnimationManager sharedManager] backInAnimationFor:self direction:direction 
+  CAAnimation *backOutAnim = [[FTAnimationManager sharedManager] backOutAnimationFor:self withFade:fade direction:direction 
                                                                             duration:duration delegate:delegate 
                                                                        startSelector:startSelector stopSelector:stopSelector];
-    [self.layer addAnimation:backInAnim forKey:kFTAnimationBackIn];
-  }
-  [CATransaction commit];
+  [self.layer addAnimation:backOutAnim forKey:kFTAnimationBackOut];
 }
 
-- (void)backInFrom:(FTAnimationDirection)direction duration:(NSTimeInterval)duration delegate:(id)delegate {
-  [self backInFrom:direction duration:duration delegate:delegate startSelector:nil stopSelector:nil];
+- (void)backOutTo:(FTAnimationDirection)direction withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(id)delegate {
+  [self backOutTo:direction withFade:fade duration:duration delegate:delegate startSelector:nil stopSelector:nil];
+}
+
+- (void)backInFrom:(FTAnimationDirection)direction withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(id)delegate 
+     startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
+  CAAnimation *backInAnim = [[FTAnimationManager sharedManager] backInAnimationFor:self withFade:fade direction:direction 
+                                                                          duration:duration delegate:delegate 
+                                                                     startSelector:startSelector stopSelector:stopSelector];
+  [self.layer addAnimation:backInAnim forKey:kFTAnimationBackIn];
+}
+
+- (void)backInFrom:(FTAnimationDirection)direction withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(id)delegate {
+  [self backInFrom:direction withFade:fade duration:duration delegate:delegate startSelector:nil stopSelector:nil];
 }
 
 #pragma mark -
 #pragma mark Fade Animations
 
 - (void)fadeIn:(NSTimeInterval)duration delegate:(id)delegate startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
-  [CATransaction begin];
-  {
-    CAAnimation *anim = [[FTAnimationManager sharedManager] fadeAnimationFor:self duration:duration delegate:delegate 
-                                                               startSelector:startSelector stopSelector:stopSelector fadeOut:NO];
-    [self.layer addAnimation:anim forKey:kFTAnimationFadeIn];
-  }
-  [CATransaction commit];
+  CAAnimation *anim = [[FTAnimationManager sharedManager] fadeAnimationFor:self duration:duration delegate:delegate 
+                                                             startSelector:startSelector stopSelector:stopSelector fadeOut:NO];
+  [self.layer addAnimation:anim forKey:kFTAnimationFadeIn];
 }
 
 - (void)fadeIn:(NSTimeInterval)duration delegate:(id)delegate {
@@ -479,13 +574,9 @@ static FTAnimationManager *sharedAnimationManager = nil;
 }
 
 - (void)fadeOut:(NSTimeInterval)duration delegate:(id)delegate startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
-  [CATransaction begin];
-  {
-    CAAnimation *anim = [[FTAnimationManager sharedManager] fadeAnimationFor:self duration:duration delegate:delegate 
-                                                               startSelector:startSelector stopSelector:stopSelector fadeOut:YES];
-    [self.layer addAnimation:anim forKey:kFTAnimationFadeOut];
-  }
-  [CATransaction commit];
+  CAAnimation *anim = [[FTAnimationManager sharedManager] fadeAnimationFor:self duration:duration delegate:delegate 
+                                                             startSelector:startSelector stopSelector:stopSelector fadeOut:YES];
+  [self.layer addAnimation:anim forKey:kFTAnimationFadeOut];
 }
 
 - (void)fadeOut:(NSTimeInterval)duration delegate:(id)delegate {
@@ -494,14 +585,10 @@ static FTAnimationManager *sharedAnimationManager = nil;
 
 - (void)fadeBackgroundColorIn:(NSTimeInterval)duration delegate:(id)delegate 
                 startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
-  [CATransaction begin];
-  {
-    CAAnimation *anim = [[FTAnimationManager sharedManager] fadeBackgroundColorAnimationFor:self duration:duration 
-                                                                                   delegate:delegate startSelector:startSelector 
-                                                                               stopSelector:stopSelector fadeOut:NO];
-    [self.layer addAnimation:anim forKey:kFTAnimationFadeBackgroundIn];
-  }
-  [CATransaction commit];
+  CAAnimation *anim = [[FTAnimationManager sharedManager] fadeBackgroundColorAnimationFor:self duration:duration 
+                                                                                 delegate:delegate startSelector:startSelector 
+                                                                             stopSelector:stopSelector fadeOut:NO];
+  [self.layer addAnimation:anim forKey:kFTAnimationFadeBackgroundIn];
 }
 
 - (void)fadeBackgroundColorIn:(NSTimeInterval)duration delegate:(id)delegate {
@@ -510,14 +597,10 @@ static FTAnimationManager *sharedAnimationManager = nil;
 
 - (void)fadeBackgroundColorOut:(NSTimeInterval)duration delegate:(id)delegate 
                  startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
-  [CATransaction begin];
-  {
-    CAAnimation *anim = [[FTAnimationManager sharedManager] fadeBackgroundColorAnimationFor:self duration:duration 
-                                                                                   delegate:delegate startSelector:startSelector 
-                                                                               stopSelector:stopSelector fadeOut:YES];
-    [self.layer addAnimation:anim forKey:kFTAnimationFadeBackgroundOut];
-  }
-  [CATransaction commit];
+  CAAnimation *anim = [[FTAnimationManager sharedManager] fadeBackgroundColorAnimationFor:self duration:duration 
+                                                                                 delegate:delegate startSelector:startSelector 
+                                                                             stopSelector:stopSelector fadeOut:YES];
+  [self.layer addAnimation:anim forKey:kFTAnimationFadeBackgroundOut];
 }
 
 - (void)fadeBackgroundColorOut:(NSTimeInterval)duration delegate:(id)delegate {
@@ -528,13 +611,9 @@ static FTAnimationManager *sharedAnimationManager = nil;
 #pragma mark Pop Animations
 
 - (void)popIn:(NSTimeInterval)duration delegate:(id)delegate startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
-  [CATransaction begin];
-  {
-    CAAnimation *anim = [[FTAnimationManager sharedManager] popInAnimationFor:self duration:duration delegate:delegate 
-                                                                startSelector:startSelector stopSelector:stopSelector];
-    [self.layer addAnimation:anim forKey:kFTAnimationPopIn];
-  }
-  [CATransaction commit];
+  CAAnimation *anim = [[FTAnimationManager sharedManager] popInAnimationFor:self duration:duration delegate:delegate 
+                                                              startSelector:startSelector stopSelector:stopSelector];
+  [self.layer addAnimation:anim forKey:kFTAnimationPopIn];
 }
 
 - (void)popIn:(NSTimeInterval)duration delegate:(id)delegate {
@@ -542,17 +621,47 @@ static FTAnimationManager *sharedAnimationManager = nil;
 }
 
 - (void)popOut:(NSTimeInterval)duration delegate:(id)delegate startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
-  [CATransaction begin];
-  {
-    CAAnimation *anim = [[FTAnimationManager sharedManager] popOutAnimationFor:self duration:duration delegate:delegate 
-                                                                 startSelector:startSelector stopSelector:stopSelector];
-    [self.layer addAnimation:anim forKey:kFTAnimationPopOut];
-  }
-  [CATransaction commit];
+  CAAnimation *anim = [[FTAnimationManager sharedManager] popOutAnimationFor:self duration:duration delegate:delegate 
+                                                               startSelector:startSelector stopSelector:stopSelector];
+  [self.layer addAnimation:anim forKey:kFTAnimationPopOut];
 }
 
 - (void)popOut:(NSTimeInterval)duration delegate:(id)delegate {
   [self popOut:duration delegate:delegate startSelector:nil stopSelector:nil];
 }
+
+#pragma mark -
+#pragma mark Fall In and Fly Out
+
+- (void)fallIn:(NSTimeInterval)duration delegate:(id)delegate {
+  [self fallIn:duration delegate:delegate startSelector:nil stopSelector:nil];
+}
+
+- (void)fallIn:(NSTimeInterval)duration delegate:(id)delegate startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
+  CAAnimation *anim = [[FTAnimationManager sharedManager] fallInAnimationFor:self duration:duration delegate:delegate 
+                                                               startSelector:startSelector stopSelector:stopSelector];
+  [self.layer addAnimation:anim forKey:kFTAnimationFallIn];
+}
+
+- (void)fallOut:(NSTimeInterval)duration delegate:(id)delegate {
+  [self fallOut:duration delegate:delegate startSelector:nil stopSelector:nil];
+}
+
+- (void)fallOut:(NSTimeInterval)duration delegate:(id)delegate startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
+  CAAnimation *anim = [[FTAnimationManager sharedManager] fallOutAnimationFor:self duration:duration delegate:delegate 
+                                                                startSelector:startSelector stopSelector:stopSelector];
+  [self.layer addAnimation:anim forKey:kFTAnimationFallOut];
+}
+
+- (void)flyOut:(NSTimeInterval)duration delegate:(id)delegate {
+  [self flyOut:duration delegate:delegate startSelector:nil stopSelector:nil];
+}
+
+- (void)flyOut:(NSTimeInterval)duration delegate:(id)delegate startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
+  CAAnimation *anim = [[FTAnimationManager sharedManager] flyOutAnimationFor:self duration:duration delegate:delegate
+                                                               startSelector:startSelector stopSelector:stopSelector];
+  [self.layer addAnimation:anim forKey:kFTAnimationFlyOut];
+}
+
 
 @end

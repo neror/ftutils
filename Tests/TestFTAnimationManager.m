@@ -94,7 +94,7 @@
     CGPointMake(dummyView.center.x, dummyView.center.y - [animationManager overshootThreshold]),
     CGPointMake(dummyView.center.x, screenBounds.size.height + dummyView.frame.size.height / 2)
   };
-  CAAnimation *bounceOutBottom = [animationManager backOutAnimationFor:dummyView direction:kFTAnimationBottom 
+  CAAnimation *bounceOutBottom = [animationManager backOutAnimationFor:dummyView withFade:NO direction:kFTAnimationBottom
                                                               duration:0.1f delegate:nil 
                                                          startSelector:nil stopSelector:nil];
   [self verifyBounceAnimation:bounceOutBottom uses:3 pathPoints:bounceOutBottomPoints];
@@ -104,7 +104,7 @@
     CGPointMake(dummyView.center.x, dummyView.center.y + [animationManager overshootThreshold]),
     CGPointMake(dummyView.center.x, screenBounds.origin.y - dummyView.frame.size.height / 2)
   };
-  CAAnimation *bounceOutTop = [animationManager backOutAnimationFor:dummyView direction:kFTAnimationTop 
+  CAAnimation *bounceOutTop = [animationManager backOutAnimationFor:dummyView withFade:NO direction:kFTAnimationTop 
                                                            duration:0.1f delegate:nil 
                                                       startSelector:nil stopSelector:nil];
   [self verifyBounceAnimation:bounceOutTop uses:3 pathPoints:bounceOutTopPoints];
@@ -114,7 +114,7 @@
     CGPointMake(dummyView.center.x + [animationManager overshootThreshold], dummyView.center.y),
     CGPointMake(screenBounds.origin.x - dummyView.frame.size.width / 2, dummyView.center.y)
   };
-  CAAnimation *bounceOutLeft = [animationManager backOutAnimationFor:dummyView direction:kFTAnimationLeft
+  CAAnimation *bounceOutLeft = [animationManager backOutAnimationFor:dummyView withFade:NO direction:kFTAnimationLeft
                                                             duration:0.1f delegate:nil
                                                        startSelector:nil stopSelector:nil];
   [self verifyBounceAnimation:bounceOutLeft uses:3 pathPoints:bounceOutLeftPoints];
@@ -124,7 +124,7 @@
     CGPointMake(dummyView.center.x - [animationManager overshootThreshold], dummyView.center.y),
     CGPointMake(screenBounds.size.width + dummyView.frame.size.width / 2, dummyView.center.y)
   };
-  CAAnimation *bounceOutRight = [animationManager backOutAnimationFor:dummyView direction:kFTAnimationRight 
+  CAAnimation *bounceOutRight = [animationManager backOutAnimationFor:dummyView withFade:NO direction:kFTAnimationRight 
                                                              duration:0.1f delegate:nil 
                                                         startSelector:nil stopSelector:nil];
   [self verifyBounceAnimation:bounceOutRight uses:3 pathPoints:bounceOutRightPoints];

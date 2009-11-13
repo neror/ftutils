@@ -22,9 +22,10 @@
  THE SOFTWARE.
 */
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-#import "FTMacros.h"
+#import <UIKit/UIKit.h>
+#import "FTUtils.h"
+#import "FTUtils+NSObject.h"
 
 typedef enum _FTAnimationDirection {
   kFTAnimationTop = 0,
@@ -50,6 +51,9 @@ extern NSString *const kFTAnimationFadeBackgroundOut;
 extern NSString *const kFTAnimationFadeBackgroundIn;
 extern NSString *const kFTAnimationPopIn;
 extern NSString *const kFTAnimationPopOut;
+extern NSString *const kFTAnimationFallIn;
+extern NSString *const kFTAnimationFallOut;
+extern NSString *const kFTAnimationFlyOut;
 extern NSString *const kFTAnimationTargetViewKey;
 
 #pragma mark Inline Functions
@@ -89,19 +93,26 @@ static inline CGPoint FTAnimationOffscreenCenterPoint(CGRect viewFrame, CGPoint 
 
 + (FTAnimationManager *)sharedManager;
 
+- (CAAnimationGroup *)delayStartOfAnimation:(CAAnimation *)animation withDelay:(CFTimeInterval)delayTime;
+- (CAAnimationGroup *)pauseAtEndOfAnimation:(CAAnimation *)animation withDelay:(CFTimeInterval)delayTime;
 - (CAAnimation *)chainAnimations:(NSArray *)animations run:(BOOL)run;
 
+- (CAAnimationGroup *)animationGroupFor:(NSArray *)animations withView:(UIView *)view 
+                               duration:(NSTimeInterval)duration delegate:(id)delegate 
+                          startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector 
+                                   name:(NSString *)name type:(NSString *)type;
+
 - (CAAnimation *)slideInAnimationFor:(UIView *)view direction:(FTAnimationDirection)direction 
-                             duration:(NSTimeInterval)duration delegate:(id)delegate 
+                            duration:(NSTimeInterval)duration delegate:(id)delegate 
                        startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
 - (CAAnimation *)slideOutAnimationFor:(UIView *)view direction:(FTAnimationDirection)direction 
-                            duration:(NSTimeInterval)duration delegate:(id)delegate 
+                             duration:(NSTimeInterval)duration delegate:(id)delegate 
                         startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
 
-- (CAAnimation *)backOutAnimationFor:(UIView *)view direction:(FTAnimationDirection)direction 
+- (CAAnimation *)backOutAnimationFor:(UIView *)view withFade:(BOOL)fade direction:(FTAnimationDirection)direction 
                             duration:(NSTimeInterval)duration delegate:(id)delegate 
                        startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
-- (CAAnimation *)backInAnimationFor:(UIView *)view direction:(FTAnimationDirection)direction 
+- (CAAnimation *)backInAnimationFor:(UIView *)view withFade:(BOOL)fade direction:(FTAnimationDirection)direction 
                            duration:(NSTimeInterval)duration delegate:(id)delegate 
                       startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
 
@@ -110,12 +121,19 @@ static inline CGPoint FTAnimationOffscreenCenterPoint(CGRect viewFrame, CGPoint 
                      stopSelector:(SEL)stopSelector fadeOut:(BOOL)fadeOut;
 
 - (CAAnimation *)fadeBackgroundColorAnimationFor:(UIView *)view duration:(NSTimeInterval)duration 
-                                   delegate:(id)delegate startSelector:(SEL)startSelector 
+                                        delegate:(id)delegate startSelector:(SEL)startSelector 
                                     stopSelector:(SEL)stopSelector fadeOut:(BOOL)fadeOut;
 
 - (CAAnimation *)popInAnimationFor:(UIView *)view duration:(NSTimeInterval)duration delegate:(id)delegate 
                      startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
 - (CAAnimation *)popOutAnimationFor:(UIView *)view duration:(NSTimeInterval)duration delegate:(id)delegate 
+                      startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
+
+- (CAAnimation *)fallInAnimationFor:(UIView *)view duration:(NSTimeInterval)duration delegate:(id)delegate 
+                      startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
+- (CAAnimation *)fallOutAnimationFor:(UIView *)view duration:(NSTimeInterval)duration delegate:(id)delegate 
+                       startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
+- (CAAnimation *)flyOutAnimationFor:(UIView *)view duration:(NSTimeInterval)duration delegate:(id)delegate 
                       startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
 
 
@@ -130,11 +148,11 @@ static inline CGPoint FTAnimationOffscreenCenterPoint(CGRect viewFrame, CGPoint 
 - (void)slideOutTo:(FTAnimationDirection)direction duration:(NSTimeInterval)duration delegate:(id)delegate 
      startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
 
-- (void)backOutTo:(FTAnimationDirection)direction duration:(NSTimeInterval)duration delegate:(id)delegate;
-- (void)backOutTo:(FTAnimationDirection)direction duration:(NSTimeInterval)duration delegate:(id)delegate 
+- (void)backOutTo:(FTAnimationDirection)direction withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(id)delegate;
+- (void)backOutTo:(FTAnimationDirection)direction withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(id)delegate 
     startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
-- (void)backInFrom:(FTAnimationDirection)direction duration:(NSTimeInterval)duration delegate:(id)delegate;
-- (void)backInFrom:(FTAnimationDirection)direction duration:(NSTimeInterval)duration delegate:(id)delegate 
+- (void)backInFrom:(FTAnimationDirection)direction withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(id)delegate;
+- (void)backInFrom:(FTAnimationDirection)direction withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(id)delegate 
      startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
 
 - (void)fadeIn:(NSTimeInterval)duration delegate:(id)delegate;
@@ -153,5 +171,19 @@ static inline CGPoint FTAnimationOffscreenCenterPoint(CGRect viewFrame, CGPoint 
 - (void)popIn:(NSTimeInterval)duration delegate:(id)delegate startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
 - (void)popOut:(NSTimeInterval)duration delegate:(id)delegate;
 - (void)popOut:(NSTimeInterval)duration delegate:(id)delegate startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
+
+- (void)fallIn:(NSTimeInterval)duration delegate:(id)delegate;
+- (void)fallIn:(NSTimeInterval)duration delegate:(id)delegate startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
+- (void)fallOut:(NSTimeInterval)duration delegate:(id)delegate;
+- (void)fallOut:(NSTimeInterval)duration delegate:(id)delegate startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
+- (void)flyOut:(NSTimeInterval)duration delegate:(id)delegate;
+- (void)flyOut:(NSTimeInterval)duration delegate:(id)delegate startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
+
+@end
+
+@interface CAAnimation (FTAnimationAdditions)
+
+- (void)setStartSelector:(SEL)selector withTarget:(id)target;
+- (void)setStopSelector:(SEL)selector withTarget:(id)target;
 
 @end
