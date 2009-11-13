@@ -24,7 +24,7 @@
 #import <Foundation/Foundation.h>
 #import <yajl/yajl_common.h>
 #import <yajl/yajl_parse.h>
-#import "FTMacros.h"
+#import "FTUtils.h"
 
 extern NSString *const FTJSONParserErrorDomain;
 
