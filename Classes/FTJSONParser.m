@@ -144,7 +144,7 @@ static yajl_callbacks ftjsonCallbacks;
 }
 
 - (NSString *)statusString {
-  return [NSString stringWithCString:yajl_status_to_string((yajl_status)parsingStatus_)];
+  return [NSString stringWithCString:yajl_status_to_string((yajl_status)parsingStatus_) encoding:NSUTF8StringEncoding];
 }
 
 #pragma mark Error Handling Helpers
@@ -152,7 +152,7 @@ static yajl_callbacks ftjsonCallbacks;
 - (NSString *)getYAJLErrorStringFor:(NSData *)data {
   unsigned char *yajlError = yajl_get_error(handle_, 0, [data bytes], [data length]);
   //Put the error string into an NSString and lop off the trailing newline
-  NSString *errorString = [NSString stringWithCString:(const char *)yajlError length:strlen((const char *)yajlError)-1];
+  NSString *errorString = [NSString stringWithUTF8String:(const char *)yajlError];
   yajl_free_error(handle_, yajlError);
   return errorString;
 }

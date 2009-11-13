@@ -41,8 +41,8 @@
       *_err = [NSError errorWithDomain:FTJSONWriterErrorDomain \
                                   code:_status \
                               userInfo:[NSDictionary dictionaryWithObjectsAndKeys: \
-                                        [NSString stringWithUTF8String:friendlyErrorMessages[_status]], \
-                                        NSLocalizedFailureReasonErrorKey, nil] \
+                                         [NSString stringWithUTF8String:friendlyErrorMessages[_status]], \
+                                         NSLocalizedFailureReasonErrorKey, nil] \
               ]; \
     } \
     return _status; \
@@ -230,7 +230,7 @@ NSString *const FTJSONWriterErrorDomain = @"FTJSONWriterError";
 
 - (FTJSONEncodingStatus)encodeArray:(NSArray *)array error:(NSError **)error {
   NSAssert(handle_, @"The writer must be prepared before encoding can begin.");
-
+  
   FTJSONEncodingStatus status;
   GEN_FUNC_OR_ERROR(error, status, yajl_gen_array_open, handle_)
   for(NSString *item in array) {
