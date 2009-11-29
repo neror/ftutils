@@ -464,7 +464,7 @@ NSString *const kFTAnimationPrevAnimationKey = @"kFTAnimationPrevAnimationKey";
   }
   
   void *arguments[] = { &theAnimation, &finished };
-  [callerDelegate performSelector:stopSelector withArguments:arguments];
+  [callerDelegate performSelectorIfExists:stopSelector withArguments:arguments];
 }
 
 #pragma mark Singleton

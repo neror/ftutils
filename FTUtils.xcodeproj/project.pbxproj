@@ -18,6 +18,7 @@
 		DF287AB10FE19638001E9F62 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA50FE19638001E9F62 /* UIKit.framework */; };
 		DF2962EE0FE18E0000B9D71D /* FTAnimationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2962E40FE18E0000B9D71D /* FTAnimationManager.h */; };
 		DF2962F20FE18E0000B9D71D /* FTAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2962E90FE18E0000B9D71D /* FTAnimationManager.m */; };
+		DFA2EA7110C2ABD2003A76FF /* FTUtils+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFBF80910ADF405008DB0B9 /* FTUtils+NSObject.m */; };
 		DFE4EF141035CC4D006A7598 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFE4EF131035CC4D006A7598 /* OCMock.framework */; };
 		DFE4EF1C1035CC97006A7598 /* OCMock.framework in Copy OCMock */ = {isa = PBXBuildFile; fileRef = DFE4EF131035CC4D006A7598 /* OCMock.framework */; };
 		DFE4EF241035CCC1006A7598 /* TestFTAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2962E10FE18E0000B9D71D /* TestFTAnimationManager.m */; };
@@ -292,6 +293,7 @@
 			files = (
 				DF2962F20FE18E0000B9D71D /* FTAnimationManager.m in Sources */,
 				DF1E44F110C29C1500F80FC0 /* FTAnimation+UIView.m in Sources */,
+				DFA2EA7110C2ABD2003A76FF /* FTUtils+NSObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
