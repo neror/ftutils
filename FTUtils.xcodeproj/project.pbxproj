@@ -8,60 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		AA747D9F0F9514B9006C5449 /* FTUtils_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* FTUtils_Prefix.pch */; };
+		DF1E44EF10C29C1500F80FC0 /* FTAnimation+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1E44EE10C29C1500F80FC0 /* FTAnimation+UIView.m */; };
+		DF1E44F010C29C1500F80FC0 /* FTAnimation+UIView.h in Headers */ = {isa = PBXBuildFile; fileRef = DF1E44ED10C29C1500F80FC0 /* FTAnimation+UIView.h */; };
+		DF1E44F110C29C1500F80FC0 /* FTAnimation+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1E44EE10C29C1500F80FC0 /* FTAnimation+UIView.m */; };
+		DF1E44F510C29D7500F80FC0 /* FTAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = DF1E44F410C29D7500F80FC0 /* FTAnimation.h */; };
 		DF287AAE0FE19638001E9F62 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA20FE19638001E9F62 /* CoreGraphics.framework */; };
 		DF287AAF0FE19638001E9F62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA30FE19638001E9F62 /* Foundation.framework */; };
 		DF287AB00FE19638001E9F62 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA40FE19638001E9F62 /* QuartzCore.framework */; };
 		DF287AB10FE19638001E9F62 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA50FE19638001E9F62 /* UIKit.framework */; };
 		DF2962EE0FE18E0000B9D71D /* FTAnimationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2962E40FE18E0000B9D71D /* FTAnimationManager.h */; };
-		DF2962EF0FE18E0000B9D71D /* FTJSONParser.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2962E50FE18E0000B9D71D /* FTJSONParser.h */; };
-		DF2962F00FE18E0000B9D71D /* FTJSONWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2962E60FE18E0000B9D71D /* FTJSONWriter.h */; };
 		DF2962F20FE18E0000B9D71D /* FTAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2962E90FE18E0000B9D71D /* FTAnimationManager.m */; };
-		DF2962F30FE18E0000B9D71D /* FTJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2962EA0FE18E0000B9D71D /* FTJSONParser.m */; };
-		DF2962F40FE18E0000B9D71D /* FTJSONWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2962EB0FE18E0000B9D71D /* FTJSONWriter.m */; };
-		DF29631F0FE18F3F00B9D71D /* libyajl_iphone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF29631E0FE18F3D00B9D71D /* libyajl_iphone.a */; };
 		DFE4EF141035CC4D006A7598 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFE4EF131035CC4D006A7598 /* OCMock.framework */; };
 		DFE4EF1C1035CC97006A7598 /* OCMock.framework in Copy OCMock */ = {isa = PBXBuildFile; fileRef = DFE4EF131035CC4D006A7598 /* OCMock.framework */; };
 		DFE4EF241035CCC1006A7598 /* TestFTAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2962E10FE18E0000B9D71D /* TestFTAnimationManager.m */; };
-		DFE4EF251035CCC1006A7598 /* TestFTJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2962E20FE18E0000B9D71D /* TestFTJSON.m */; };
-		DFE4EF261035CCC5006A7598 /* FTJSONTestData.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF2962E00FE18E0000B9D71D /* FTJSONTestData.plist */; };
 		DFE4EFE21035CCCD006A7598 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA20FE19638001E9F62 /* CoreGraphics.framework */; };
 		DFE4EFE31035CCCD006A7598 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA30FE19638001E9F62 /* Foundation.framework */; };
 		DFE4EFE41035CCCD006A7598 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA40FE19638001E9F62 /* QuartzCore.framework */; };
 		DFE4EFE51035CCCD006A7598 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA50FE19638001E9F62 /* UIKit.framework */; };
 		DFF7F0601035CE350067ED5B /* FTAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2962E90FE18E0000B9D71D /* FTAnimationManager.m */; };
-		DFF7F0611035CE350067ED5B /* FTJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2962EA0FE18E0000B9D71D /* FTJSONParser.m */; };
-		DFF7F0621035CE350067ED5B /* FTJSONWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2962EB0FE18E0000B9D71D /* FTJSONWriter.m */; };
-		DFF7F0641035CE440067ED5B /* libyajl_iphone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF29631E0FE18F3D00B9D71D /* libyajl_iphone.a */; };
 		DFFBF80A10ADF405008DB0B9 /* FTUtils+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFBF80910ADF405008DB0B9 /* FTUtils+NSObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DF287F340FE19DAA001E9F62 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF2963170FE18F3D00B9D71D /* yajl_iphone.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC045055464E500DB518D;
-			remoteInfo = libyajl;
-		};
-		DF29631D0FE18F3D00B9D71D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF2963170FE18F3D00B9D71D /* yajl_iphone.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC046055464E500DB518D;
-			remoteInfo = libyajl;
-		};
-		DFF7F0651035CE540067ED5B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF2963170FE18F3D00B9D71D /* yajl_iphone.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC045055464E500DB518D;
-			remoteInfo = libyajl;
-		};
 		DFFBF86110ADF7A1008DB0B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DFE4EF0A1035CBCB006A7598 /* UnitTests */;
+			remoteGlobalIDString = DFE4EF0A1035CBCB006A7598;
 			remoteInfo = UnitTests;
 		};
 /* End PBXContainerItemProxy section */
@@ -83,21 +56,17 @@
 /* Begin PBXFileReference section */
 		AA747D9E0F9514B9006C5449 /* FTUtils_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTUtils_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		D2AAC07E0554694100DB518D /* libFTUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFTUtils.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF1E44ED10C29C1500F80FC0 /* FTAnimation+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FTAnimation+UIView.h"; path = "FTUtils/FTAnimation+UIView.h"; sourceTree = "<group>"; };
+		DF1E44EE10C29C1500F80FC0 /* FTAnimation+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTAnimation+UIView.m"; sourceTree = "<group>"; };
+		DF1E44F410C29D7500F80FC0 /* FTAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAnimation.h; sourceTree = "<group>"; };
 		DF2879B50FE192A1001E9F62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF287AA20FE19638001E9F62 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		DF287AA30FE19638001E9F62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DF287AA40FE19638001E9F62 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DF287AA50FE19638001E9F62 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		DF2962E00FE18E0000B9D71D /* FTJSONTestData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FTJSONTestData.plist; sourceTree = "<group>"; };
 		DF2962E10FE18E0000B9D71D /* TestFTAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestFTAnimationManager.m; sourceTree = "<group>"; };
-		DF2962E20FE18E0000B9D71D /* TestFTJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestFTJSON.m; sourceTree = "<group>"; };
 		DF2962E40FE18E0000B9D71D /* FTAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTAnimationManager.h; path = FTUtils/FTAnimationManager.h; sourceTree = "<group>"; };
-		DF2962E50FE18E0000B9D71D /* FTJSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTJSONParser.h; path = FTUtils/FTJSONParser.h; sourceTree = "<group>"; };
-		DF2962E60FE18E0000B9D71D /* FTJSONWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTJSONWriter.h; path = FTUtils/FTJSONWriter.h; sourceTree = "<group>"; };
 		DF2962E90FE18E0000B9D71D /* FTAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAnimationManager.m; sourceTree = "<group>"; };
-		DF2962EA0FE18E0000B9D71D /* FTJSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTJSONParser.m; sourceTree = "<group>"; };
-		DF2962EB0FE18E0000B9D71D /* FTJSONWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTJSONWriter.m; sourceTree = "<group>"; };
-		DF2963170FE18F3D00B9D71D /* yajl_iphone.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = yajl_iphone.xcodeproj; path = Support/yajl/yajl_iphone/yajl_iphone.xcodeproj; sourceTree = SOURCE_ROOT; };
 		DF6D06470FE1A6F200CC44C6 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
 		DFE4EF0B1035CBCB006A7598 /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE4EF0C1035CBCB006A7598 /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
@@ -112,7 +81,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF29631F0FE18F3F00B9D71D /* libyajl_iphone.a in Frameworks */,
 				DF287AAE0FE19638001E9F62 /* CoreGraphics.framework in Frameworks */,
 				DF287AAF0FE19638001E9F62 /* Foundation.framework in Frameworks */,
 				DF287AB00FE19638001E9F62 /* QuartzCore.framework in Frameworks */,
@@ -129,7 +97,6 @@
 				DFE4EFE41035CCCD006A7598 /* QuartzCore.framework in Frameworks */,
 				DFE4EFE51035CCCD006A7598 /* UIKit.framework in Frameworks */,
 				DFE4EF141035CC4D006A7598 /* OCMock.framework in Frameworks */,
-				DFF7F0641035CE440067ED5B /* libyajl_iphone.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,29 +151,19 @@
 		DF2962DE0FE18E0000B9D71D /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				DF2962DF0FE18E0000B9D71D /* TestData */,
 				DF2962E10FE18E0000B9D71D /* TestFTAnimationManager.m */,
-				DF2962E20FE18E0000B9D71D /* TestFTJSON.m */,
 			);
 			path = Tests;
-			sourceTree = "<group>";
-		};
-		DF2962DF0FE18E0000B9D71D /* TestData */ = {
-			isa = PBXGroup;
-			children = (
-				DF2962E00FE18E0000B9D71D /* FTJSONTestData.plist */,
-			);
-			path = TestData;
 			sourceTree = "<group>";
 		};
 		DF2962E30FE18E0000B9D71D /* Headers */ = {
 			isa = PBXGroup;
 			children = (
 				DFFBF82610ADF55A008DB0B9 /* FTUtils.h */,
-				DF2962E40FE18E0000B9D71D /* FTAnimationManager.h */,
-				DF2962E50FE18E0000B9D71D /* FTJSONParser.h */,
-				DF2962E60FE18E0000B9D71D /* FTJSONWriter.h */,
 				DFFBF80810ADF405008DB0B9 /* FTUtils+NSObject.h */,
+				DF1E44F410C29D7500F80FC0 /* FTAnimation.h */,
+				DF2962E40FE18E0000B9D71D /* FTAnimationManager.h */,
+				DF1E44ED10C29C1500F80FC0 /* FTAnimation+UIView.h */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -214,10 +171,9 @@
 		DF2962E80FE18E0000B9D71D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DF2962E90FE18E0000B9D71D /* FTAnimationManager.m */,
-				DF2962EA0FE18E0000B9D71D /* FTJSONParser.m */,
-				DF2962EB0FE18E0000B9D71D /* FTJSONWriter.m */,
 				DFFBF80910ADF405008DB0B9 /* FTUtils+NSObject.m */,
+				DF2962E90FE18E0000B9D71D /* FTAnimationManager.m */,
+				DF1E44EE10C29C1500F80FC0 /* FTAnimation+UIView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -226,17 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				DFE4EF131035CC4D006A7598 /* OCMock.framework */,
-				DF2963170FE18F3D00B9D71D /* yajl_iphone.xcodeproj */,
 			);
 			name = Support;
-			sourceTree = "<group>";
-		};
-		DF29631A0FE18F3D00B9D71D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DF29631E0FE18F3D00B9D71D /* libyajl_iphone.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,8 +195,8 @@
 			files = (
 				AA747D9F0F9514B9006C5449 /* FTUtils_Prefix.pch in Headers */,
 				DF2962EE0FE18E0000B9D71D /* FTAnimationManager.h in Headers */,
-				DF2962EF0FE18E0000B9D71D /* FTJSONParser.h in Headers */,
-				DF2962F00FE18E0000B9D71D /* FTJSONWriter.h in Headers */,
+				DF1E44F010C29C1500F80FC0 /* FTAnimation+UIView.h in Headers */,
+				DF1E44F510C29D7500F80FC0 /* FTAnimation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +214,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				DF287F350FE19DAA001E9F62 /* PBXTargetDependency */,
 				DFFBF86210ADF7A1008DB0B9 /* PBXTargetDependency */,
 			);
 			name = FTUtils;
@@ -288,7 +234,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				DFF7F0661035CE540067ED5B /* PBXTargetDependency */,
 			);
 			name = UnitTests;
 			productName = UnitTests;
@@ -306,12 +251,6 @@
 			mainGroup = 0867D691FE84028FC02AAC07 /* FTUtils */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = DF29631A0FE18F3D00B9D71D /* Products */;
-					ProjectRef = DF2963170FE18F3D00B9D71D /* yajl_iphone.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				D2AAC07D0554694100DB518D /* FTUtils */,
@@ -320,22 +259,11 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		DF29631E0FE18F3D00B9D71D /* libyajl_iphone.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libyajl_iphone.a;
-			remoteRef = DF29631D0FE18F3D00B9D71D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		DFE4EF061035CBCB006A7598 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFE4EF261035CCC5006A7598 /* FTJSONTestData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,8 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF2962F20FE18E0000B9D71D /* FTAnimationManager.m in Sources */,
-				DF2962F30FE18E0000B9D71D /* FTJSONParser.m in Sources */,
-				DF2962F40FE18E0000B9D71D /* FTJSONWriter.m in Sources */,
+				DF1E44F110C29C1500F80FC0 /* FTAnimation+UIView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,27 +300,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFE4EF241035CCC1006A7598 /* TestFTAnimationManager.m in Sources */,
-				DFE4EF251035CCC1006A7598 /* TestFTJSON.m in Sources */,
 				DFF7F0601035CE350067ED5B /* FTAnimationManager.m in Sources */,
-				DFF7F0611035CE350067ED5B /* FTJSONParser.m in Sources */,
-				DFF7F0621035CE350067ED5B /* FTJSONWriter.m in Sources */,
 				DFFBF80A10ADF405008DB0B9 /* FTUtils+NSObject.m in Sources */,
+				DF1E44EF10C29C1500F80FC0 /* FTAnimation+UIView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DF287F350FE19DAA001E9F62 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = libyajl;
-			targetProxy = DF287F340FE19DAA001E9F62 /* PBXContainerItemProxy */;
-		};
-		DFF7F0661035CE540067ED5B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = libyajl;
-			targetProxy = DFF7F0651035CE540067ED5B /* PBXContainerItemProxy */;
-		};
 		DFFBF86210ADF7A1008DB0B9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DFE4EF0A1035CBCB006A7598 /* UnitTests */;
