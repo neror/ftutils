@@ -3,8 +3,8 @@ FTUtils iPhone Utility Code Library
 
 The code in FTUtils is common utility code extracted from [Free Time Studios](http://www.freetimestudios.com/) iPhone projects. Currently, there is only one primary utility (`FTAnimationManager`) and some simple preprocessor macros. Some unit tests exist for the code, but more are needed. The documentation is also still under development.
 
-Using FTUtils
--------------
+Setting Up FTUtils
+------------------
 
 FTUtils is most easily used by simply copying `FTUtils.h`, `FTAnimationManager.h` and `FTAnimationManager.m` into your project. Be sure to add the QuartzCore framework to your project as well (step 5 below). The preferred way to integrate FTUtils into your projects is by adding it as a static library. This will keep it separate from your code.
 
@@ -26,17 +26,16 @@ The following is the process to add the FTUtils static library to your Xcode pro
 
  7. While you are in Project Settings, go to "Other Linker Flags" under the "Linker" section, and add "-ObjC" and "-all_load" to the list of flags.
 
-You're ready to go! Just import the headers in your code for the parts of the library you'd like to use. Here they are for easy reference:
+You're ready to go! Just import the header(s) in your code for the parts of the library you'd like to use. The FTAnimation.h header includes everything in the library. So you can just include it:
 
-    #import <FTUtils/FTUtils.h>
-    #import <FTUtils/FTAnimationManager.h>
+    #import <FTUtils/FTAnimation.h>
 
 Enjoy! And extra super special thanks to [Joe Hewitt](http://www.joehewitt.com/ "Joe Hewitt") for writing these steps out for his [three20 project](http://github.com/joehewitt/three20/tree/master "joehewitt's three20 at master - GitHub")! I don't think I have the patience to pull it off.
 
-FTAnimationManager
-------------------
+Using FTAnimation
+-----------------
 
-The animation manager was designed to make complex Core Animation based animations simple to create and use. The primary interface into the pre-built animations is a category on `UIView`. Animating a view is as simple as:
+FTAnimation was designed to make complex Core Animation based animations simple to create and use. The primary interface into the pre-built animations is a category on `UIView`. Animating a view is as simple as:
 
     [myView slideInFrom:kFTAnimationBottom duration:.33f delegate:self];
     
@@ -51,6 +50,13 @@ modify it to your satisfaction and/or add it to a `CAAnimationGroup` and add it 
     [myView.layer addAnimation:anim forKey:@"MySpecialAnimation"];
     
 See the code for details.
+
+The FTAnimation UIView Category
+-------------------------------
+
+FTAnimation ships with 13 canned `UIView` animations for animating the showing and hiding of views in the interface. These animations are all available through a category on the `UIView` class.
+
+
 
 Contributors
 ------------

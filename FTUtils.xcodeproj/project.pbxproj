@@ -28,7 +28,37 @@
 		DFE4EFE51035CCCD006A7598 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA50FE19638001E9F62 /* UIKit.framework */; };
 		DFF7F0601035CE350067ED5B /* FTAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2962E90FE18E0000B9D71D /* FTAnimationManager.m */; };
 		DFFBF80A10ADF405008DB0B9 /* FTUtils+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFBF80910ADF405008DB0B9 /* FTUtils+NSObject.m */; };
+		DFFDB56D10C2DA6400F7BF95 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA50FE19638001E9F62 /* UIKit.framework */; };
+		DFFDB56E10C2DA6400F7BF95 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA40FE19638001E9F62 /* QuartzCore.framework */; };
+		DFFDB56F10C2DA6500F7BF95 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA30FE19638001E9F62 /* Foundation.framework */; };
+		DFFDB57010C2DA6500F7BF95 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA20FE19638001E9F62 /* CoreGraphics.framework */; };
+		DFFDB57110C2DA6A00F7BF95 /* libFTUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libFTUtils.a */; };
+		DFFDB57710C2DA9700F7BF95 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFDB57610C2DA9700F7BF95 /* main.m */; };
+		DFFDB57A10C2DAED00F7BF95 /* ExamplesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFDB57910C2DAED00F7BF95 /* ExamplesAppDelegate.m */; };
+		DFFDB59610C2DBC000F7BF95 /* ExampleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFDB59510C2DBC000F7BF95 /* ExampleManager.m */; };
+		DFFDB59D10C2DC7900F7BF95 /* SimpleAnimationExample.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFDB59C10C2DC7900F7BF95 /* SimpleAnimationExample.m */; };
+		DFFDB5A610C2DD1600F7BF95 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFDB5A510C2DD1600F7BF95 /* RootViewController.m */; };
+		DFFDB5E010C2DFB700F7BF95 /* BackInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFDB5DF10C2DFB700F7BF95 /* BackInOut.m */; };
+		DFFDB62610C2E67100F7BF95 /* ViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = DFFDB62510C2E67100F7BF95 /* ViewBackground.png */; };
+		DFFDB68210C2EA1400F7BF95 /* Checkers.png in Resources */ = {isa = PBXBuildFile; fileRef = DFFDB68110C2EA1400F7BF95 /* Checkers.png */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DFFBF86110ADF7A1008DB0B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DFE4EF0A1035CBCB006A7598;
+			remoteInfo = UnitTests;
+		};
+		DFFDB4B010C2DA5200F7BF95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = FTUtils;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		DFE4EF1B1035CC68006A7598 /* Copy OCMock */ = {
@@ -65,6 +95,22 @@
 		DFFBF80810ADF405008DB0B9 /* FTUtils+NSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FTUtils+NSObject.h"; path = "FTUtils/FTUtils+NSObject.h"; sourceTree = "<group>"; };
 		DFFBF80910ADF405008DB0B9 /* FTUtils+NSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTUtils+NSObject.m"; sourceTree = "<group>"; };
 		DFFBF82610ADF55A008DB0B9 /* FTUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTUtils.h; path = FTUtils/FTUtils.h; sourceTree = "<group>"; };
+		DFFDB4AA10C2DA2200F7BF95 /* FTAnimationExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FTAnimationExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFFDB4AC10C2DA2300F7BF95 /* FTAnimationExamples-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FTAnimationExamples-Info.plist"; sourceTree = "<group>"; };
+		DFFDB57610C2DA9700F7BF95 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DFFDB57810C2DAED00F7BF95 /* ExamplesAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamplesAppDelegate.h; sourceTree = "<group>"; };
+		DFFDB57910C2DAED00F7BF95 /* ExamplesAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamplesAppDelegate.m; sourceTree = "<group>"; };
+		DFFDB59410C2DBC000F7BF95 /* ExampleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleManager.h; sourceTree = "<group>"; };
+		DFFDB59510C2DBC000F7BF95 /* ExampleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleManager.m; sourceTree = "<group>"; };
+		DFFDB59B10C2DC7900F7BF95 /* SimpleAnimationExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleAnimationExample.h; sourceTree = "<group>"; };
+		DFFDB59C10C2DC7900F7BF95 /* SimpleAnimationExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleAnimationExample.m; sourceTree = "<group>"; };
+		DFFDB5A410C2DD1600F7BF95 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		DFFDB5A510C2DD1600F7BF95 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		DFFDB5DE10C2DFB700F7BF95 /* BackInOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackInOut.h; sourceTree = "<group>"; };
+		DFFDB5DF10C2DFB700F7BF95 /* BackInOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackInOut.m; sourceTree = "<group>"; };
+		DFFDB5EE10C2E12200F7BF95 /* Examples_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Examples_Prefix.pch; sourceTree = "<group>"; };
+		DFFDB62510C2E67100F7BF95 /* ViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ViewBackground.png; sourceTree = "<group>"; };
+		DFFDB68110C2EA1400F7BF95 /* Checkers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Checkers.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +137,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DFFDB4A810C2DA2200F7BF95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFFDB56D10C2DA6400F7BF95 /* UIKit.framework in Frameworks */,
+				DFFDB56E10C2DA6400F7BF95 /* QuartzCore.framework in Frameworks */,
+				DFFDB56F10C2DA6500F7BF95 /* Foundation.framework in Frameworks */,
+				DFFDB57010C2DA6500F7BF95 /* CoreGraphics.framework in Frameworks */,
+				DFFDB57110C2DA6A00F7BF95 /* libFTUtils.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -99,6 +157,7 @@
 			children = (
 				D2AAC07E0554694100DB518D /* libFTUtils.a */,
 				DFE4EF0B1035CBCB006A7598 /* UnitTests.octest */,
+				DFFDB4AA10C2DA2200F7BF95 /* FTAnimationExamples.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,6 +168,7 @@
 				DF6D06470FE1A6F200CC44C6 /* README.mdown */,
 				DF2962E30FE18E0000B9D71D /* Headers */,
 				DF2962E80FE18E0000B9D71D /* Classes */,
+				DFFDB49110C2D91B00F7BF95 /* Examples */,
 				DF2962DE0FE18E0000B9D71D /* Tests */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				DF29630D0FE18F2600B9D71D /* Support */,
@@ -116,6 +176,7 @@
 				034768DFFF38A50411DB9C8B /* Products */,
 				DF2879B50FE192A1001E9F62 /* Info.plist */,
 				DFE4EF0C1035CBCB006A7598 /* UnitTests-Info.plist */,
+				DFFDB4AC10C2DA2300F7BF95 /* FTAnimationExamples-Info.plist */,
 			);
 			name = FTUtils;
 			sourceTree = "<group>";
@@ -177,6 +238,43 @@
 			name = Support;
 			sourceTree = "<group>";
 		};
+		DFFDB49110C2D91B00F7BF95 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				DFFDB4A510C2D9E300F7BF95 /* Simple View Animation */,
+				DFFDB5BC10C2DDB600F7BF95 /* Supporting Files */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		DFFDB4A510C2D9E300F7BF95 /* Simple View Animation */ = {
+			isa = PBXGroup;
+			children = (
+				DFFDB59B10C2DC7900F7BF95 /* SimpleAnimationExample.h */,
+				DFFDB59C10C2DC7900F7BF95 /* SimpleAnimationExample.m */,
+				DFFDB5DE10C2DFB700F7BF95 /* BackInOut.h */,
+				DFFDB5DF10C2DFB700F7BF95 /* BackInOut.m */,
+			);
+			name = "Simple View Animation";
+			sourceTree = "<group>";
+		};
+		DFFDB5BC10C2DDB600F7BF95 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DFFDB68110C2EA1400F7BF95 /* Checkers.png */,
+				DFFDB62510C2E67100F7BF95 /* ViewBackground.png */,
+				DFFDB57610C2DA9700F7BF95 /* main.m */,
+				DFFDB5EE10C2E12200F7BF95 /* Examples_Prefix.pch */,
+				DFFDB59410C2DBC000F7BF95 /* ExampleManager.h */,
+				DFFDB59510C2DBC000F7BF95 /* ExampleManager.m */,
+				DFFDB5A410C2DD1600F7BF95 /* RootViewController.h */,
+				DFFDB5A510C2DD1600F7BF95 /* RootViewController.m */,
+				DFFDB57810C2DAED00F7BF95 /* ExamplesAppDelegate.h */,
+				DFFDB57910C2DAED00F7BF95 /* ExamplesAppDelegate.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -230,6 +328,24 @@
 			productReference = DFE4EF0B1035CBCB006A7598 /* UnitTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
+		DFFDB4A910C2DA2200F7BF95 /* FTAnimationExamples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFFDB4AF10C2DA2300F7BF95 /* Build configuration list for PBXNativeTarget "FTAnimationExamples" */;
+			buildPhases = (
+				DFFDB4A610C2DA2200F7BF95 /* Resources */,
+				DFFDB4A710C2DA2200F7BF95 /* Sources */,
+				DFFDB4A810C2DA2200F7BF95 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DFFDB4B110C2DA5200F7BF95 /* PBXTargetDependency */,
+			);
+			name = FTAnimationExamples;
+			productName = FTAnimationExamples;
+			productReference = DFFDB4AA10C2DA2200F7BF95 /* FTAnimationExamples.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -245,6 +361,7 @@
 			targets = (
 				D2AAC07D0554694100DB518D /* FTUtils */,
 				DFE4EF0A1035CBCB006A7598 /* UnitTests */,
+				DFFDB4A910C2DA2200F7BF95 /* FTAnimationExamples */,
 			);
 		};
 /* End PBXProject section */
@@ -254,6 +371,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFFDB4A610C2DA2200F7BF95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFFDB62610C2E67100F7BF95 /* ViewBackground.png in Resources */,
+				DFFDB68210C2EA1400F7BF95 /* Checkers.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +423,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DFFDB4A710C2DA2200F7BF95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFFDB57710C2DA9700F7BF95 /* main.m in Sources */,
+				DFFDB57A10C2DAED00F7BF95 /* ExamplesAppDelegate.m in Sources */,
+				DFFDB59610C2DBC000F7BF95 /* ExampleManager.m in Sources */,
+				DFFDB59D10C2DC7900F7BF95 /* SimpleAnimationExample.m in Sources */,
+				DFFDB5A610C2DD1600F7BF95 /* RootViewController.m in Sources */,
+				DFFDB5E010C2DFB700F7BF95 /* BackInOut.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DFFBF86210ADF7A1008DB0B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DFE4EF0A1035CBCB006A7598 /* UnitTests */;
+			targetProxy = DFFBF86110ADF7A1008DB0B9 /* PBXContainerItemProxy */;
+		};
+		DFFDB4B110C2DA5200F7BF95 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AAC07D0554694100DB518D /* FTUtils */;
+			targetProxy = DFFDB4B010C2DA5200F7BF95 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1DEB921F08733DC00010E9CD /* Debug */ = {
@@ -441,6 +593,57 @@
 			};
 			name = Release;
 		};
+		DFFDB4AD10C2DA2300F7BF95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Examples/Examples_Prefix.pch;
+				INFOPLIST_FILE = "FTAnimationExamples-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+					"-ObjC",
+					"-all_load",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = FTAnimationExamples;
+				SDKROOT = iphonesimulator3.0;
+			};
+			name = Debug;
+		};
+		DFFDB4AE10C2DA2300F7BF95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "FTAnimationExamples-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = FTAnimationExamples;
+				SDKROOT = iphoneos3.1.2;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -467,6 +670,15 @@
 			buildConfigurations = (
 				DFE4EF0D1035CBCB006A7598 /* Debug */,
 				DFE4EF0E1035CBCB006A7598 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFFDB4AF10C2DA2300F7BF95 /* Build configuration list for PBXNativeTarget "FTAnimationExamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFFDB4AD10C2DA2300F7BF95 /* Debug */,
+				DFFDB4AE10C2DA2300F7BF95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
