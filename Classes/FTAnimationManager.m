@@ -329,9 +329,10 @@ NSString *const kFTAnimationPrevAnimationKey = @"kFTAnimationPrevAnimationKey";
                   nil];
   
   CABasicAnimation *fadeIn = [CABasicAnimation animationWithKeyPath:@"opacity"];
-  fadeIn.duration = duration * .66f;
+  fadeIn.duration = duration * .7f;
   fadeIn.fromValue = [NSNumber numberWithFloat:0.f];
   fadeIn.toValue = [NSNumber numberWithFloat:1.f];
+  fadeIn.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
   fadeIn.fillMode = kCAFillModeForwards;
   
   CAAnimationGroup *group = [self animationGroupFor:[NSArray arrayWithObjects:scale, fadeIn, nil] withView:view duration:duration 
@@ -352,10 +353,12 @@ NSString *const kFTAnimationPrevAnimationKey = @"kFTAnimationPrevAnimationKey";
                   nil];
   
   CABasicAnimation *fadeOut = [CABasicAnimation animationWithKeyPath:@"opacity"];
-  fadeOut.duration = duration;
+  fadeOut.duration = duration * .3f;
   fadeOut.fromValue = [NSNumber numberWithFloat:1.f];
   fadeOut.toValue = [NSNumber numberWithFloat:0.f];
-  fadeOut.fillMode = kCAFillModeForwards;
+  fadeOut.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+  fadeOut.beginTime = duration * .7f;
+  fadeOut.fillMode = kCAFillModeBoth;
   
   return [self animationGroupFor:[NSArray arrayWithObjects:scale, fadeOut, nil] withView:view duration:duration 
                         delegate:delegate startSelector:startSelector stopSelector:stopSelector 
