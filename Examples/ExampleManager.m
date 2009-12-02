@@ -29,6 +29,7 @@
 #import "FadeInOut.h"
 #import "FadeBackgroundColorInOut.h"
 #import "PopInOut.h"
+#import "FallInOut.h"
 
 @interface ExampleManager ()
 
@@ -69,6 +70,7 @@ static ExampleManager *sharedSampleManager = nil;
                                                                           [FadeInOut class], 
                                                                           [FadeBackgroundColorInOut class], 
                                                                           [PopInOut class],
+                                                                          [FallInOut class],
                                                                           nil], 
                                                 nil]; 
   }

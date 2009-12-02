@@ -22,6 +22,7 @@
 		DF3E06C610C721E0004434C3 /* FadeInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3E06C510C721E0004434C3 /* FadeInOut.m */; };
 		DF3E06F110C723F0004434C3 /* FadeBackgroundColorInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3E06F010C723F0004434C3 /* FadeBackgroundColorInOut.m */; };
 		DF3E071410C72581004434C3 /* PopInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3E071310C72581004434C3 /* PopInOut.m */; };
+		DF3E073410C72689004434C3 /* FallInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3E073310C72689004434C3 /* FallInOut.m */; };
 		DFA2EA8A10C2AC89003A76FF /* FTUtils+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFBF80910ADF405008DB0B9 /* FTUtils+NSObject.m */; };
 		DFE4EF141035CC4D006A7598 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFE4EF131035CC4D006A7598 /* OCMock.framework */; };
 		DFE4EF1C1035CC97006A7598 /* OCMock.framework in Copy OCMock */ = {isa = PBXBuildFile; fileRef = DFE4EF131035CC4D006A7598 /* OCMock.framework */; };
@@ -93,6 +94,8 @@
 		DF3E06F010C723F0004434C3 /* FadeBackgroundColorInOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FadeBackgroundColorInOut.m; sourceTree = "<group>"; };
 		DF3E071210C72581004434C3 /* PopInOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopInOut.h; sourceTree = "<group>"; };
 		DF3E071310C72581004434C3 /* PopInOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopInOut.m; sourceTree = "<group>"; };
+		DF3E073210C72689004434C3 /* FallInOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FallInOut.h; sourceTree = "<group>"; };
+		DF3E073310C72689004434C3 /* FallInOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FallInOut.m; sourceTree = "<group>"; };
 		DF6D06470FE1A6F200CC44C6 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
 		DFE4EF0B1035CBCB006A7598 /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE4EF0C1035CBCB006A7598 /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
@@ -277,6 +280,8 @@
 				DF3E06F010C723F0004434C3 /* FadeBackgroundColorInOut.m */,
 				DF3E071210C72581004434C3 /* PopInOut.h */,
 				DF3E071310C72581004434C3 /* PopInOut.m */,
+				DF3E073210C72689004434C3 /* FallInOut.h */,
+				DF3E073310C72689004434C3 /* FallInOut.m */,
 			);
 			name = "Simple View Animation";
 			sourceTree = "<group>";
@@ -458,6 +463,7 @@
 				DF3E06C610C721E0004434C3 /* FadeInOut.m in Sources */,
 				DF3E06F110C723F0004434C3 /* FadeBackgroundColorInOut.m in Sources */,
 				DF3E071410C72581004434C3 /* PopInOut.m in Sources */,
+				DF3E073410C72689004434C3 /* FallInOut.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

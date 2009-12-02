@@ -384,7 +384,6 @@ NSString *const kFTAnimationPrevAnimationKey = @"kFTAnimationPrevAnimationKey";
   CAAnimationGroup *group = [self animationGroupFor:[NSArray arrayWithObjects:fall, fade, nil] withView:view duration:duration 
                                            delegate:delegate startSelector:startSelector stopSelector:stopSelector 
                                                name:kFTAnimationFallIn type:kFTAnimationTypeIn];
-  group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
   return group;
 }
 
@@ -404,7 +403,6 @@ NSString *const kFTAnimationPrevAnimationKey = @"kFTAnimationPrevAnimationKey";
   CAAnimationGroup *group = [self animationGroupFor:[NSArray arrayWithObjects:fall, fade, nil] withView:view duration:duration 
                                            delegate:delegate startSelector:startSelector stopSelector:stopSelector 
                                                name:kFTAnimationFallOut type:kFTAnimationTypeOut];
-  group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
   return group;
 }
 
