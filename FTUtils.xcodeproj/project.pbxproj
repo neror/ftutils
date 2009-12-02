@@ -19,6 +19,7 @@
 		DF2962EE0FE18E0000B9D71D /* FTAnimationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2962E40FE18E0000B9D71D /* FTAnimationManager.h */; };
 		DF2962F20FE18E0000B9D71D /* FTAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2962E90FE18E0000B9D71D /* FTAnimationManager.m */; };
 		DF3E06A110C71FF7004434C3 /* SlideInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3E06A010C71FF7004434C3 /* SlideInOut.m */; };
+		DF3E06C610C721E0004434C3 /* FadeInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3E06C510C721E0004434C3 /* FadeInOut.m */; };
 		DFA2EA8A10C2AC89003A76FF /* FTUtils+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFBF80910ADF405008DB0B9 /* FTUtils+NSObject.m */; };
 		DFE4EF141035CC4D006A7598 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFE4EF131035CC4D006A7598 /* OCMock.framework */; };
 		DFE4EF1C1035CC97006A7598 /* OCMock.framework in Copy OCMock */ = {isa = PBXBuildFile; fileRef = DFE4EF131035CC4D006A7598 /* OCMock.framework */; };
@@ -84,6 +85,8 @@
 		DF2962E90FE18E0000B9D71D /* FTAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAnimationManager.m; sourceTree = "<group>"; };
 		DF3E069F10C71FF7004434C3 /* SlideInOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideInOut.h; sourceTree = "<group>"; };
 		DF3E06A010C71FF7004434C3 /* SlideInOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideInOut.m; sourceTree = "<group>"; };
+		DF3E06C410C721E0004434C3 /* FadeInOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FadeInOut.h; sourceTree = "<group>"; };
+		DF3E06C510C721E0004434C3 /* FadeInOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FadeInOut.m; sourceTree = "<group>"; };
 		DF6D06470FE1A6F200CC44C6 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
 		DFE4EF0B1035CBCB006A7598 /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE4EF0C1035CBCB006A7598 /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
@@ -262,6 +265,8 @@
 				DFFDB5DF10C2DFB700F7BF95 /* BackInOut.m */,
 				DF3E069F10C71FF7004434C3 /* SlideInOut.h */,
 				DF3E06A010C71FF7004434C3 /* SlideInOut.m */,
+				DF3E06C410C721E0004434C3 /* FadeInOut.h */,
+				DF3E06C510C721E0004434C3 /* FadeInOut.m */,
 			);
 			name = "Simple View Animation";
 			sourceTree = "<group>";
@@ -440,6 +445,7 @@
 				DFFDB5A610C2DD1600F7BF95 /* RootViewController.m in Sources */,
 				DFFDB5E010C2DFB700F7BF95 /* BackInOut.m in Sources */,
 				DF3E06A110C71FF7004434C3 /* SlideInOut.m in Sources */,
+				DF3E06C610C721E0004434C3 /* FadeInOut.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

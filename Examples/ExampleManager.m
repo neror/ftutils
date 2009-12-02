@@ -26,6 +26,7 @@
 #import <objc/runtime.h>
 #import "BackInOut.h"
 #import "SlideInOut.h"
+#import "FadeInOut.h"
 
 @interface ExampleManager ()
 
@@ -58,19 +59,11 @@ static ExampleManager *sharedSampleManager = nil;
 - (id)init {
   self = [super init];
   if (self != nil) {
-//    NSArray *geom = [NSArray arrayWithObjects:[GeometricProperties class], [LayerTransforms class], nil];
-//    NSArray *hier = [NSArray arrayWithObjects:[LayerTree class], nil];
-//    NSArray *drawing = [NSArray arrayWithObjects:[ImageContent class], [LayerDrawing class], [StyleProperties class], nil];
-//    NSArray *animation = [NSArray arrayWithObjects:[BasicAnimation class], [AnimationGroups class], 
-//                          [AnimationTransactions class], [KeyframeAnimation class], [LayerActions class], 
-//                          [LayerTransitions class], nil];
-//    NSArray *special = [NSArray arrayWithObjects:[ShapeLayers class], [GradientLayers class], nil];
-    
-    
     groups_ = [[NSArray alloc] initWithObjects:@"Animating Views",
                                                nil];
     
-    samples_ = [[NSArray alloc] initWithObjects:[NSArray arrayWithObjects:[BackInOut class], [SlideInOut class], nil], nil]; 
+    samples_ = [[NSArray alloc] initWithObjects:[NSArray arrayWithObjects:[BackInOut class], [SlideInOut class], [FadeInOut class], nil], 
+                                                nil]; 
   }
   return self;
 }
