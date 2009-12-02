@@ -20,22 +20,12 @@
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
-*/
+ */
 
-#import <UIKit/UIKit.h>
+#import "SimpleAnimationExample.h"
 
 
-@interface SimpleAnimationExample : UIViewController {
-  UIImageView *viewToAnimate_;
-  UIButton *performAnimationButton_;
-  UISegmentedControl *directionControl_;
+@interface SlideInOut : SimpleAnimationExample {
 }
-
-@property(nonatomic,retain) UIImageView *viewToAnimate;
-@property(nonatomic,retain) UIButton *performAnimationButton;
-@property(nonatomic,retain) UISegmentedControl *directionControl;
-@property(assign) BOOL hasDirectionControl;
-
-- (void)performAnimation:(id)sender;
 
 @end

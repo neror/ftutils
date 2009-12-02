@@ -31,12 +31,17 @@
   return @"Back In/Back Out";
 }
 
+- (void)viewDidLoad {
+  self.hasDirectionControl = YES;
+}
+
 - (void)performAnimation:(id)sender {
   if(self.viewToAnimate.hidden) {
-    [self.viewToAnimate backInFrom:kFTAnimationTop withFade:NO duration:1. delegate:nil];
+    [self.viewToAnimate backInFrom:self.directionControl.selectedSegmentIndex withFade:NO duration:.4 delegate:nil];
   } else {
-    [self.viewToAnimate backOutTo:kFTAnimationTop withFade:NO duration:1. delegate:nil];
+    [self.viewToAnimate backOutTo:self.directionControl.selectedSegmentIndex withFade:NO duration:.4 delegate:nil];
   }
 }
+
 
 @end

@@ -25,6 +25,7 @@
 #import "ExampleManager.h"
 #import <objc/runtime.h>
 #import "BackInOut.h"
+#import "SlideInOut.h"
 
 @interface ExampleManager ()
 
@@ -69,7 +70,7 @@ static ExampleManager *sharedSampleManager = nil;
     groups_ = [[NSArray alloc] initWithObjects:@"Animating Views",
                                                nil];
     
-    samples_ = [[NSArray alloc] initWithObjects:[NSArray arrayWithObject:[BackInOut class]], nil]; 
+    samples_ = [[NSArray alloc] initWithObjects:[NSArray arrayWithObjects:[BackInOut class], [SlideInOut class], nil], nil]; 
   }
   return self;
 }

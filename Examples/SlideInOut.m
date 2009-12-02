@@ -20,22 +20,28 @@
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
-*/
+ */
 
-#import <UIKit/UIKit.h>
+#import "SlideInOut.h"
+#import "FTAnimation.h"
 
+@implementation SlideInOut
 
-@interface SimpleAnimationExample : UIViewController {
-  UIImageView *viewToAnimate_;
-  UIButton *performAnimationButton_;
-  UISegmentedControl *directionControl_;
++ (NSString *)friendlyName {
+  return @"Slide In/Slide Out";
 }
 
-@property(nonatomic,retain) UIImageView *viewToAnimate;
-@property(nonatomic,retain) UIButton *performAnimationButton;
-@property(nonatomic,retain) UISegmentedControl *directionControl;
-@property(assign) BOOL hasDirectionControl;
+- (void)viewDidLoad {
+  self.hasDirectionControl = YES;
+}
 
-- (void)performAnimation:(id)sender;
+- (void)performAnimation:(id)sender {
+  if(self.viewToAnimate.hidden) {
+    [self.viewToAnimate slideInFrom:self.directionControl.selectedSegmentIndex duration:.4 delegate:nil];
+  } else {
+    [self.viewToAnimate slideOutTo:self.directionControl.selectedSegmentIndex duration:.4 delegate:nil];
+  }
+}
+
 
 @end
