@@ -416,11 +416,11 @@ NSString *const kFTAnimationPrevAnimationKey = @"kFTAnimationPrevAnimationKey";
   
   CABasicAnimation *fade = [CABasicAnimation animationWithKeyPath:@"opacity"];
   fade.toValue = [NSNumber numberWithFloat:0.f];
+  fade.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
   
   CAAnimationGroup *group = [self animationGroupFor:[NSArray arrayWithObjects:fly, fade, nil] withView:view duration:duration 
                                            delegate:delegate startSelector:startSelector stopSelector:stopSelector 
                                                name:kFTAnimationFlyOut type:kFTAnimationTypeOut];
-  group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
   return group;
 }
 

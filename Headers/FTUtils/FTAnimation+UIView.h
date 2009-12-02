@@ -61,6 +61,7 @@
 - (void)fallIn:(NSTimeInterval)duration delegate:(id)delegate startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
 - (void)fallOut:(NSTimeInterval)duration delegate:(id)delegate;
 - (void)fallOut:(NSTimeInterval)duration delegate:(id)delegate startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
+
 - (void)flyOut:(NSTimeInterval)duration delegate:(id)delegate;
 - (void)flyOut:(NSTimeInterval)duration delegate:(id)delegate startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
 
