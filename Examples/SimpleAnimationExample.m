@@ -31,7 +31,7 @@
 @synthesize performAnimationButton = performAnimationButton_;
 @synthesize directionControl = directionControl_;
 
-+ (NSString *)friendlyName {
++ (NSString *)displayName {
   return @"";
 }
 
@@ -39,7 +39,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
   if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-    self.title = [[self class] friendlyName];
+    self.title = [[self class] displayName];
   }
   return self;
 }

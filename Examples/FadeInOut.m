@@ -27,7 +27,7 @@
 
 @implementation FadeInOut
 
-+ (NSString *)friendlyName {
++ (NSString *)displayName {
   return @"Fade In/Fade Out";
 }
 

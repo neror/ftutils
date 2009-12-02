@@ -27,7 +27,7 @@
 
 @implementation BackInOut
 
-+ (NSString *)friendlyName {
++ (NSString *)displayName {
   return @"Back In/Back Out";
 }
 

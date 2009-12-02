@@ -27,7 +27,7 @@
 
 @implementation SlideInOut
 
-+ (NSString *)friendlyName {
++ (NSString *)displayName {
   return @"Slide In/Slide Out";
 }
 

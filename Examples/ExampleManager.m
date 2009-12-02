@@ -36,7 +36,7 @@
 
 @interface UIViewController (ThisIsHereToAviodACompilerWarning)
 
-+ (NSString *)friendlyName;
++ (NSString *)displayName;
 
 @end
 
@@ -90,7 +90,7 @@ static ExampleManager *sharedSampleManager = nil;
   ExampleManager *SELF = [ExampleManager sharedSampleManager];
   NSArray *samples = [SELF->samples_ objectAtIndex:indexPath.section];
   Class clazz = [samples objectAtIndex:indexPath.row];
-  return [clazz friendlyName];
+  return [clazz displayName];
 }
 
 + (UIViewController *)sampleInstanceAtIndexPath:(NSIndexPath *)indexPath {
