@@ -27,6 +27,7 @@
 #import "BackInOut.h"
 #import "SlideInOut.h"
 #import "FadeInOut.h"
+#import "FadeBackgroundColorInOut.h"
 
 @interface ExampleManager ()
 
@@ -62,7 +63,11 @@ static ExampleManager *sharedSampleManager = nil;
     groups_ = [[NSArray alloc] initWithObjects:@"Animating Views",
                                                nil];
     
-    samples_ = [[NSArray alloc] initWithObjects:[NSArray arrayWithObjects:[BackInOut class], [SlideInOut class], [FadeInOut class], nil], 
+    samples_ = [[NSArray alloc] initWithObjects:[NSArray arrayWithObjects:[BackInOut class], 
+                                                                          [SlideInOut class], 
+                                                                          [FadeInOut class], 
+                                                                          [FadeBackgroundColorInOut class], 
+                                                                          nil], 
                                                 nil]; 
   }
   return self;
