@@ -329,7 +329,7 @@ NSString *const kFTAnimationPrevAnimationKey = @"kFTAnimationPrevAnimationKey";
                   nil];
   
   CABasicAnimation *fadeIn = [CABasicAnimation animationWithKeyPath:@"opacity"];
-  fadeIn.duration = duration * .7f;
+  fadeIn.duration = duration * .4f;
   fadeIn.fromValue = [NSNumber numberWithFloat:0.f];
   fadeIn.toValue = [NSNumber numberWithFloat:1.f];
   fadeIn.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
@@ -353,11 +353,11 @@ NSString *const kFTAnimationPrevAnimationKey = @"kFTAnimationPrevAnimationKey";
                   nil];
   
   CABasicAnimation *fadeOut = [CABasicAnimation animationWithKeyPath:@"opacity"];
-  fadeOut.duration = duration * .3f;
+  fadeOut.duration = duration * .4f;
   fadeOut.fromValue = [NSNumber numberWithFloat:1.f];
   fadeOut.toValue = [NSNumber numberWithFloat:0.f];
   fadeOut.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-  fadeOut.beginTime = duration * .7f;
+  fadeOut.beginTime = duration * .6f;
   fadeOut.fillMode = kCAFillModeBoth;
   
   return [self animationGroupFor:[NSArray arrayWithObjects:scale, fadeOut, nil] withView:view duration:duration 
