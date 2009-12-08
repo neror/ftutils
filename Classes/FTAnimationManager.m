@@ -53,6 +53,7 @@ NSString *const kFTAnimationTargetViewKey = @"kFTAnimationTargetViewKey";
 NSString *const kFTAnimationIsChainedKey = @"kFTAnimationIsChainedKey";
 NSString *const kFTAnimationNextAnimationKey = @"kFTAnimationNextAnimationKey";
 NSString *const kFTAnimationPrevAnimationKey = @"kFTAnimationPrevAnimationKey";
+NSString *const kFTAnimationWasInteractionEnabledKey = @"kFTAnimationWasInteractionEnabledKey";
 
 @interface FTAnimationManager ()
 
@@ -432,6 +433,7 @@ NSString *const kFTAnimationPrevAnimationKey = @"kFTAnimationPrevAnimationKey";
 
 - (void)animationDidStart:(CAAnimation *)theAnimation {
   UIView *targetView = [theAnimation valueForKey:kFTAnimationTargetViewKey];
+  [theAnimation setValue:[NSNumber numberWithBool:targetView.userInteractionEnabled] forKey:kFTAnimationWasInteractionEnabledKey];
   [targetView setUserInteractionEnabled:NO];
   
   if([[theAnimation valueForKey:kFTAnimationType] isEqualToString:kFTAnimationTypeIn]) {
@@ -446,7 +448,8 @@ NSString *const kFTAnimationPrevAnimationKey = @"kFTAnimationPrevAnimationKey";
 }
 - (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)finished {
   UIView *targetView = [theAnimation valueForKey:kFTAnimationTargetViewKey];
-  [targetView setUserInteractionEnabled:YES];
+  BOOL wasInteractionEnabled = [[theAnimation valueForKey:kFTAnimationWasInteractionEnabledKey] boolValue];
+  [targetView setUserInteractionEnabled:wasInteractionEnabled];
   
   if([[theAnimation valueForKey:kFTAnimationType] isEqualToString:kFTAnimationTypeOut]) {
     [targetView setHidden:YES];
