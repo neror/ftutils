@@ -25,6 +25,12 @@
 #import "ExampleManager.h"
 #import <objc/runtime.h>
 #import "BackInOut.h"
+#import "SlideInOut.h"
+#import "FadeInOut.h"
+#import "FadeBackgroundColorInOut.h"
+#import "PopInOut.h"
+#import "FallInOut.h"
+#import "FlyOut.h"
 
 @interface ExampleManager ()
 
@@ -34,7 +40,7 @@
 
 @interface UIViewController (ThisIsHereToAviodACompilerWarning)
 
-+ (NSString *)friendlyName;
++ (NSString *)displayName;
 
 @end
 
@@ -57,19 +63,18 @@ static ExampleManager *sharedSampleManager = nil;
 - (id)init {
   self = [super init];
   if (self != nil) {
-//    NSArray *geom = [NSArray arrayWithObjects:[GeometricProperties class], [LayerTransforms class], nil];
-//    NSArray *hier = [NSArray arrayWithObjects:[LayerTree class], nil];
-//    NSArray *drawing = [NSArray arrayWithObjects:[ImageContent class], [LayerDrawing class], [StyleProperties class], nil];
-//    NSArray *animation = [NSArray arrayWithObjects:[BasicAnimation class], [AnimationGroups class], 
-//                          [AnimationTransactions class], [KeyframeAnimation class], [LayerActions class], 
-//                          [LayerTransitions class], nil];
-//    NSArray *special = [NSArray arrayWithObjects:[ShapeLayers class], [GradientLayers class], nil];
-    
-    
     groups_ = [[NSArray alloc] initWithObjects:@"Animating Views",
                                                nil];
     
-    samples_ = [[NSArray alloc] initWithObjects:[NSArray arrayWithObject:[BackInOut class]], nil]; 
+    samples_ = [[NSArray alloc] initWithObjects:[NSArray arrayWithObjects:[BackInOut class], 
+                                                                          [SlideInOut class], 
+                                                                          [FadeInOut class], 
+                                                                          [FadeBackgroundColorInOut class], 
+                                                                          [PopInOut class],
+                                                                          [FallInOut class],
+                                                                          [FlyOut class],
+                                                                          nil], 
+                                                nil]; 
   }
   return self;
 }
@@ -96,7 +101,7 @@ static ExampleManager *sharedSampleManager = nil;
   ExampleManager *SELF = [ExampleManager sharedSampleManager];
   NSArray *samples = [SELF->samples_ objectAtIndex:indexPath.section];
   Class clazz = [samples objectAtIndex:indexPath.row];
-  return [clazz friendlyName];
+  return [clazz displayName];
 }
 
 + (UIViewController *)sampleInstanceAtIndexPath:(NSIndexPath *)indexPath {

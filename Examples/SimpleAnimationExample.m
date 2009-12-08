@@ -29,8 +29,9 @@
 
 @synthesize viewToAnimate = viewToAnimate_;
 @synthesize performAnimationButton = performAnimationButton_;
+@synthesize directionControl = directionControl_;
 
-+ (NSString *)friendlyName {
++ (NSString *)displayName {
   return @"";
 }
 
@@ -38,7 +39,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
   if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-    self.title = [[self class] friendlyName];
+    self.title = [[self class] displayName];
   }
   return self;
 }
@@ -46,7 +47,20 @@
 - (void)dealloc {
   self.viewToAnimate = nil;
   self.performAnimationButton = nil;
+  self.directionControl = nil;
   [super dealloc];
+}
+
+- (void)setHasDirectionControl:(BOOL)hasDirection {
+  if(hasDirection && (self.directionControl.superview == nil)) {
+    [self.view insertSubview:self.directionControl belowSubview:self.viewToAnimate];
+  } else if(!hasDirection && self.directionControl.superview != nil){
+    [self.directionControl removeFromSuperview];
+  }
+}
+
+- (BOOL)hasDirectionControl {
+  return (self.directionControl.superview != nil);
 }
 
 #pragma mark Load and unload the view
@@ -58,12 +72,17 @@
   self.viewToAnimate = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ViewBackground.png"]] autorelease];
   self.viewToAnimate.opaque = NO;
   self.viewToAnimate.backgroundColor = [UIColor clearColor];
-  self.viewToAnimate.frame = CGRectMake(20., 20., 280., 320.);
+  self.viewToAnimate.frame = CGRectMake(20., 10., 280., 280.);
   
   self.performAnimationButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
   self.performAnimationButton.frame = CGRectMake(10., 356., 300., 44.);
   [self.performAnimationButton setTitle:@"Run Animation" forState:UIControlStateNormal];
   [self.performAnimationButton addTarget:self action:@selector(performAnimation:) forControlEvents:UIControlEventTouchUpInside];
+  
+  NSArray *directionItems = [NSArray arrayWithObjects:@"Top", @"Right", @"Bottom", @"Left", nil];
+  self.directionControl = [[[UISegmentedControl alloc] initWithItems:directionItems] autorelease];
+  self.directionControl.selectedSegmentIndex = 0;
+  self.directionControl.frame = CGRectMake(10., 300., 300., 44.);
   
   [self.view addSubview:self.performAnimationButton];
   [self.view addSubview:self.viewToAnimate];

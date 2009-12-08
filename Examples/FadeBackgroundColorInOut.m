@@ -20,26 +20,28 @@
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
-*/
+ */
 
-#import "BackInOut.h"
+#import "FadeBackgroundColorInOut.h"
 #import "FTAnimation.h"
 
-@implementation BackInOut
+@implementation FadeBackgroundColorInOut
 
 + (NSString *)displayName {
-  return @"Back In/Back Out";
+  return @"Fade Background Color In/Out";
 }
 
 - (void)viewDidLoad {
-  self.hasDirectionControl = YES;
+  self.viewToAnimate.image = nil;
+  self.viewToAnimate.backgroundColor = UIColorFromRGBA(0x0000FF, .85);
+  self.viewToAnimate.layer.cornerRadius = 20.;
 }
 
 - (void)performAnimation:(id)sender {
   if(self.viewToAnimate.hidden) {
-    [self.viewToAnimate backInFrom:self.directionControl.selectedSegmentIndex withFade:NO duration:.4 delegate:nil];
+    [self.viewToAnimate fadeBackgroundColorIn:.4 delegate:nil];
   } else {
-    [self.viewToAnimate backOutTo:self.directionControl.selectedSegmentIndex withFade:NO duration:.4 delegate:nil];
+    [self.viewToAnimate fadeBackgroundColorOut:.4 delegate:nil];
   }
 }
 

@@ -330,7 +330,7 @@ NSString *const kFTAnimationWasInteractionEnabledKey = @"kFTAnimationWasInteract
                   nil];
   
   CABasicAnimation *fadeIn = [CABasicAnimation animationWithKeyPath:@"opacity"];
-  fadeIn.duration = duration * .7f;
+  fadeIn.duration = duration * .4f;
   fadeIn.fromValue = [NSNumber numberWithFloat:0.f];
   fadeIn.toValue = [NSNumber numberWithFloat:1.f];
   fadeIn.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
@@ -354,11 +354,11 @@ NSString *const kFTAnimationWasInteractionEnabledKey = @"kFTAnimationWasInteract
                   nil];
   
   CABasicAnimation *fadeOut = [CABasicAnimation animationWithKeyPath:@"opacity"];
-  fadeOut.duration = duration * .3f;
+  fadeOut.duration = duration * .4f;
   fadeOut.fromValue = [NSNumber numberWithFloat:1.f];
   fadeOut.toValue = [NSNumber numberWithFloat:0.f];
   fadeOut.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-  fadeOut.beginTime = duration * .7f;
+  fadeOut.beginTime = duration * .6f;
   fadeOut.fillMode = kCAFillModeBoth;
   
   return [self animationGroupFor:[NSArray arrayWithObjects:scale, fadeOut, nil] withView:view duration:duration 
@@ -385,7 +385,6 @@ NSString *const kFTAnimationWasInteractionEnabledKey = @"kFTAnimationWasInteract
   CAAnimationGroup *group = [self animationGroupFor:[NSArray arrayWithObjects:fall, fade, nil] withView:view duration:duration 
                                            delegate:delegate startSelector:startSelector stopSelector:stopSelector 
                                                name:kFTAnimationFallIn type:kFTAnimationTypeIn];
-  group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
   return group;
 }
 
@@ -405,7 +404,6 @@ NSString *const kFTAnimationWasInteractionEnabledKey = @"kFTAnimationWasInteract
   CAAnimationGroup *group = [self animationGroupFor:[NSArray arrayWithObjects:fall, fade, nil] withView:view duration:duration 
                                            delegate:delegate startSelector:startSelector stopSelector:stopSelector 
                                                name:kFTAnimationFallOut type:kFTAnimationTypeOut];
-  group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
   return group;
 }
 
@@ -419,11 +417,11 @@ NSString *const kFTAnimationWasInteractionEnabledKey = @"kFTAnimationWasInteract
   
   CABasicAnimation *fade = [CABasicAnimation animationWithKeyPath:@"opacity"];
   fade.toValue = [NSNumber numberWithFloat:0.f];
+  fade.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
   
   CAAnimationGroup *group = [self animationGroupFor:[NSArray arrayWithObjects:fly, fade, nil] withView:view duration:duration 
                                            delegate:delegate startSelector:startSelector stopSelector:stopSelector 
                                                name:kFTAnimationFlyOut type:kFTAnimationTypeOut];
-  group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
   return group;
 }
 

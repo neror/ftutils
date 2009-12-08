@@ -18,6 +18,12 @@
 		DF287AB10FE19638001E9F62 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA50FE19638001E9F62 /* UIKit.framework */; };
 		DF2962EE0FE18E0000B9D71D /* FTAnimationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2962E40FE18E0000B9D71D /* FTAnimationManager.h */; };
 		DF2962F20FE18E0000B9D71D /* FTAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2962E90FE18E0000B9D71D /* FTAnimationManager.m */; };
+		DF3E06A110C71FF7004434C3 /* SlideInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3E06A010C71FF7004434C3 /* SlideInOut.m */; };
+		DF3E06C610C721E0004434C3 /* FadeInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3E06C510C721E0004434C3 /* FadeInOut.m */; };
+		DF3E06F110C723F0004434C3 /* FadeBackgroundColorInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3E06F010C723F0004434C3 /* FadeBackgroundColorInOut.m */; };
+		DF3E071410C72581004434C3 /* PopInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3E071310C72581004434C3 /* PopInOut.m */; };
+		DF3E073410C72689004434C3 /* FallInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3E073310C72689004434C3 /* FallInOut.m */; };
+		DF3E075B10C7278D004434C3 /* FlyOut.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3E075A10C7278D004434C3 /* FlyOut.m */; };
 		DFA2EA8A10C2AC89003A76FF /* FTUtils+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFBF80910ADF405008DB0B9 /* FTUtils+NSObject.m */; };
 		DFE4EF141035CC4D006A7598 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFE4EF131035CC4D006A7598 /* OCMock.framework */; };
 		DFE4EF1C1035CC97006A7598 /* OCMock.framework in Copy OCMock */ = {isa = PBXBuildFile; fileRef = DFE4EF131035CC4D006A7598 /* OCMock.framework */; };
@@ -44,13 +50,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DFFBF86110ADF7A1008DB0B9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DFE4EF0A1035CBCB006A7598;
-			remoteInfo = UnitTests;
-		};
 		DFFDB4B010C2DA5200F7BF95 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -88,6 +87,18 @@
 		DF2962E10FE18E0000B9D71D /* TestFTAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestFTAnimationManager.m; sourceTree = "<group>"; };
 		DF2962E40FE18E0000B9D71D /* FTAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTAnimationManager.h; path = FTUtils/FTAnimationManager.h; sourceTree = "<group>"; };
 		DF2962E90FE18E0000B9D71D /* FTAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAnimationManager.m; sourceTree = "<group>"; };
+		DF3E069F10C71FF7004434C3 /* SlideInOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideInOut.h; sourceTree = "<group>"; };
+		DF3E06A010C71FF7004434C3 /* SlideInOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideInOut.m; sourceTree = "<group>"; };
+		DF3E06C410C721E0004434C3 /* FadeInOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FadeInOut.h; sourceTree = "<group>"; };
+		DF3E06C510C721E0004434C3 /* FadeInOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FadeInOut.m; sourceTree = "<group>"; };
+		DF3E06EF10C723F0004434C3 /* FadeBackgroundColorInOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FadeBackgroundColorInOut.h; sourceTree = "<group>"; };
+		DF3E06F010C723F0004434C3 /* FadeBackgroundColorInOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FadeBackgroundColorInOut.m; sourceTree = "<group>"; };
+		DF3E071210C72581004434C3 /* PopInOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopInOut.h; sourceTree = "<group>"; };
+		DF3E071310C72581004434C3 /* PopInOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopInOut.m; sourceTree = "<group>"; };
+		DF3E073210C72689004434C3 /* FallInOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FallInOut.h; sourceTree = "<group>"; };
+		DF3E073310C72689004434C3 /* FallInOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FallInOut.m; sourceTree = "<group>"; };
+		DF3E075910C7278D004434C3 /* FlyOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyOut.h; sourceTree = "<group>"; };
+		DF3E075A10C7278D004434C3 /* FlyOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyOut.m; sourceTree = "<group>"; };
 		DF6D06470FE1A6F200CC44C6 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
 		DFE4EF0B1035CBCB006A7598 /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE4EF0C1035CBCB006A7598 /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
@@ -238,11 +249,21 @@
 			name = Support;
 			sourceTree = "<group>";
 		};
+		DF3E064410C71181004434C3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DFFDB68110C2EA1400F7BF95 /* Checkers.png */,
+				DFFDB62510C2E67100F7BF95 /* ViewBackground.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		DFFDB49110C2D91B00F7BF95 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
 				DFFDB4A510C2D9E300F7BF95 /* Simple View Animation */,
-				DFFDB5BC10C2DDB600F7BF95 /* Supporting Files */,
+				DFFDB5BC10C2DDB600F7BF95 /* Supporting Classes */,
+				DF3E064410C71181004434C3 /* Resources */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -254,15 +275,25 @@
 				DFFDB59C10C2DC7900F7BF95 /* SimpleAnimationExample.m */,
 				DFFDB5DE10C2DFB700F7BF95 /* BackInOut.h */,
 				DFFDB5DF10C2DFB700F7BF95 /* BackInOut.m */,
+				DF3E069F10C71FF7004434C3 /* SlideInOut.h */,
+				DF3E06A010C71FF7004434C3 /* SlideInOut.m */,
+				DF3E06C410C721E0004434C3 /* FadeInOut.h */,
+				DF3E06C510C721E0004434C3 /* FadeInOut.m */,
+				DF3E06EF10C723F0004434C3 /* FadeBackgroundColorInOut.h */,
+				DF3E06F010C723F0004434C3 /* FadeBackgroundColorInOut.m */,
+				DF3E071210C72581004434C3 /* PopInOut.h */,
+				DF3E071310C72581004434C3 /* PopInOut.m */,
+				DF3E073210C72689004434C3 /* FallInOut.h */,
+				DF3E073310C72689004434C3 /* FallInOut.m */,
+				DF3E075910C7278D004434C3 /* FlyOut.h */,
+				DF3E075A10C7278D004434C3 /* FlyOut.m */,
 			);
 			name = "Simple View Animation";
 			sourceTree = "<group>";
 		};
-		DFFDB5BC10C2DDB600F7BF95 /* Supporting Files */ = {
+		DFFDB5BC10C2DDB600F7BF95 /* Supporting Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DFFDB68110C2EA1400F7BF95 /* Checkers.png */,
-				DFFDB62510C2E67100F7BF95 /* ViewBackground.png */,
 				DFFDB57610C2DA9700F7BF95 /* main.m */,
 				DFFDB5EE10C2E12200F7BF95 /* Examples_Prefix.pch */,
 				DFFDB59410C2DBC000F7BF95 /* ExampleManager.h */,
@@ -272,7 +303,7 @@
 				DFFDB57810C2DAED00F7BF95 /* ExamplesAppDelegate.h */,
 				DFFDB57910C2DAED00F7BF95 /* ExamplesAppDelegate.m */,
 			);
-			name = "Supporting Files";
+			name = "Supporting Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,17 +464,18 @@
 				DFFDB59D10C2DC7900F7BF95 /* SimpleAnimationExample.m in Sources */,
 				DFFDB5A610C2DD1600F7BF95 /* RootViewController.m in Sources */,
 				DFFDB5E010C2DFB700F7BF95 /* BackInOut.m in Sources */,
+				DF3E06A110C71FF7004434C3 /* SlideInOut.m in Sources */,
+				DF3E06C610C721E0004434C3 /* FadeInOut.m in Sources */,
+				DF3E06F110C723F0004434C3 /* FadeBackgroundColorInOut.m in Sources */,
+				DF3E071410C72581004434C3 /* PopInOut.m in Sources */,
+				DF3E073410C72689004434C3 /* FallInOut.m in Sources */,
+				DF3E075B10C7278D004434C3 /* FlyOut.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DFFBF86210ADF7A1008DB0B9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DFE4EF0A1035CBCB006A7598 /* UnitTests */;
-			targetProxy = DFFBF86110ADF7A1008DB0B9 /* PBXContainerItemProxy */;
-		};
 		DFFDB4B110C2DA5200F7BF95 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D2AAC07D0554694100DB518D /* FTUtils */;

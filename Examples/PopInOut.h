@@ -20,28 +20,12 @@
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
-*/
+ */
 
-#import "BackInOut.h"
-#import "FTAnimation.h"
+#import "SimpleAnimationExample.h"
 
-@implementation BackInOut
 
-+ (NSString *)displayName {
-  return @"Back In/Back Out";
+@interface PopInOut : SimpleAnimationExample {
 }
-
-- (void)viewDidLoad {
-  self.hasDirectionControl = YES;
-}
-
-- (void)performAnimation:(id)sender {
-  if(self.viewToAnimate.hidden) {
-    [self.viewToAnimate backInFrom:self.directionControl.selectedSegmentIndex withFade:NO duration:.4 delegate:nil];
-  } else {
-    [self.viewToAnimate backOutTo:self.directionControl.selectedSegmentIndex withFade:NO duration:.4 delegate:nil];
-  }
-}
-
 
 @end

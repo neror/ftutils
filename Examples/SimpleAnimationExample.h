@@ -28,10 +28,13 @@
 @interface SimpleAnimationExample : UIViewController {
   UIImageView *viewToAnimate_;
   UIButton *performAnimationButton_;
+  UISegmentedControl *directionControl_;
 }
 
 @property(nonatomic,retain) UIImageView *viewToAnimate;
 @property(nonatomic,retain) UIButton *performAnimationButton;
+@property(nonatomic,retain) UISegmentedControl *directionControl;
+@property(assign) BOOL hasDirectionControl;
 
 - (void)performAnimation:(id)sender;
 
