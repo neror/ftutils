@@ -6,7 +6,22 @@ title: FTUtils
 FTUtils iPhone Utility Code Library
 -----------------------------------
 
-The code in FTUtils is common utility code extracted from [Free Time Studios](http://www.freetimestudios.com/) iPhone projects. Currently, there is only one primary utility (`FTAnimation`) and some simple preprocessor macros. Some unit tests exist for the code, but more are needed. The documentation is also still under development.
+The code in FTUtils is common utility code extracted from [Free Time Studios](http://www.freetimestudios.com/) iPhone projects. Currently, there is only one primary utility (`FTAnimation`) and some simple preprocessor macros. Some unit tests exist for the code, but more are needed.
+
+Documentation, Examples, & Screecasts
+-------------------------------------
+
+The documentation is still under heavy development, and will be updated as pieces are finished. Keep an eye on the [gh-pages](http://github.com/neror/ftutils/tree/gh-pages "neror's ftutils at gh-pages - GitHub") branch of the github repository to see when it's updated. Some [basic examples](http://github.com/neror/ftutils/tree/master/Examples/ "Examples at master from neror's ftutils - GitHub") are already available, and the example code is also being updated regularly. Screencasts of the examples are also being created. In the meantime, FTUtils user Márton Fodor has created a quick screencast of the example app.
+
+<object width="320" height="480">
+  <param name="movie" value="http://cloud.github.com/downloads/neror/ftutils/FTUtils.swf"> </param>
+  <embed src="http://cloud.github.com/downloads/neror/ftutils/FTUtils.swf" width="320" height="480"> </embed>
+</object>
+
+A Note About the Generated API Docs
+-----------------------------------
+
+If you're viewing the API docs on [ftutils.com](http://ftutils.com/ "FTUtils") some of the links are broken. This is due to [a bug](http://github.com/mojombo/jekyll/issues#issue/107 "Issues - mojombo/jekyll - GitHub") in github pages that is supposed to be fixed soon. You'll have to [build the docs yourself](http://localhost:4000/docs/docset/ "Building and Installing the Docset") to get around this.
 
 Contributors
 ------------
