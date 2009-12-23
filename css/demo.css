@@ -83,3 +83,7 @@ ul#nav li a:hover {
 ul#nav li a:active {
 	background: -webkit-gradient(linear, center bottom, center top, from(#747983), to(#51555c));
 }
+
+ul {
+	margin:0;
+}
