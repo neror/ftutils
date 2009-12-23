@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>FTUtils: /private/tmp/ftutils_docbuild/Headers/FTUtils/FTUtils.h File Reference</title>
+<title>FTUtils: Headers/FTUtils/FTUtils.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -24,7 +24,7 @@
   </div>
 </div>
 <div class="contents">
-<h1>/private/tmp/ftutils_docbuild/Headers/FTUtils/FTUtils.h File Reference</h1>
+<h1>Headers/FTUtils/FTUtils.h File Reference</h1>
 <p><a href="_f_t_utils_8h_source.html">Go to the source code of this file.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Defines</h2></td></tr>
@@ -464,10 +464,18 @@
 
 <p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00097">97</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
 
+<p><div class="fragment"><pre class="fragment"><a name="l00097"></a>00097                                                                               {
+<a name="l00098"></a>00098   NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+<a name="l00099"></a>00099   NSString *documentsDirectory = [paths objectAtIndex:0];
+<a name="l00100"></a>00100   NSString *path = [documentsDirectory stringByAppendingPathComponent:filename];
+<a name="l00101"></a>00101   <span class="keywordflow">return</span> path;
+<a name="l00102"></a>00102 }
+</pre></div></p>
+
 </div>
 </div>
 </div>
-<hr size="1"/><address style="text-align: right;"><small>Generated on Wed Dec 23 14:09:43 2009 for FTUtils by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Wed Dec 23 15:36:49 2009 for FTUtils by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

@@ -8,6 +8,6 @@
      <key>CFBundleIdentifier</key>
      <string>com.freetimestudios.FTUtils.docset</string>
      <key>DocSetFeedName</key>
-     <string>Doxygen generated docs</string>
+     <string>FTUtils Doxygen generated docs</string>
 </dict>
 </plist>

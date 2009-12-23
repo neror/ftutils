@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>FTUtils: /private/tmp/ftutils_docbuild/Headers/FTUtils/FTAnimationManager.h File Reference</title>
+<title>FTUtils: Headers/FTUtils/FTAnimationManager.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -24,7 +24,7 @@
   </div>
 </div>
 <div class="contents">
-<h1>/private/tmp/ftutils_docbuild/Headers/FTUtils/FTAnimationManager.h File Reference</h1><code>#import &lt;Foundation/Foundation.h&gt;</code><br/>
+<h1>Headers/FTUtils/FTAnimationManager.h File Reference</h1><code>#import &lt;Foundation/Foundation.h&gt;</code><br/>
 <code>#import &lt;QuartzCore/QuartzCore.h&gt;</code><br/>
 <code>#import &lt;UIKit/UIKit.h&gt;</code><br/>
 
@@ -103,6 +103,14 @@
 
 <p>Definition at line <a class="el" href="_f_t_animation_manager_8h_source.html#l00029">29</a> of file <a class="el" href="_f_t_animation_manager_8h_source.html">FTAnimationManager.h</a>.</p>
 
+<p><div class="fragment"><pre class="fragment"><a name="l00029"></a>00029                                    {
+<a name="l00030"></a>00030   <a class="code" href="_f_t_animation_manager_8h.html#af7d4e322c20617fe2fbe6084d181c939adf1eb4684e342f1c87f956614dfe2034">kFTAnimationTop</a> = 0,
+<a name="l00031"></a>00031   <a class="code" href="_f_t_animation_manager_8h.html#af7d4e322c20617fe2fbe6084d181c939adf43b42af0695ba9857a3a2c8e4982da">kFTAnimationRight</a>,
+<a name="l00032"></a>00032   <a class="code" href="_f_t_animation_manager_8h.html#af7d4e322c20617fe2fbe6084d181c939afb4821bd9bc2a43c4bd206e5040c9356">kFTAnimationBottom</a>,
+<a name="l00033"></a>00033   <a class="code" href="_f_t_animation_manager_8h.html#af7d4e322c20617fe2fbe6084d181c939a17e67cfff83ccbbbf1131d54bffa8fd4">kFTAnimationLeft</a>
+<a name="l00034"></a>00034 } <a class="code" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>;
+</pre></div></p>
+
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
@@ -138,6 +146,34 @@
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="_f_t_animation_manager_8h_source.html#l00060">60</a> of file <a class="el" href="_f_t_animation_manager_8h_source.html">FTAnimationManager.h</a>.</p>
+
+<p><div class="fragment"><pre class="fragment"><a name="l00060"></a>00060                                                                                                                             {
+<a name="l00061"></a>00061   CGRect screenRect = [[UIScreen mainScreen] bounds];
+<a name="l00062"></a>00062   <span class="keywordflow">switch</span> (direction) {
+<a name="l00063"></a>00063     <span class="keywordflow">case</span> <a class="code" href="_f_t_animation_manager_8h.html#af7d4e322c20617fe2fbe6084d181c939afb4821bd9bc2a43c4bd206e5040c9356">kFTAnimationBottom</a>: {
+<a name="l00064"></a>00064       CGFloat extraOffset = viewFrame.size.height / 2;
+<a name="l00065"></a>00065       <span class="keywordflow">return</span> CGPointMake(viewCenter.x, screenRect.size.height + extraOffset);
+<a name="l00066"></a>00066       <span class="keywordflow">break</span>;
+<a name="l00067"></a>00067     }
+<a name="l00068"></a>00068     <span class="keywordflow">case</span> <a class="code" href="_f_t_animation_manager_8h.html#af7d4e322c20617fe2fbe6084d181c939adf1eb4684e342f1c87f956614dfe2034">kFTAnimationTop</a>: {
+<a name="l00069"></a>00069       CGFloat extraOffset = viewFrame.size.height / 2;
+<a name="l00070"></a>00070       <span class="keywordflow">return</span> CGPointMake(viewCenter.x, screenRect.origin.y - extraOffset);
+<a name="l00071"></a>00071       <span class="keywordflow">break</span>;
+<a name="l00072"></a>00072     }
+<a name="l00073"></a>00073     <span class="keywordflow">case</span> <a class="code" href="_f_t_animation_manager_8h.html#af7d4e322c20617fe2fbe6084d181c939a17e67cfff83ccbbbf1131d54bffa8fd4">kFTAnimationLeft</a>: {
+<a name="l00074"></a>00074       CGFloat extraOffset = viewFrame.size.width / 2;
+<a name="l00075"></a>00075       <span class="keywordflow">return</span> CGPointMake(screenRect.origin.x - extraOffset, viewCenter.y);
+<a name="l00076"></a>00076       <span class="keywordflow">break</span>;
+<a name="l00077"></a>00077     }
+<a name="l00078"></a>00078     <span class="keywordflow">case</span> <a class="code" href="_f_t_animation_manager_8h.html#af7d4e322c20617fe2fbe6084d181c939adf43b42af0695ba9857a3a2c8e4982da">kFTAnimationRight</a>: {
+<a name="l00079"></a>00079       CGFloat extraOffset = viewFrame.size.width / 2;
+<a name="l00080"></a>00080       <span class="keywordflow">return</span> CGPointMake(screenRect.size.width + extraOffset, viewCenter.y);
+<a name="l00081"></a>00081       <span class="keywordflow">break</span>;
+<a name="l00082"></a>00082     }
+<a name="l00083"></a>00083   }
+<a name="l00084"></a>00084   <span class="keywordflow">return</span> CGPointZero;  
+<a name="l00085"></a>00085 }
+</pre></div></p>
 
 </div>
 </div>
@@ -377,7 +413,7 @@
 </div>
 </div>
 </div>
-<hr size="1"/><address style="text-align: right;"><small>Generated on Wed Dec 23 14:09:43 2009 for FTUtils by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Wed Dec 23 15:36:49 2009 for FTUtils by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>
