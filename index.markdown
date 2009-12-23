@@ -11,12 +11,9 @@ The code in FTUtils is common utility code extracted from [Free Time Studios](ht
 Documentation, Examples, & Screecasts
 -------------------------------------
 
-The documentation is still under heavy development, and will be updated as pieces are finished. Keep an eye on the [gh-pages](http://github.com/neror/ftutils/tree/gh-pages "neror's ftutils at gh-pages - GitHub") branch of the github repository to see when it's updated. Some [basic examples](http://github.com/neror/ftutils/tree/master/Examples/ "Examples at master from neror's ftutils - GitHub") are already available, and the example code is also being updated regularly. Screencasts of the examples are also being created. In the meantime, FTUtils user Márton Fodor has created a quick screencast of the example app.
+The documentation is still under heavy development, and will be updated as pieces are finished. Keep an eye on the [gh-pages](http://github.com/neror/ftutils/tree/gh-pages "neror's ftutils at gh-pages - GitHub") branch of the github repository to see when it's updated. Some [basic examples](http://github.com/neror/ftutils/tree/master/Examples/ "Examples at master from neror's ftutils - GitHub") are already available, and the example code is also being updated regularly. Screencasts of the examples are also being created. Here is the first to wet whistle.
 
-<object width="320" height="480">
-  <param name="movie" value="http://cloud.github.com/downloads/neror/ftutils/FTUtils.swf"> </param>
-  <embed src="http://cloud.github.com/downloads/neror/ftutils/FTUtils.swf" width="320" height="480"> </embed>
-</object>
+<object width="480" height="385"><param name="movie" value="http://www.youtube.com/v/UMYP-qEKs9Q&hl=en_US&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/UMYP-qEKs9Q&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="385"></embed></object>
 
 A Note About the Generated API Docs
 -----------------------------------
