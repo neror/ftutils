@@ -76,6 +76,7 @@
 /* Begin PBXFileReference section */
 		AA747D9E0F9514B9006C5449 /* FTUtils_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTUtils_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		D2AAC07E0554694100DB518D /* libFTUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFTUtils.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF19192010E2A94900906A0D /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		DF1E44ED10C29C1500F80FC0 /* FTAnimation+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FTAnimation+UIView.h"; path = "FTUtils/FTAnimation+UIView.h"; sourceTree = "<group>"; };
 		DF1E44EE10C29C1500F80FC0 /* FTAnimation+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTAnimation+UIView.m"; sourceTree = "<group>"; };
 		DF1E44F410C29D7500F80FC0 /* FTAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAnimation.h; sourceTree = "<group>"; };
@@ -176,6 +177,7 @@
 		0867D691FE84028FC02AAC07 /* FTUtils */ = {
 			isa = PBXGroup;
 			children = (
+				DF19192010E2A94900906A0D /* Makefile */,
 				DF6D06470FE1A6F200CC44C6 /* README.mdown */,
 				DF2962E30FE18E0000B9D71D /* Headers */,
 				DF2962E80FE18E0000B9D71D /* Classes */,
