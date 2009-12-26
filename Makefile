@@ -1,13 +1,13 @@
-SCAN_BUILD=$(HOME)/Work/iphone/checker-224/scan-build
+SCAN_BUILD ?= $(HOME)/Work/iphone/checker-224/scan-build
 SCAN_ARGS=-analyze-headers -k -v -checker-cfref -warn-dead-stores -warn-objc-methodsigs -warn-objc-missing-dealloc -warn-objc-unused-ivars
-XCODEBUILD=xcodebuild
-SIMULATOR_SDK=iphonesimulator3.0
-DEVICE_SDK=iphoneos3.0
-BUILD_TARGET=FTUtils
+XCODEBUILD ?= xcodebuild
+SIMULATOR_SDK ?= iphonesimulator3.0
+DEVICE_SDK ?= iphoneos3.0
+BUILD_TARGET ?= FTUtils
 BUILD_ARGS=-target $(BUILD_TARGET) -sdk $(SIMULATOR_SDK) -configuration
-DOXYGEN=doxygen
+DOXYGEN ?= doxygen
 
-CLOC=$(HOME)/Work/cloc-1.07.pl
+CLOC ?= $(HOME)/Work/cloc-1.07.pl
 CLOC_ARGS=--force-lang="Objective C",m --exclude-dir=Support,build,.git,Tests,Classes/GameObjects,../../iphone --no3
 
 all: cleandebug test
