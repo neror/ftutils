@@ -22,8 +22,35 @@
  THE SOFTWARE.
 */
 
+/** 
+ @file FTUtils.h
+ @brief A collection of macros used throughout the FTUtils set of tools.
+ 
+ This file need not be included directly since it's included by the other 
+ pieces of the library. The macros are useful throughout a project, and 
+ it's recommended that you just include the file in your prefix header.
+*/
+
+/** @name Logging */
+//@{
 #pragma mark -
 #pragma mark Logging
+
+/**
+ @def FTLOG(...)
+ A simple wrapper for NSLog() that is automatically removed from release builds.
+*/
+
+/**
+ @def FTLOGEXT(fmt, ...)
+ More detailed loogging. Logs the function name and line number after the log message.
+*/
+
+/**
+ @def FTLOGCALL
+ Logs a method call's class and selector.
+*/
+
 // FTLOGEXT logging macro from: http://iphoneincubator.com/blog/debugging/the-evolution-of-a-replacement-for-nslog
 #ifdef DEBUG
 #define FTLOG(...) NSLog(__VA_ARGS__)
@@ -34,39 +61,84 @@
 #define FTLOGEXT(...) /* */
 #define FTLOGCALL /* */
 #endif
+//@}
 
+/** @name Memory Management */
+//@{
 #pragma mark -
 #pragma mark Memory Management
 
+/**
+ Safely release an objective-c object and set its variable to nil.
+*/
 #define FTRELEASE(_obj) [_obj release], _obj = nil
-#define FTFREE(_ptr) if(_ptr != NULL) { free(_ptr); _ptr = NULL; }
 
+/**
+ Safely free a pointer and set its variable to NULL.
+*/
+#define FTFREE(_ptr) if(_ptr != NULL) { free(_ptr); _ptr = NULL; }
+//@}
+
+/** @name Math */
+//@{
 #pragma mark -
 #pragma mark Math
 
 #define DEGREES_TO_RADIANS(d) (d * M_PI / 180)
 #define RADIANS_TO_DEGREES(r) (r * 180 / M_PI)
 
+//@}
+
+/**
+ @name Colors
+*/
+//@{
 #pragma mark -
-#pragma mark Color Def Macros
+#pragma mark Colors
 
-#define RGBCOLOR(r,g,b) [UIColor colorWithRed:r/256.f green:g/256.f blue:b/256.f alpha:1.f]
-#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:r/256.f green:g/256.f blue:b/256.f alpha:a]
-#define UIColorFromRGB(rgbValue) [UIColor \
-                                   colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
-                                          green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 \
-                                           blue:((float)(rgbValue & 0x0000FF))/255.0 \
-                                          alpha:1.0]
+/**
+ Create a UIColor with r,g,b values between 0.0 and 1.0.
+*/
+#define RGBCOLOR(r,g,b) \
+[UIColor colorWithRed:r/256.f green:g/256.f blue:b/256.f alpha:1.f]
 
-#define UIColorFromRGBA(rgbValue, alphaValue) [UIColor \
-                                                colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
-                                                       green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 \
-                                                        blue:((float)(rgbValue & 0x0000FF))/255.0 \
-                                                       alpha:alphaValue]
+/**
+ Create a UIColor with r,g,b,a values between 0.0 and 1.0.
+*/
+#define RGBACOLOR(r,g,b,a) \
+[UIColor colorWithRed:r/256.f green:g/256.f blue:b/256.f alpha:a]
 
+/**
+ Create a UIColor from a hex value. For example, UIColorFromRGB(0xFF0000) creates a UIColor object representing the color red.
+*/
+#define UIColorFromRGB(rgbValue) \
+[UIColor \
+  colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+         green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 \
+          blue:((float)(rgbValue & 0x0000FF))/255.0 \
+         alpha:1.0]
+
+/**
+ Create a UIColor with an alpha value from a hex value.
+ 
+ For example, UIColorFromRGBA(0xFF0000, .5) creates a UIColor object representing a half-transparent red. 
+*/
+#define UIColorFromRGBA(rgbValue, alphaValue) \
+[UIColor \
+  colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+         green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 \
+          blue:((float)(rgbValue & 0x0000FF))/255.0 \
+         alpha:alphaValue]
+//@}
+
+/** @name Delegates */
+//@{
 #pragma mark -
-#pragma mark Delegate Helpers
+#pragma mark Delegates
 
+/**
+ Call a delegate method if the selector exists.
+*/
 #define FT_CALL_DELEGATE(_delegate, _selector) \
 do { \
   id _theDelegate = _delegate; \
@@ -75,6 +147,9 @@ do { \
   } \
 } while(0);
 
+/**
+ Call a delegate method that accepts one argument if the selector exists.
+*/
 #define FT_CALL_DELEGATE_WITH_ARG(_delegate, _selector, _argument) \
 do { \
   id _theDelegate = _delegate; \
@@ -83,6 +158,9 @@ do { \
   } \
 } while(0);
 
+/**
+ Call a delegate method that accepts two arguments if the selector exists.
+*/
 #define FT_CALL_DELEGATE_WITH_ARGS(_delegate, _selector, _arg1, _arg2) \
 do { \
   id _theDelegate = _delegate; \
@@ -91,19 +169,34 @@ do { \
   } \
 } while(0);
 
-#pragma mark -
-#pragma mark File System Helpers
+//@}
 
+/** @name File System */
+//@{
+#pragma mark -
+#pragma mark File System
+
+/**
+ Get the full path for a file name in the documents directory.
+ @param filename the name of the file <em>(the file need not exist yet)</em>.
+ @return The full path to the filename.
+*/
 static inline NSString *FTPathForFileInDocumentsDirectory(NSString *filename) {
   NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
   NSString *documentsDirectory = [paths objectAtIndex:0];
   NSString *path = [documentsDirectory stringByAppendingPathComponent:filename];
   return path;
 }
+//@}
 
+/** @name Core Data */
+//@{
 #pragma mark -
-#pragma mark Core Data Helpers
+#pragma mark Core Data
 
+/**
+ Save a Core Data NSManagedObjectContext and pretty print any errors.
+*/
 #define FT_SAVE_MOC(_ft_moc) \
 do { \
   NSError* _ft_save_error; \
@@ -121,3 +214,4 @@ do { \
   } \
 } while(0);
 
+//@}

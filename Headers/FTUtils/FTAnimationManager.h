@@ -22,6 +22,10 @@
  THE SOFTWARE.
 */
 
+/**
+ @file FTAnimationManager.h
+ @brief The FTAnimationManager.h file is the heart of the FTUtils animation utilites.
+*/
 #import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
@@ -53,6 +57,7 @@ extern NSString *const kFTAnimationPopOut;
 extern NSString *const kFTAnimationFallIn;
 extern NSString *const kFTAnimationFallOut;
 extern NSString *const kFTAnimationFlyOut;
+
 extern NSString *const kFTAnimationTargetViewKey;
 
 #pragma mark Inline Functions
@@ -84,12 +89,27 @@ static inline CGPoint FTAnimationOffscreenCenterPoint(CGRect viewFrame, CGPoint 
   return CGPointZero;  
 }
 
+/**
+ @class FTAnimationManager
+ @brief The FTAnimationManager class is the heart of the FTUtils Core Animation utilities.
+
+ This class is meant to be used as a singleton. Developers should avoid creating
+ mulitple instances and should get a reference to an instance via the 
+ FTAnimationManager#sharedManager class method.
+*/
 @interface FTAnimationManager : NSObject {
   CGFloat overshootThreshold_;
 }
 
+/**
+ The maximum value (in pixels) that the bouncing animations will travel past their end vlaue before coming to rest. The default is 10.0.
+*/
 @property(assign) CGFloat overshootThreshold;
 
+/**
+ Get a reference to the FTAnimationManager singleton creating it if necessary.
+ @return The singleton.
+*/
 + (FTAnimationManager *)sharedManager;
 
 - (CAAnimationGroup *)delayStartOfAnimation:(CAAnimation *)animation withDelay:(CFTimeInterval)delayTime;
