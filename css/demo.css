@@ -30,14 +30,23 @@ h5 {
 }
 
 h2 {
-	padding: 20px 0 0;
+/*	padding: 20px 0 0;*/
 	text-align: left;
 }
 
 p {
 	overflow: auto;
-	padding: 10px 0;
+/*	padding: 10px 0;*/
 	text-align: left;
+}
+
+blockquote {
+	background:#404040;
+	color:#d0d0d0;
+	padding: 20px;
+	font-family:monospace;
+	font-size:12px;
+/*	font-style:italic;*/
 }
 
 pre {
@@ -47,6 +56,7 @@ pre {
 }
 code {
 	font-size:13px;
+	color: #51555c;
 	background:#F5F5E6;
 	padding:1px 2px;
 }

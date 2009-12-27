@@ -9,7 +9,7 @@
 .highlight .x { color: #d0d0d0 } /* Other */
 .highlight .p { color: #d0d0d0; font-weight:bold;} /* Punctuation */
 .highlight .cm { color: #999999; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #cd2828; font-weight: bold } /* Comment.Preproc */
+.highlight .cp { color: #c0c0c0; font-weight: bold } /* Comment.Preproc */
 .highlight .c1 { color: #999999; font-style: italic } /* Comment.Single */
 .highlight .cs { color: #e50808; font-weight: bold; background-color: #520000 } /* Comment.Special */
 .highlight .gd { color: #d22323 } /* Generic.Deleted */
