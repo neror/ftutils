@@ -18,7 +18,7 @@ The documentation is still under heavy development, and will be updated as piece
 A Note About the Generated API Docs
 -----------------------------------
 
-If you're viewing the API docs on [ftutils.com](http://ftutils.com/ "FTUtils") some of the links are broken. This is due to [a bug](http://github.com/mojombo/jekyll/issues#issue/107 "Issues - mojombo/jekyll - GitHub") in github pages that is supposed to be fixed soon. You'll have to [build the docs yourself](http://localhost:4000/docs/docset/ "Building and Installing the Docset") to get around this.
+If you're viewing the API docs on [ftutils.com](http://ftutils.com/ "FTUtils") some of the links are broken. This is due to [a bug](http://github.com/mojombo/jekyll/issues#issue/107 "Issues - mojombo/jekyll - GitHub") in github pages that is supposed to be fixed soon. You'll have to [build the docs yourself](http://ftutils.com/docs/docset/ "Building and Installing the Docset") to get around this.
 
 Contributors
 ------------
