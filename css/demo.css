@@ -35,20 +35,23 @@ h2 {
 }
 
 p {
-/*	overflow: hidden;*/
+	overflow: auto;
 	padding: 10px 0;
 	text-align: left;
 }
 
 pre {
-	color: white;
+	color: #d0d0d0;
 	padding: 15px;
 	font-size:12px;
-	background:#51555c;
+}
+code {
+	font-size:13px;
+	background:#F5F5E6;
+	padding:1px 2px;
 }
 
 #maincontent {
-/*	background: #fff;*/
 	margin-bottom: 20px;
 }
 
