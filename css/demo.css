@@ -100,3 +100,19 @@ ul#nav li a:active {
 ul {
 	margin:0;
 }
+
+#footer div#links {
+	margin-top:89px;
+	vertical-align:bottom;
+}
+
+div#cclicense {
+	text-align:justify;
+	margin:20px 0;
+	font-size:10px;
+	line-height:1.5em;
+}
+
+div#cclicense img {
+/*	margin-left:134px;*/
+}
