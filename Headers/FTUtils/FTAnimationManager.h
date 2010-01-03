@@ -22,7 +22,7 @@
  THE SOFTWARE.
 */
 
-/**
+/*!
  @file FTAnimationManager.h
  @brief The FTAnimationManager.h file is the heart of the FTUtils animation utilites.
 */
@@ -89,7 +89,7 @@ static inline CGPoint FTAnimationOffscreenCenterPoint(CGRect viewFrame, CGPoint 
   return CGPointZero;  
 }
 
-/**
+/*!
  @class FTAnimationManager
  @brief The FTAnimationManager class is the heart of the FTUtils Core Animation utilities.
 
@@ -101,12 +101,12 @@ static inline CGPoint FTAnimationOffscreenCenterPoint(CGRect viewFrame, CGPoint 
   CGFloat overshootThreshold_;
 }
 
-/**
+/*!
  The maximum value (in pixels) that the bouncing animations will travel past their end vlaue before coming to rest. The default is 10.0.
 */
 @property(assign) CGFloat overshootThreshold;
 
-/**
+/*!
  Get a reference to the FTAnimationManager singleton creating it if necessary.
  @return The singleton.
 */

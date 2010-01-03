@@ -22,7 +22,7 @@
  THE SOFTWARE.
 */
 
-/** 
+/*! 
  @file FTUtils.h
  @brief A collection of macros used throughout the FTUtils set of tools.
  
@@ -31,22 +31,22 @@
  it's recommended that you just include the file in your prefix header.
 */
 
-/** @name Logging */
+/*! @name Logging */
 //@{
 #pragma mark -
 #pragma mark Logging
 
-/**
+/*!
  @def FTLOG(...)
  A simple wrapper for NSLog() that is automatically removed from release builds.
 */
 
-/**
+/*!
  @def FTLOGEXT(fmt, ...)
  More detailed loogging. Logs the function name and line number after the log message.
 */
 
-/**
+/*!
  @def FTLOGCALL
  Logs a method call's class and selector.
 */
@@ -63,23 +63,23 @@
 #endif
 //@}
 
-/** @name Memory Management */
+/*! @name Memory Management */
 //@{
 #pragma mark -
 #pragma mark Memory Management
 
-/**
+/*!
  Safely release an objective-c object and set its variable to nil.
 */
 #define FTRELEASE(_obj) [_obj release], _obj = nil
 
-/**
+/*!
  Safely free a pointer and set its variable to NULL.
 */
 #define FTFREE(_ptr) if(_ptr != NULL) { free(_ptr); _ptr = NULL; }
 //@}
 
-/** @name Math */
+/*! @name Math */
 //@{
 #pragma mark -
 #pragma mark Math
@@ -89,26 +89,26 @@
 
 //@}
 
-/**
+/*!
  @name Colors
 */
 //@{
 #pragma mark -
 #pragma mark Colors
 
-/**
+/*!
  Create a UIColor with r,g,b values between 0.0 and 1.0.
 */
 #define RGBCOLOR(r,g,b) \
 [UIColor colorWithRed:r/256.f green:g/256.f blue:b/256.f alpha:1.f]
 
-/**
+/*!
  Create a UIColor with r,g,b,a values between 0.0 and 1.0.
 */
 #define RGBACOLOR(r,g,b,a) \
 [UIColor colorWithRed:r/256.f green:g/256.f blue:b/256.f alpha:a]
 
-/**
+/*!
  Create a UIColor from a hex value. For example, UIColorFromRGB(0xFF0000) creates a UIColor object representing the color red.
 */
 #define UIColorFromRGB(rgbValue) \
@@ -118,7 +118,7 @@
           blue:((float)(rgbValue & 0x0000FF))/255.0 \
          alpha:1.0]
 
-/**
+/*!
  Create a UIColor with an alpha value from a hex value.
  
  For example, UIColorFromRGBA(0xFF0000, .5) creates a UIColor object representing a half-transparent red. 
@@ -131,12 +131,12 @@
          alpha:alphaValue]
 //@}
 
-/** @name Delegates */
+/*! @name Delegates */
 //@{
 #pragma mark -
 #pragma mark Delegates
 
-/**
+/*!
  Call a delegate method if the selector exists.
 */
 #define FT_CALL_DELEGATE(_delegate, _selector) \
@@ -147,7 +147,7 @@ do { \
   } \
 } while(0);
 
-/**
+/*!
  Call a delegate method that accepts one argument if the selector exists.
 */
 #define FT_CALL_DELEGATE_WITH_ARG(_delegate, _selector, _argument) \
@@ -158,7 +158,7 @@ do { \
   } \
 } while(0);
 
-/**
+/*!
  Call a delegate method that accepts two arguments if the selector exists.
 */
 #define FT_CALL_DELEGATE_WITH_ARGS(_delegate, _selector, _arg1, _arg2) \
@@ -171,12 +171,12 @@ do { \
 
 //@}
 
-/** @name File System */
+/*! @name File System */
 //@{
 #pragma mark -
 #pragma mark File System
 
-/**
+/*!
  Get the full path for a file name in the documents directory.
  @param filename the name of the file <em>(the file need not exist yet)</em>.
  @return The full path to the filename.
@@ -189,12 +189,12 @@ static inline NSString *FTPathForFileInDocumentsDirectory(NSString *filename) {
 }
 //@}
 
-/** @name Core Data */
+/*! @name Core Data */
 //@{
 #pragma mark -
 #pragma mark Core Data
 
-/**
+/*!
  Save a Core Data NSManagedObjectContext and pretty print any errors.
 */
 #define FT_SAVE_MOC(_ft_moc) \

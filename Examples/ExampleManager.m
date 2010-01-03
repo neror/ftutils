@@ -63,7 +63,8 @@ static ExampleManager *sharedSampleManager = nil;
 - (id)init {
   self = [super init];
   if (self != nil) {
-    groups_ = [[NSArray alloc] initWithObjects:@"Animating Views",
+    groups_ = [[NSArray alloc] initWithObjects:@"Animating Single Views",
+                                               @"Delegation and Animation Info",
                                                nil];
     
     samples_ = [[NSArray alloc] initWithObjects:[NSArray arrayWithObjects:[BackInOut class], 
@@ -74,6 +75,7 @@ static ExampleManager *sharedSampleManager = nil;
                                                                           [FallInOut class],
                                                                           [FlyOut class],
                                                                           nil], 
+                                                [NSArray array],
                                                 nil]; 
   }
   return self;
