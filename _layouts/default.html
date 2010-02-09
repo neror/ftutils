@@ -3,6 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
+  <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <title>{{page.title}}</title>
   <link rel="stylesheet" href="/css/reset.css" />
@@ -76,5 +77,24 @@
   var pageTracker = _gat._getTracker("UA-9080396-3");
   pageTracker._trackPageview();
   } catch(err) {}</script>
+  <script type="text/javascript">
+  var _sf_async_config={uid:3889,domain:"ftutils.com"};
+  (function(){
+    function loadChartbeat() {
+      window._sf_endpt=(new Date()).getTime();
+      var e = document.createElement('script');
+      e.setAttribute('language', 'javascript');
+      e.setAttribute('type', 'text/javascript');
+      e.setAttribute('src',
+         (("https:" == document.location.protocol) ? "https://s3.amazonaws.com/" : "http://") +
+         "static.chartbeat.com/js/chartbeat.js");
+      document.body.appendChild(e);
+    }
+    var oldonload = window.onload;
+    window.onload = (typeof window.onload != 'function') ?
+       loadChartbeat : function() { oldonload(); loadChartbeat(); };
+  })();
+
+  </script>
 </body>
 </html>
