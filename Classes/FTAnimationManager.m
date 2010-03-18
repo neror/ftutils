@@ -451,8 +451,8 @@ NSString *const kFTAnimationWasInteractionEnabledKey = @"kFTAnimationWasInteract
   
   if([[theAnimation valueForKey:kFTAnimationType] isEqualToString:kFTAnimationTypeOut]) {
     [targetView setHidden:YES];
-    [targetView.layer removeAnimationForKey:[theAnimation valueForKey:kFTAnimationName]];
   }
+  [targetView.layer removeAnimationForKey:[theAnimation valueForKey:kFTAnimationName]];
   
   //Forward the delegate call
   id callerDelegate = [theAnimation valueForKey:kFTAnimationCallerDelegateKey];
