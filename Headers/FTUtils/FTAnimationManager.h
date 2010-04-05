@@ -34,7 +34,11 @@ typedef enum _FTAnimationDirection {
   kFTAnimationTop = 0,
   kFTAnimationRight,
   kFTAnimationBottom,
-  kFTAnimationLeft
+  kFTAnimationLeft,
+  kFTAnimationTopLeft,
+  kFTAnimationTopRight,
+  kFTAnimationBottomLeft,
+  kFTAnimationBottomRight
 } FTAnimationDirection;
 
 #pragma mark String Constants
@@ -62,31 +66,61 @@ extern NSString *const kFTAnimationTargetViewKey;
 
 #pragma mark Inline Functions
 
+
+static inline CGPoint FTAnimationOutOfViewCenterPoint(CGRect enclosingViewFrame, CGRect viewFrame, CGPoint viewCenter, FTAnimationDirection direction) {
+	switch (direction) {
+		case kFTAnimationBottom: {
+			CGFloat extraOffset = viewFrame.size.height / 2;
+			return CGPointMake(viewCenter.x, enclosingViewFrame.size.height + extraOffset);
+			break;
+		}
+		case kFTAnimationTop: {
+			CGFloat extraOffset = viewFrame.size.height / 2;
+			return CGPointMake(viewCenter.x, enclosingViewFrame.origin.y - extraOffset);
+			break;
+		}
+		case kFTAnimationLeft: {
+			CGFloat extraOffset = viewFrame.size.width / 2;
+			return CGPointMake(enclosingViewFrame.origin.x - extraOffset, viewCenter.y);
+			break;
+		}
+		case kFTAnimationRight: {
+			CGFloat extraOffset = viewFrame.size.width / 2;
+			return CGPointMake(enclosingViewFrame.size.width + extraOffset, viewCenter.y);
+			break;
+		}
+		case kFTAnimationBottomLeft: {
+			CGFloat extraOffsetHeight = viewFrame.size.height / 2;
+			CGFloat extraOffsetWidth = viewFrame.size.width / 2;
+			return CGPointMake(enclosingViewFrame.origin.x - extraOffsetWidth, enclosingViewFrame.size.height + extraOffsetHeight);
+			break;
+		}
+		case kFTAnimationTopLeft: {
+			CGFloat extraOffsetHeight = viewFrame.size.height / 2;
+			CGFloat extraOffsetWidth = viewFrame.size.width / 2;			
+			return CGPointMake(enclosingViewFrame.origin.x - extraOffsetWidth, enclosingViewFrame.origin.y - extraOffsetHeight);
+			break;
+		}
+		case kFTAnimationBottomRight: {
+			CGFloat extraOffsetHeight = viewFrame.size.height / 2;
+			CGFloat extraOffsetWidth = viewFrame.size.width / 2;
+			return CGPointMake(enclosingViewFrame.size.width + extraOffsetWidth, enclosingViewFrame.size.height + extraOffsetHeight);
+			break;
+		}
+		case kFTAnimationTopRight: {
+			CGFloat extraOffsetHeight = viewFrame.size.height / 2;
+			CGFloat extraOffsetWidth = viewFrame.size.width / 2;
+			return CGPointMake(enclosingViewFrame.size.width + extraOffsetWidth, enclosingViewFrame.origin.y - extraOffsetHeight);
+			break;
+		}
+			
+	}
+	return CGPointZero;  
+}
+
 static inline CGPoint FTAnimationOffscreenCenterPoint(CGRect viewFrame, CGPoint viewCenter, FTAnimationDirection direction) {
-  CGRect screenRect = [[UIScreen mainScreen] bounds];
-  switch (direction) {
-    case kFTAnimationBottom: {
-      CGFloat extraOffset = viewFrame.size.height / 2;
-      return CGPointMake(viewCenter.x, screenRect.size.height + extraOffset);
-      break;
-    }
-    case kFTAnimationTop: {
-      CGFloat extraOffset = viewFrame.size.height / 2;
-      return CGPointMake(viewCenter.x, screenRect.origin.y - extraOffset);
-      break;
-    }
-    case kFTAnimationLeft: {
-      CGFloat extraOffset = viewFrame.size.width / 2;
-      return CGPointMake(screenRect.origin.x - extraOffset, viewCenter.y);
-      break;
-    }
-    case kFTAnimationRight: {
-      CGFloat extraOffset = viewFrame.size.width / 2;
-      return CGPointMake(screenRect.size.width + extraOffset, viewCenter.y);
-      break;
-    }
-  }
-  return CGPointZero;  
+	
+	return FTAnimationOutOfViewCenterPoint([[UIScreen mainScreen] bounds], viewFrame, viewCenter, direction);
 }
 
 /*!
@@ -127,6 +161,15 @@ static inline CGPoint FTAnimationOffscreenCenterPoint(CGRect viewFrame, CGPoint 
 - (CAAnimation *)slideOutAnimationFor:(UIView *)view direction:(FTAnimationDirection)direction 
                              duration:(NSTimeInterval)duration delegate:(id)delegate 
                         startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
+
+- (CAAnimation *)slideInAnimationFor:(UIView *)view direction:(FTAnimationDirection)direction inView:(UIView*)enclosingView
+                            duration:(NSTimeInterval)duration delegate:(id)delegate 
+                       startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
+
+- (CAAnimation *)slideOutAnimationFor:(UIView *)view direction:(FTAnimationDirection)direction inView:(UIView*)enclosingView
+                             duration:(NSTimeInterval)duration delegate:(id)delegate 
+                        startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
+
 
 - (CAAnimation *)backOutAnimationFor:(UIView *)view withFade:(BOOL)fade direction:(FTAnimationDirection)direction 
                             duration:(NSTimeInterval)duration delegate:(id)delegate 

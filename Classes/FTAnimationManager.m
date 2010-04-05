@@ -194,6 +194,32 @@ NSString *const kFTAnimationWasInteractionEnabledKey = @"kFTAnimationWasInteract
                             name:kFTAnimationSlideOut type:kFTAnimationTypeOut];
 }
 
+
+#pragma mark -
+
+- (CAAnimation *)slideInAnimationFor:(UIView *)view direction:(FTAnimationDirection)direction inView:(UIView*)enclosingView
+                            duration:(NSTimeInterval)duration delegate:(id)delegate 
+                       startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
+	CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
+	animation.fromValue = [NSValue valueWithCGPoint:FTAnimationOutOfViewCenterPoint(enclosingView.bounds, view.frame, view.center, direction)];
+	animation.toValue = [NSValue valueWithCGPoint:view.center];
+	return [self animationGroupFor:[NSArray arrayWithObject:animation] withView:view duration:duration 
+						  delegate:delegate startSelector:startSelector stopSelector:stopSelector 
+							  name:kFTAnimationSlideIn type:kFTAnimationTypeIn];
+}
+
+- (CAAnimation *)slideOutAnimationFor:(UIView *)view direction:(FTAnimationDirection)direction inView:(UIView*)enclosingView
+                             duration:(NSTimeInterval)duration delegate:(id)delegate 
+                        startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector{
+	CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
+	animation.fromValue = [NSValue valueWithCGPoint:view.center];
+	animation.toValue = [NSValue valueWithCGPoint:FTAnimationOutOfViewCenterPoint(view.superview.bounds, view.frame, view.center, direction)];
+	return [self animationGroupFor:[NSArray arrayWithObject:animation] withView:view duration:duration 
+						  delegate:delegate startSelector:startSelector stopSelector:stopSelector 
+							  name:kFTAnimationSlideOut type:kFTAnimationTypeOut];
+}
+
+
 #pragma mark -
 #pragma mark Bounce Animation Builders
 
@@ -201,9 +227,18 @@ NSString *const kFTAnimationWasInteractionEnabledKey = @"kFTAnimationWasInteract
   CGPoint overshootPoint;
   if(direction == kFTAnimationTop || direction == kFTAnimationBottom) {
     overshootPoint = CGPointMake(point.x, point.y + ((direction == kFTAnimationBottom ? -1 : 1) * threshold));
-  } else {
+  } else if (direction == kFTAnimationLeft || direction == kFTAnimationRight){
     overshootPoint = CGPointMake(point.x + ((direction == kFTAnimationRight ? -1 : 1) * threshold), point.y);
+  } else if (direction == kFTAnimationTopLeft){
+	  overshootPoint = CGPointMake(point.x + threshold, point.y + threshold);
+  } else if (direction == kFTAnimationTopRight){
+	  overshootPoint = CGPointMake(point.x - threshold, point.y + threshold);
+  } else if (direction == kFTAnimationBottomLeft){
+	  overshootPoint = CGPointMake(point.x + threshold, point.y - threshold);
+  } else if (direction == kFTAnimationBottomRight){
+	  overshootPoint = CGPointMake(point.x - threshold, point.y - threshold);
   }
+
   return overshootPoint;
 }
 
@@ -261,6 +296,66 @@ NSString *const kFTAnimationWasInteractionEnabledKey = @"kFTAnimationWasInteract
   return [self animationGroupFor:animations withView:view duration:duration 
                         delegate:delegate startSelector:startSelector stopSelector:stopSelector 
                             name:kFTAnimationBackIn type:kFTAnimationTypeIn];
+}
+
+
+#pragma mark -
+
+- (CAAnimation *)backOutAnimationFor:(UIView *)view withFade:(BOOL)fade direction:(FTAnimationDirection)direction inView:(UIView*)enclosingView
+                            duration:(NSTimeInterval)duration delegate:(id)delegate 
+                       startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
+	CGPoint path[3] = {
+		view.center,
+		[self overshootPointFor:view.center withDirection:direction threshold:overshootThreshold_],
+		FTAnimationOutOfViewCenterPoint(enclosingView.bounds, view.frame, view.center, direction)
+	};
+	
+	CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+	CGMutablePathRef thePath = CGPathCreateMutable();
+	CGPathAddLines(thePath, NULL, path, 3);
+	animation.path = thePath;
+	CGPathRelease(thePath);
+	NSArray *animations;
+	if(fade) {
+		CAAnimation *fade = [self fadeAnimationFor:view duration:duration * .5f delegate:nil startSelector:nil stopSelector:nil fadeOut:YES];
+		fade.beginTime = duration * .5f;
+		fade.fillMode = kCAFillModeForwards;
+		animations = [NSArray arrayWithObjects:animation, fade, nil];
+	} else {
+		animations = [NSArray arrayWithObject:animation];
+	}
+	return [self animationGroupFor:animations withView:view duration:duration 
+						  delegate:delegate startSelector:startSelector stopSelector:stopSelector 
+							  name:kFTAnimationBackOut type:kFTAnimationTypeOut];
+}
+
+
+- (CAAnimation *)backInAnimationFor:(UIView *)view withFade:(BOOL)fade direction:(FTAnimationDirection)direction inView:(UIView*)enclosingView
+                           duration:(NSTimeInterval)duration delegate:(id)delegate 
+                      startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
+	CGPoint path[3] = {
+		FTAnimationOutOfViewCenterPoint(enclosingView.bounds, view.frame, view.center, direction),
+		[self overshootPointFor:view.center withDirection:direction threshold:(overshootThreshold_ * 1.15)],
+		view.center
+	};
+	
+	CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+	CGMutablePathRef thePath = CGPathCreateMutable();
+	CGPathAddLines(thePath, NULL, path, 3);
+	animation.path = thePath;
+	CGPathRelease(thePath);
+	NSArray *animations;
+	if(fade) {
+		CAAnimation *fade = [self fadeAnimationFor:view duration:duration * .5f delegate:nil startSelector:nil stopSelector:nil fadeOut:NO];
+		fade.fillMode = kCAFillModeForwards;
+		
+		animations = [NSArray arrayWithObjects:animation, fade, nil];
+	} else {
+		animations = [NSArray arrayWithObject:animation];
+	}
+	return [self animationGroupFor:animations withView:view duration:duration 
+						  delegate:delegate startSelector:startSelector stopSelector:stopSelector 
+							  name:kFTAnimationBackIn type:kFTAnimationTypeIn];
 }
 
 #pragma mark -

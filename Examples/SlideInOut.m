@@ -24,6 +24,7 @@
 
 #import "SlideInOut.h"
 #import "FTAnimation.h"
+#import "FTAnimation+UIView.h"
 
 @implementation SlideInOut
 
@@ -37,9 +38,12 @@
 
 - (void)performAnimation:(id)sender {
   if(self.viewToAnimate.hidden) {
-    [self.viewToAnimate slideInFrom:self.directionControl.selectedSegmentIndex duration:.4 delegate:nil];
+	  //[self.viewToAnimate slideInFrom:self.directionControl.selectedSegmentIndex duration:.4 delegate:nil];
+	  [self.viewToAnimate slideInFrom:self.directionControl.selectedSegmentIndex+4 inView:self.viewToAnimate.superview duration:0.4 delegate:nil startSelector:nil stopSelector:nil];
   } else {
-    [self.viewToAnimate slideOutTo:self.directionControl.selectedSegmentIndex duration:.4 delegate:nil];
+	  //[self.viewToAnimate slideOutTo:self.directionControl.selectedSegmentIndex duration:.4 delegate:nil];
+	  [self.viewToAnimate slideOutTo:self.directionControl.selectedSegmentIndex+4 inView:self.viewToAnimate.superview duration:0.4 delegate:nil startSelector:nil stopSelector:nil];
+
   }
 }
 

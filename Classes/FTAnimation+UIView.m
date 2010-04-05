@@ -56,6 +56,25 @@
   [self slideOutTo:direction duration:duration delegate:delegate startSelector:nil stopSelector:nil];
 }
 
+#pragma mark -
+
+- (void)slideInFrom:(FTAnimationDirection)direction inView:(UIView*)enclosingView duration:(NSTimeInterval)duration delegate:(id)delegate 
+      startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
+	CAAnimation *slideInAnim = [[FTAnimationManager sharedManager] slideInAnimationFor:self direction:direction inView:(UIView*)enclosingView
+																			  duration:duration delegate:delegate 
+																		 startSelector:startSelector stopSelector:stopSelector];
+	[self.layer addAnimation:slideInAnim forKey:kFTAnimationSlideIn];
+}
+
+- (void)slideOutTo:(FTAnimationDirection)direction inView:(UIView*)enclosingView duration:(NSTimeInterval)duration 
+          delegate:(id)delegate startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
+	CAAnimation *slideOutAnim = [[FTAnimationManager sharedManager] slideOutAnimationFor:self direction:direction inView:(UIView*)enclosingView
+																				duration:duration delegate:delegate 
+																		   startSelector:startSelector stopSelector:stopSelector];
+	[self.layer addAnimation:slideOutAnim forKey:kFTAnimationSlideOut];
+}
+
+
 #pragma mark Back In/Out Animations
 
 - (void)backOutTo:(FTAnimationDirection)direction withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(id)delegate 
