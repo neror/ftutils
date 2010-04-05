@@ -33,11 +33,23 @@
 - (void)slideOutTo:(FTAnimationDirection)direction duration:(NSTimeInterval)duration delegate:(id)delegate 
      startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
 
+//use the enclosing view
+- (void)slideInFrom:(FTAnimationDirection)direction inView:(UIView*)enclosingView duration:(NSTimeInterval)duration delegate:(id)delegate 
+      startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
+- (void)slideOutTo:(FTAnimationDirection)direction inView:(UIView*)enclosingView duration:(NSTimeInterval)duration 
+          delegate:(id)delegate startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
+
 - (void)backOutTo:(FTAnimationDirection)direction withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(id)delegate;
 - (void)backOutTo:(FTAnimationDirection)direction withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(id)delegate 
     startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
 - (void)backInFrom:(FTAnimationDirection)direction withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(id)delegate;
 - (void)backInFrom:(FTAnimationDirection)direction withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(id)delegate 
+     startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
+
+//Use the enclosing view
+- (void)backOutTo:(FTAnimationDirection)direction inView:(UIView*)enclosingView withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(id)delegate 
+    startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
+- (void)backInFrom:(FTAnimationDirection)direction inView:(UIView*)enclosingView withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(id)delegate 
      startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
 
 - (void)fadeIn:(NSTimeInterval)duration delegate:(id)delegate;

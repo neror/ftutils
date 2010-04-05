@@ -102,6 +102,25 @@
 }
 
 #pragma mark -
+
+- (void)backOutTo:(FTAnimationDirection)direction inView:(UIView*)enclosingView withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(id)delegate 
+    startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
+	CAAnimation *backOutAnim = [[FTAnimationManager sharedManager] backOutAnimationFor:self withFade:fade direction:direction inView:enclosingView
+																			  duration:duration delegate:delegate 
+																		 startSelector:startSelector stopSelector:stopSelector];
+	[self.layer addAnimation:backOutAnim forKey:kFTAnimationBackOut];
+}
+
+- (void)backInFrom:(FTAnimationDirection)direction inView:(UIView*)enclosingView withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(id)delegate 
+     startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
+	CAAnimation *backInAnim = [[FTAnimationManager sharedManager] backInAnimationFor:self withFade:fade direction:direction inView:enclosingView
+																			duration:duration delegate:delegate 
+																	   startSelector:startSelector stopSelector:stopSelector];
+	[self.layer addAnimation:backInAnim forKey:kFTAnimationBackIn];
+}
+
+
+#pragma mark -
 #pragma mark Fade Animations
 
 - (void)fadeIn:(NSTimeInterval)duration delegate:(id)delegate startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {

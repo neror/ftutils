@@ -178,6 +178,13 @@ static inline CGPoint FTAnimationOffscreenCenterPoint(CGRect viewFrame, CGPoint 
                            duration:(NSTimeInterval)duration delegate:(id)delegate 
                       startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
 
+- (CAAnimation *)backOutAnimationFor:(UIView *)view withFade:(BOOL)fade direction:(FTAnimationDirection)direction inView:(UIView*)enclosingView
+                            duration:(NSTimeInterval)duration delegate:(id)delegate 
+                       startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
+- (CAAnimation *)backInAnimationFor:(UIView *)view withFade:(BOOL)fade direction:(FTAnimationDirection)direction inView:(UIView*)enclosingView
+                           duration:(NSTimeInterval)duration delegate:(id)delegate 
+                      startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
+
 - (CAAnimation *)fadeAnimationFor:(UIView *)view duration:(NSTimeInterval)duration 
                          delegate:(id)delegate startSelector:(SEL)startSelector 
                      stopSelector:(SEL)stopSelector fadeOut:(BOOL)fadeOut;
