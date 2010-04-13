@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AA747D9F0F9514B9006C5449 /* FTUtils_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* FTUtils_Prefix.pch */; };
+		DF16614D1174CAC700054B46 /* AnimationChaining.m in Sources */ = {isa = PBXBuildFile; fileRef = DF16614C1174CAC700054B46 /* AnimationChaining.m */; };
 		DF1E44EF10C29C1500F80FC0 /* FTAnimation+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1E44EE10C29C1500F80FC0 /* FTAnimation+UIView.m */; };
 		DF1E44F010C29C1500F80FC0 /* FTAnimation+UIView.h in Headers */ = {isa = PBXBuildFile; fileRef = DF1E44ED10C29C1500F80FC0 /* FTAnimation+UIView.h */; };
 		DF1E44F110C29C1500F80FC0 /* FTAnimation+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1E44EE10C29C1500F80FC0 /* FTAnimation+UIView.m */; };
@@ -76,6 +77,8 @@
 /* Begin PBXFileReference section */
 		AA747D9E0F9514B9006C5449 /* FTUtils_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTUtils_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		D2AAC07E0554694100DB518D /* libFTUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFTUtils.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF16614B1174CAC700054B46 /* AnimationChaining.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationChaining.h; sourceTree = "<group>"; };
+		DF16614C1174CAC700054B46 /* AnimationChaining.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationChaining.m; sourceTree = "<group>"; };
 		DF19192010E2A94900906A0D /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		DF1E44ED10C29C1500F80FC0 /* FTAnimation+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FTAnimation+UIView.h"; path = "FTUtils/FTAnimation+UIView.h"; sourceTree = "<group>"; };
 		DF1E44EE10C29C1500F80FC0 /* FTAnimation+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTAnimation+UIView.m"; sourceTree = "<group>"; };
@@ -263,16 +266,6 @@
 		DFFDB49110C2D91B00F7BF95 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
-				DFFDB4A510C2D9E300F7BF95 /* Simple View Animation */,
-				DFFDB5BC10C2DDB600F7BF95 /* Supporting Classes */,
-				DF3E064410C71181004434C3 /* Resources */,
-			);
-			path = Examples;
-			sourceTree = "<group>";
-		};
-		DFFDB4A510C2D9E300F7BF95 /* Simple View Animation */ = {
-			isa = PBXGroup;
-			children = (
 				DFFDB59B10C2DC7900F7BF95 /* SimpleAnimationExample.h */,
 				DFFDB59C10C2DC7900F7BF95 /* SimpleAnimationExample.m */,
 				DFFDB5DE10C2DFB700F7BF95 /* BackInOut.h */,
@@ -289,8 +282,12 @@
 				DF3E073310C72689004434C3 /* FallInOut.m */,
 				DF3E075910C7278D004434C3 /* FlyOut.h */,
 				DF3E075A10C7278D004434C3 /* FlyOut.m */,
+				DF16614B1174CAC700054B46 /* AnimationChaining.h */,
+				DF16614C1174CAC700054B46 /* AnimationChaining.m */,
+				DFFDB5BC10C2DDB600F7BF95 /* Supporting Classes */,
+				DF3E064410C71181004434C3 /* Resources */,
 			);
-			name = "Simple View Animation";
+			path = Examples;
 			sourceTree = "<group>";
 		};
 		DFFDB5BC10C2DDB600F7BF95 /* Supporting Classes */ = {
@@ -472,6 +469,7 @@
 				DF3E071410C72581004434C3 /* PopInOut.m in Sources */,
 				DF3E073410C72689004434C3 /* FallInOut.m in Sources */,
 				DF3E075B10C7278D004434C3 /* FlyOut.m in Sources */,
+				DF16614D1174CAC700054B46 /* AnimationChaining.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
