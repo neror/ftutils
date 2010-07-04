@@ -64,6 +64,11 @@ extern NSString *const kFTAnimationTargetViewKey;
 
 static inline CGPoint FTAnimationOffscreenCenterPoint(CGRect viewFrame, CGPoint viewCenter, FTAnimationDirection direction) {
   CGRect screenRect = [[UIScreen mainScreen] bounds];
+  if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
+    CGFloat swap = screenRect.size.height;
+    screenRect.size.height = screenRect.size.width;
+    screenRect.size.width = swap;
+  } 
   switch (direction) {
     case kFTAnimationBottom: {
       CGFloat extraOffset = viewFrame.size.height / 2;
