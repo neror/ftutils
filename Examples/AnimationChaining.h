@@ -22,18 +22,20 @@
  THE SOFTWARE.
 */
 
-#import <Foundation/Foundation.h>
+#import "ExampleManager.h"
 
-@interface ExampleManager : NSObject {
-  NSArray *groups_;
-  NSArray *samples_;
+@interface AnimationChaining : UIViewController {
+  UIView *redView_;
+  UIView *greenView_;
+  UIView *blueView_;
+  
+  UIButton *performAnimationButton_;
 }
 
-+ (NSUInteger)groupCount;
-+ (NSUInteger)sampleCountForGroup:(NSUInteger)group;
-+ (NSArray *)samplesForGroup:(NSUInteger)group;
-+ (NSString *)sampleNameAtIndexPath:(NSIndexPath *)indexPath;
-+ (UIViewController *)sampleInstanceAtIndexPath:(NSIndexPath *)indexPath;
-+ (NSString *)groupTitleAtIndex:(NSUInteger)index;
+@property(nonatomic, retain) UIView *redView;
+@property(nonatomic, retain) UIView *blueView;
+@property(nonatomic, retain) UIView *greenView;
+
+@property(nonatomic,retain) UIButton *performAnimationButton;
 
 @end

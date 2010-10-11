@@ -31,6 +31,7 @@
 #import "PopInOut.h"
 #import "FallInOut.h"
 #import "FlyOut.h"
+#import "AnimationChaining.h"
 
 @interface ExampleManager ()
 
@@ -64,7 +65,7 @@ static ExampleManager *sharedSampleManager = nil;
   self = [super init];
   if (self != nil) {
     groups_ = [[NSArray alloc] initWithObjects:@"Animating Single Views",
-                                               @"Delegation and Animation Info",
+                                               @"Advanced Features",
                                                nil];
     
     samples_ = [[NSArray alloc] initWithObjects:[NSArray arrayWithObjects:[BackInOut class], 
@@ -75,7 +76,7 @@ static ExampleManager *sharedSampleManager = nil;
                                                                           [FallInOut class],
                                                                           [FlyOut class],
                                                                           nil], 
-                                                [NSArray array],
+                                                [NSArray arrayWithObject:[AnimationChaining class]],
                                                 nil]; 
   }
   return self;
