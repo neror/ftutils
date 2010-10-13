@@ -229,11 +229,9 @@
   maxSize.width -= WINDOW_MARGIN * 2.f;
   maxSize.height -= WINDOW_MARGIN * 2.f;
   
-  __block CGFloat longestWidth = 0.f;
+  CGFloat longestWidth = 0.f;
   
-  [labels enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-    UILabel *label = obj;
-    
+  for (UILabel *label in labels) {
     [label sizeToFit];
     CGRect labelBounds = label.bounds;
     if(labelBounds.size.width > maxSize.width || labelBounds.size.height > maxSize.height) {
@@ -242,7 +240,7 @@
       label.bounds = labelBounds;
     }
     longestWidth = fmaxf(longestWidth, labelBounds.size.width);
-  }];
+  }
   
   [self.titleLabel.layer setValue:[NSNumber numberWithFloat:longestWidth] forKeyPath:@"bounds.size.width"];
   [self.bodyLabel.layer setValue:[NSNumber numberWithFloat:longestWidth] forKeyPath:@"bounds.size.width"];
