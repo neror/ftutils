@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AA747D9F0F9514B9006C5449 /* FTUtils_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* FTUtils_Prefix.pch */; };
+		DF12FE4712665DDA000E8B89 /* FTAnnotationView.h in Headers */ = {isa = PBXBuildFile; fileRef = DF12FE4412665DDA000E8B89 /* FTAnnotationView.h */; };
+		DF12FE4812665DDA000E8B89 /* FTAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF12FE4512665DDA000E8B89 /* FTAnnotationView.m */; };
 		DF16614D1174CAC700054B46 /* AnimationChaining.m in Sources */ = {isa = PBXBuildFile; fileRef = DF16614C1174CAC700054B46 /* AnimationChaining.m */; };
 		DF1E44EF10C29C1500F80FC0 /* FTAnimation+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1E44EE10C29C1500F80FC0 /* FTAnimation+UIView.m */; };
 		DF1E44F010C29C1500F80FC0 /* FTAnimation+UIView.h in Headers */ = {isa = PBXBuildFile; fileRef = DF1E44ED10C29C1500F80FC0 /* FTAnimation+UIView.h */; };
@@ -77,6 +79,8 @@
 /* Begin PBXFileReference section */
 		AA747D9E0F9514B9006C5449 /* FTUtils_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTUtils_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		D2AAC07E0554694100DB518D /* libFTUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFTUtils.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF12FE4412665DDA000E8B89 /* FTAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTAnnotationView.h; path = FTUtils/FTAnnotationView.h; sourceTree = "<group>"; };
+		DF12FE4512665DDA000E8B89 /* FTAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAnnotationView.m; sourceTree = "<group>"; };
 		DF16614B1174CAC700054B46 /* AnimationChaining.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationChaining.h; sourceTree = "<group>"; };
 		DF16614C1174CAC700054B46 /* AnimationChaining.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationChaining.m; sourceTree = "<group>"; };
 		DF19192010E2A94900906A0D /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
@@ -233,6 +237,14 @@
 			name = Animation;
 			sourceTree = "<group>";
 		};
+		DF12FE3B12665DBB000E8B89 /* View Components */ = {
+			isa = PBXGroup;
+			children = (
+				DF12FE4512665DDA000E8B89 /* FTAnnotationView.m */,
+			);
+			name = "View Components";
+			sourceTree = "<group>";
+		};
 		DF2962DE0FE18E0000B9D71D /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +261,7 @@
 				DF1E44F410C29D7500F80FC0 /* FTAnimation.h */,
 				DF2962E40FE18E0000B9D71D /* FTAnimationManager.h */,
 				DF1E44ED10C29C1500F80FC0 /* FTAnimation+UIView.h */,
+				DF12FE4412665DDA000E8B89 /* FTAnnotationView.h */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -256,6 +269,7 @@
 		DF2962E80FE18E0000B9D71D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DF12FE3B12665DBB000E8B89 /* View Components */,
 				DF12FDBC12664B6E000E8B89 /* Animation */,
 				DF12FDBB12664B5A000E8B89 /* General Utilites */,
 			);
@@ -332,6 +346,7 @@
 				DF2962EE0FE18E0000B9D71D /* FTAnimationManager.h in Headers */,
 				DF1E44F010C29C1500F80FC0 /* FTAnimation+UIView.h in Headers */,
 				DF1E44F510C29D7500F80FC0 /* FTAnimation.h in Headers */,
+				DF12FE4712665DDA000E8B89 /* FTAnnotationView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +477,7 @@
 				DF2962F20FE18E0000B9D71D /* FTAnimationManager.m in Sources */,
 				DF1E44F110C29C1500F80FC0 /* FTAnimation+UIView.m in Sources */,
 				DFA2EA8A10C2AC89003A76FF /* FTUtils+NSObject.m in Sources */,
+				DF12FE4812665DDA000E8B89 /* FTAnnotationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
