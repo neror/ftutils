@@ -22,7 +22,8 @@
  THE SOFTWARE.
 */
 
-#import "FTAnnotationView.h"
+#import <FTUtils/FTAnnotationView.h>
+#import <FTUtils/FTAnimation.h>
 
 #define WINDOW_MARGIN 20.f
 
@@ -48,16 +49,14 @@
 #pragma mark -
 #pragma mark Object creation
 
-- (id)initWithFrame:(CGRect)frame
-{
-  if ((self = [super initWithFrame:frame])) {
+- (id)initWithFrame:(CGRect)theFrame {
+  if ((self = [super initWithFrame:theFrame])) {
     [self setupView];
   }
   return self;
 }
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
   [self setupView];
 }
 
@@ -75,8 +74,7 @@
   [super dealloc];
 }
 
-- (void)setupView
-{
+- (void)setupView {
   self.opaque = NO;
   self.layer.backgroundColor = [[UIColor clearColor] CGColor];
   self.layer.anchorPoint = CGPointMake(.5f, 1.f);
@@ -101,10 +99,8 @@
 #pragma mark -
 #pragma mark Lazy properties
 
-- (CALayer *)bubbleLayer
-{
-  if(!bubble_)
-  {
+- (CALayer *)bubbleLayer {
+  if(!bubble_) {
     bubble_ = [[CALayer alloc] init];
     bubble_.cornerRadius = 6.f;
     bubble_.backgroundColor = [[UIColor blackColor] CGColor];
@@ -112,8 +108,7 @@
   return bubble_;
 }
 
-- (CAShapeLayer *)arrowLayer
-{
+- (CAShapeLayer *)arrowLayer {
   if(!arrow_)
   {
     arrow_ = [[CAShapeLayer alloc] init];
@@ -135,10 +130,8 @@
   return arrow_;
 }
 
-- (CAGradientLayer *)gradientLayer
-{
-  if(!gradient_)
-  {
+- (CAGradientLayer *)gradientLayer {
+  if(!gradient_) {
     gradient_ = [[CAGradientLayer alloc] init];
     gradient_.colors = [NSArray arrayWithObjects:
                         (id)[[[UIColor whiteColor] colorWithAlphaComponent:.15f] CGColor], 
@@ -152,10 +145,8 @@
   return gradient_;
 }
 
-- (UILabel *)titleLabel
-{
-  if(!titleLabel_)
-  {
+- (UILabel *)titleLabel {
+  if(!titleLabel_) {
     titleLabel_ = [[UILabel alloc] initWithFrame:self.bounds];
     titleLabel_.font = [UIFont fontWithName:@"Helvetica-Oblique" size:10.f];
     titleLabel_.textColor = [UIColor whiteColor];
@@ -168,10 +159,8 @@
   return titleLabel_;
 }
 
-- (UILabel *)bodyLabel
-{
-  if(!bodyLabel_)
-  {
+- (UILabel *)bodyLabel {
+  if(!bodyLabel_) {
     bodyLabel_ = [[UILabel alloc] initWithFrame:self.bounds];
     bodyLabel_.font = [UIFont fontWithName:@"Helvetica-Bold" size:18.f];
     bodyLabel_.textColor = [UIColor whiteColor];
@@ -187,8 +176,7 @@
 
 #pragma mark Composite property methods
 
-- (void)setBubbleColor:(UIColor *)newColor
-{
+- (void)setBubbleColor:(UIColor *)newColor {
   [CATransaction begin];
   [CATransaction setDisableActions:YES];
   self.bubbleLayer.backgroundColor = [newColor CGColor];
@@ -199,20 +187,14 @@
 #pragma mark -
 #pragma mark KVO observering
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-  if ([keyPath isEqualToString:@"anchorPosition"])
-  {
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+  if ([keyPath isEqualToString:@"anchorPosition"]) {
     //TODO: Calculate the height and move the anchorPoint if necessary
   	[self setNeedsLayout];
-  }
-  else if([keyPath isEqualToString:@"titleText"])
-  {
+  } else if([keyPath isEqualToString:@"titleText"]) {
     self.titleLabel.text = self.titleText;
     [self setNeedsLayout];
-  }
-  else if([keyPath isEqualToString:@"bodyText"])
-  {
+  } else if([keyPath isEqualToString:@"bodyText"]) {
     self.bodyLabel.text = self.bodyText;
     [self setNeedsLayout];
   }
@@ -221,8 +203,7 @@
 #pragma mark -
 #pragma mark View display/drawing
 
-- (void)sizeLabelsToFitText
-{
+- (void)sizeLabelsToFitText {
   NSArray *labels = [NSArray arrayWithObjects:self.titleLabel, self.bodyLabel, nil];
   
   CGSize maxSize = self.window.bounds.size;
@@ -246,12 +227,10 @@
   [self.bodyLabel.layer setValue:[NSNumber numberWithFloat:longestWidth] forKeyPath:@"bounds.size.width"];
 }
 
-- (void)adjustAnchorPoint
-{
+- (void)adjustAnchorPoint {
   CGRect layerFrame = self.layer.frame;
   CGRect windowBounds = CGRectInset(self.window.bounds, WINDOW_MARGIN, WINDOW_MARGIN);
-  if(layerFrame.origin.x < windowBounds.origin.x || CGRectGetMaxX(layerFrame) > CGRectGetMaxX(windowBounds))
-  {
+  if(layerFrame.origin.x < windowBounds.origin.x || CGRectGetMaxX(layerFrame) > CGRectGetMaxX(windowBounds)) {
     layerFrame.origin.x = windowBounds.origin.x;
     CGPoint anchorPoint = self.layer.anchorPoint;
     anchorPoint.x = self.anchorPosition.x / layerFrame.size.width;
@@ -259,8 +238,7 @@
   }
 }
 
-- (void)layoutSubviews
-{
+- (void)layoutSubviews {
   [CATransaction begin];
   [CATransaction setDisableActions:YES];
 
@@ -294,40 +272,16 @@
   [CATransaction commit];
 }
 
-- (void)showForRect:(CGRect)subjectRect inView:(UIView *)subjectContainerView animated:(BOOL)animated
-{
+- (void)showForRect:(CGRect)subjectRect inView:(UIView *)subjectContainerView animated:(BOOL)animated {
   self.anchorPosition = CGPointMake(CGRectGetMidX(subjectRect), CGRectGetMinY(subjectRect));
   [subjectContainerView addSubview:self];
   
-  if(animated)
-  {
-    NSTimeInterval duration = .3f;
-    
-    CAKeyframeAnimation *scale = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
-    scale.duration = duration;
-    scale.values = [NSArray arrayWithObjects:[NSNumber numberWithFloat:.5f],
-                    [NSNumber numberWithFloat:1.05f],
-                    [NSNumber numberWithFloat:.95f],
-                    [NSNumber numberWithFloat:1.f],
-                    nil];
-    
-    CABasicAnimation *fadeIn = [CABasicAnimation animationWithKeyPath:@"opacity"];
-    fadeIn.duration = duration * .4f;
-    fadeIn.fromValue = [NSNumber numberWithFloat:0.f];
-    fadeIn.toValue = [NSNumber numberWithFloat:1.f];
-    fadeIn.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
-    fadeIn.fillMode = kCAFillModeForwards;
-    
-    CAAnimationGroup *group = [CAAnimationGroup animation];
-    group.animations = [NSArray arrayWithObjects:scale, fadeIn, nil];
-    group.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    
-    [self.layer addAnimation:group forKey:@"DAShowAnnotationAnimation"];  
+  if(animated) {
+    [self popIn:.3f delegate:nil];
   }
 }
 
-- (void)dismiss
-{
+- (void)dismiss {
   [self removeFromSuperview];
 }
 
