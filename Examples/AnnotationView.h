@@ -27,9 +27,9 @@
 @class FTAnnotationView;
 
 @interface AnnotationView : UIViewController {
-
 }
 
 @property (nonatomic, retain) IBOutlet FTAnnotationView *annotationView;
+@property (nonatomic, retain) UIView *fingerView;
 
 @end

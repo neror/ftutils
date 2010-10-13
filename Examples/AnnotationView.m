@@ -23,9 +23,11 @@
 */
 
 #import "AnnotationView.h"
-#import "FTAnnotationView.h"
+#import <FTUtils/FTAnnotationView.h>
+#import <FTAnimation.h>
+#import <QuartzCore/QuartzCore.h>
 
-#define FINGER_SIZE 20.f
+#define FINGER_SIZE 40.f
 
 @interface AnnotationView (Private)
 
@@ -35,7 +37,8 @@
 
 @implementation AnnotationView
 
-@synthesize annotationView = annotationView_;
+@synthesize annotationView;
+@synthesize fingerView;
 
 + (NSString *)displayName {
   return @"Annotation View";
@@ -51,16 +54,26 @@
   UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
   [self.view addGestureRecognizer:tap];
   [tap release];
+  
+  UIView *finger = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, FINGER_SIZE, FINGER_SIZE)];
+  finger.backgroundColor = [[UIColor yellowColor] colorWithAlphaComponent:.75f];
+  finger.clipsToBounds = YES;
+  finger.layer.cornerRadius = 6.f;
+  self.fingerView = finger;
+  [fingerView release];
+  
   [super viewDidLoad];
 }
 
 - (void)viewDidUnload {
   self.annotationView = nil;
+  self.fingerView = nil;
   [super viewDidUnload];
 }
 
 - (void)dealloc {
   self.annotationView = nil;
+  self.fingerView = nil;
   [super dealloc];
 }
 
@@ -70,6 +83,13 @@
 - (void)handleTap:(UITapGestureRecognizer *)gesture {
   CGPoint tapLocation = [gesture locationInView:self.view];
   CGRect fingerRect = CGRectMake(tapLocation.x - FINGER_SIZE / 2.f, tapLocation.y - FINGER_SIZE / 2.f, FINGER_SIZE, FINGER_SIZE);
+  
+  if(self.fingerView.superview) {
+    [self.fingerView removeFromSuperview];
+  }
+  self.fingerView.frame = fingerRect;
+  [self.view addSubview:self.fingerView];
+  [self.fingerView fadeIn:.2f delegate:nil];
   
   if(self.annotationView.superview) {
     [self.annotationView dismiss];
