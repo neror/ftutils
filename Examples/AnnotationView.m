@@ -94,7 +94,7 @@
   if(self.annotationView.superview) {
     [self.annotationView dismiss];
   }
-  self.annotationView.bodyText = [NSString stringWithFormat:@"%@", NSStringFromCGPoint(tapLocation)];
+  self.annotationView.bodyText = [NSString stringWithFormat:@"Tap location: %@", NSStringFromCGPoint(tapLocation)];
   
   [self.annotationView showForRect:fingerRect inView:self.view animated:YES];
 }
