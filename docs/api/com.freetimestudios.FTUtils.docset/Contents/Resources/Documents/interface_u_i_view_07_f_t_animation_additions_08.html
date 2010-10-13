@@ -32,10 +32,14 @@
 <tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_u_i_view_07_f_t_animation_additions_08.html#ae0a67a19113ae0e36a2462c740a0bb2b">slideInFrom:duration:delegate:startSelector:stopSelector:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_u_i_view_07_f_t_animation_additions_08.html#a2ebf69a632374c2a4a87fabf2766bb70">slideOutTo:duration:delegate:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_u_i_view_07_f_t_animation_additions_08.html#a6e80e998fe97e2de8c749fdc4a711e7f">slideOutTo:duration:delegate:startSelector:stopSelector:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_u_i_view_07_f_t_animation_additions_08.html#a03e0cc18247c848b4c10eb137b2b75f3">slideInFrom:inView:duration:delegate:startSelector:stopSelector:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_u_i_view_07_f_t_animation_additions_08.html#a98bb6a880bd4bfb0e46e506b9e39816b">slideOutTo:inView:duration:delegate:startSelector:stopSelector:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_u_i_view_07_f_t_animation_additions_08.html#a2bf27796f7b2048baff40aab58df18fa">backOutTo:withFade:duration:delegate:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_u_i_view_07_f_t_animation_additions_08.html#a17bc5a34b965e15120fb5a9fa40c7440">backOutTo:withFade:duration:delegate:startSelector:stopSelector:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_u_i_view_07_f_t_animation_additions_08.html#af75fb7f1be07c12cc3733eb18e763374">backInFrom:withFade:duration:delegate:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_u_i_view_07_f_t_animation_additions_08.html#ae3de723e3c4744e41a7a17691f3783d1">backInFrom:withFade:duration:delegate:startSelector:stopSelector:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_u_i_view_07_f_t_animation_additions_08.html#a2904e74e29246ab07efa80289bceaea7">backOutTo:inView:withFade:duration:delegate:startSelector:stopSelector:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_u_i_view_07_f_t_animation_additions_08.html#a4f096b6180c5955882f517379c047434">backInFrom:inView:withFade:duration:delegate:startSelector:stopSelector:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_u_i_view_07_f_t_animation_additions_08.html#ac685e7f7f4dc96908944a2476dc810a1">fadeIn:delegate:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_u_i_view_07_f_t_animation_additions_08.html#ad9991171b24f7530f3f8b45c84f79bf2">fadeIn:delegate:startSelector:stopSelector:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_u_i_view_07_f_t_animation_additions_08.html#aa360b205eeec1100b064153d1d944b6d">fadeOut:delegate:</a></td></tr>
@@ -59,6 +63,63 @@
 
 <p>Definition at line <a class="el" href="_f_t_animation_09_u_i_view_8h_source.html#l00027">27</a> of file <a class="el" href="_f_t_animation_09_u_i_view_8h_source.html">FTAnimation+UIView.h</a>.</p>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a4f096b6180c5955882f517379c047434"></a><!-- doxytag: member="UIView(FTAnimationAdditions)::backInFrom:inView:withFade:duration:delegate:startSelector:stopSelector:" ref="a4f096b6180c5955882f517379c047434" args="(FTAnimationDirection direction,[inView] UIView *enclosingView,[withFade] BOOL fade,[duration] NSTimeInterval duration,[delegate] id delegate,[startSelector] SEL startSelector,[stopSelector] SEL stopSelector)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) backInFrom: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)&nbsp;</td>
+          <td class="paramname"> <em>direction</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">inView:</td>
+          <td></td>
+          <td class="paramtype">(UIView *)&nbsp;</td>
+          <td class="paramname"> <em>enclosingView</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">withFade:</td>
+          <td></td>
+          <td class="paramtype">(BOOL)&nbsp;</td>
+          <td class="paramname"> <em>fade</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">duration:</td>
+          <td></td>
+          <td class="paramtype">(NSTimeInterval)&nbsp;</td>
+          <td class="paramname"> <em>duration</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">delegate:</td>
+          <td></td>
+          <td class="paramtype">(id)&nbsp;</td>
+          <td class="paramname"> <em>delegate</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">startSelector:</td>
+          <td></td>
+          <td class="paramtype">(SEL)&nbsp;</td>
+          <td class="paramname"> <em>startSelector</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">stopSelector:</td>
+          <td></td>
+          <td class="paramtype">(SEL)&nbsp;</td>
+          <td class="paramname"> <em>stopSelector</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="af75fb7f1be07c12cc3733eb18e763374"></a><!-- doxytag: member="UIView(FTAnimationAdditions)::backInFrom:withFade:duration:delegate:" ref="af75fb7f1be07c12cc3733eb18e763374" args="(FTAnimationDirection direction,[withFade] BOOL fade,[duration] NSTimeInterval duration,[delegate] id delegate)" -->
 <div class="memitem">
 <div class="memproto">
@@ -107,6 +168,63 @@
           <td></td>
           <td class="paramtype">(<a class="el" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)&nbsp;</td>
           <td class="paramname"> <em>direction</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">withFade:</td>
+          <td></td>
+          <td class="paramtype">(BOOL)&nbsp;</td>
+          <td class="paramname"> <em>fade</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">duration:</td>
+          <td></td>
+          <td class="paramtype">(NSTimeInterval)&nbsp;</td>
+          <td class="paramname"> <em>duration</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">delegate:</td>
+          <td></td>
+          <td class="paramtype">(id)&nbsp;</td>
+          <td class="paramname"> <em>delegate</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">startSelector:</td>
+          <td></td>
+          <td class="paramtype">(SEL)&nbsp;</td>
+          <td class="paramname"> <em>startSelector</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">stopSelector:</td>
+          <td></td>
+          <td class="paramtype">(SEL)&nbsp;</td>
+          <td class="paramname"> <em>stopSelector</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2904e74e29246ab07efa80289bceaea7"></a><!-- doxytag: member="UIView(FTAnimationAdditions)::backOutTo:inView:withFade:duration:delegate:startSelector:stopSelector:" ref="a2904e74e29246ab07efa80289bceaea7" args="(FTAnimationDirection direction,[inView] UIView *enclosingView,[withFade] BOOL fade,[duration] NSTimeInterval duration,[delegate] id delegate,[startSelector] SEL startSelector,[stopSelector] SEL stopSelector)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) backOutTo: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)&nbsp;</td>
+          <td class="paramname"> <em>direction</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">inView:</td>
+          <td></td>
+          <td class="paramtype">(UIView *)&nbsp;</td>
+          <td class="paramname"> <em>enclosingView</em></td>
         </tr>
         <tr>
           <td class="paramkey">withFade:</td>
@@ -911,6 +1029,57 @@
 
 </div>
 </div>
+<a class="anchor" id="a03e0cc18247c848b4c10eb137b2b75f3"></a><!-- doxytag: member="UIView(FTAnimationAdditions)::slideInFrom:inView:duration:delegate:startSelector:stopSelector:" ref="a03e0cc18247c848b4c10eb137b2b75f3" args="(FTAnimationDirection direction,[inView] UIView *enclosingView,[duration] NSTimeInterval duration,[delegate] id delegate,[startSelector] SEL startSelector,[stopSelector] SEL stopSelector)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) slideInFrom: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)&nbsp;</td>
+          <td class="paramname"> <em>direction</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">inView:</td>
+          <td></td>
+          <td class="paramtype">(UIView *)&nbsp;</td>
+          <td class="paramname"> <em>enclosingView</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">duration:</td>
+          <td></td>
+          <td class="paramtype">(NSTimeInterval)&nbsp;</td>
+          <td class="paramname"> <em>duration</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">delegate:</td>
+          <td></td>
+          <td class="paramtype">(id)&nbsp;</td>
+          <td class="paramname"> <em>delegate</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">startSelector:</td>
+          <td></td>
+          <td class="paramtype">(SEL)&nbsp;</td>
+          <td class="paramname"> <em>startSelector</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">stopSelector:</td>
+          <td></td>
+          <td class="paramtype">(SEL)&nbsp;</td>
+          <td class="paramname"> <em>stopSelector</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a2ebf69a632374c2a4a87fabf2766bb70"></a><!-- doxytag: member="UIView(FTAnimationAdditions)::slideOutTo:duration:delegate:" ref="a2ebf69a632374c2a4a87fabf2766bb70" args="(FTAnimationDirection direction,[duration] NSTimeInterval duration,[delegate] id delegate)" -->
 <div class="memitem">
 <div class="memproto">
@@ -989,11 +1158,62 @@
 
 </div>
 </div>
+<a class="anchor" id="a98bb6a880bd4bfb0e46e506b9e39816b"></a><!-- doxytag: member="UIView(FTAnimationAdditions)::slideOutTo:inView:duration:delegate:startSelector:stopSelector:" ref="a98bb6a880bd4bfb0e46e506b9e39816b" args="(FTAnimationDirection direction,[inView] UIView *enclosingView,[duration] NSTimeInterval duration,[delegate] id delegate,[startSelector] SEL startSelector,[stopSelector] SEL stopSelector)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) slideOutTo: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)&nbsp;</td>
+          <td class="paramname"> <em>direction</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">inView:</td>
+          <td></td>
+          <td class="paramtype">(UIView *)&nbsp;</td>
+          <td class="paramname"> <em>enclosingView</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">duration:</td>
+          <td></td>
+          <td class="paramtype">(NSTimeInterval)&nbsp;</td>
+          <td class="paramname"> <em>duration</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">delegate:</td>
+          <td></td>
+          <td class="paramtype">(id)&nbsp;</td>
+          <td class="paramname"> <em>delegate</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">startSelector:</td>
+          <td></td>
+          <td class="paramtype">(SEL)&nbsp;</td>
+          <td class="paramname"> <em>startSelector</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">stopSelector:</td>
+          <td></td>
+          <td class="paramtype">(SEL)&nbsp;</td>
+          <td class="paramname"> <em>stopSelector</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>Headers/FTUtils/<a class="el" href="_f_t_animation_09_u_i_view_8h_source.html">FTAnimation+UIView.h</a></li>
 </ul>
 </div>
-<hr size="1"/><address style="text-align: right;"><small>Generated on Wed Dec 23 15:36:49 2009 for FTUtils by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Wed Oct 13 16:15:00 2010 for FTUtils by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

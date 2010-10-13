@@ -46,7 +46,7 @@
 <a name="l00022"></a>00022 <span class="comment"> THE SOFTWARE.</span>
 <a name="l00023"></a>00023 <span class="comment">*/</span>
 <a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="preprocessor">#import &quot;<a class="code" href="_f_t_animation_manager_8h.html">FTAnimationManager.h</a>&quot;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#import &quot;<a class="code" href="_f_t_animation_manager_8h.html" title="The FTAnimationManager.h file is the heart of the FTUtils animation utilites.">FTAnimationManager.h</a>&quot;</span>
 <a name="l00026"></a>00026 
 <a name="l00027"></a><a class="code" href="interface_u_i_view_07_f_t_animation_additions_08.html">00027</a> <span class="keyword">@interface </span>UIView (FTAnimationAdditions)
 <a name="l00028"></a>00028 
@@ -57,41 +57,53 @@
 <a name="l00033"></a>00033 - (void)slideOutTo:(<a class="code" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)direction duration:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate 
 <a name="l00034"></a>00034      startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
 <a name="l00035"></a>00035 
-<a name="l00036"></a>00036 - (void)backOutTo:(<a class="code" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)direction withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate;
-<a name="l00037"></a>00037 - (void)backOutTo:(<a class="code" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)direction withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate 
-<a name="l00038"></a>00038     startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
-<a name="l00039"></a>00039 - (void)backInFrom:(<a class="code" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)direction withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate;
-<a name="l00040"></a>00040 - (void)backInFrom:(<a class="code" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)direction withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate 
-<a name="l00041"></a>00041      startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043 - (void)fadeIn:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate;
-<a name="l00044"></a>00044 - (void)fadeIn:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
-<a name="l00045"></a>00045 - (void)fadeOut:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate;
-<a name="l00046"></a>00046 - (void)fadeOut:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048 - (void)fadeBackgroundColorIn:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate;
-<a name="l00049"></a>00049 - (void)fadeBackgroundColorIn:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate 
-<a name="l00050"></a>00050                 startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
-<a name="l00051"></a>00051 - (void)fadeBackgroundColorOut:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate;
-<a name="l00052"></a>00052 - (void)fadeBackgroundColorOut:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate 
-<a name="l00053"></a>00053                  startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
+<a name="l00036"></a>00036 <span class="comment">//use the enclosing view</span>
+<a name="l00037"></a>00037 - (void)slideInFrom:(<a class="code" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)direction inView:(UIView*)enclosingView duration:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate 
+<a name="l00038"></a>00038       startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
+<a name="l00039"></a>00039 - (void)slideOutTo:(<a class="code" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)direction inView:(UIView*)enclosingView duration:(NSTimeInterval)duration 
+<a name="l00040"></a>00040           delegate:(<span class="keywordtype">id</span>)delegate startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042 - (void)backOutTo:(<a class="code" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)direction withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate;
+<a name="l00043"></a>00043 - (void)backOutTo:(<a class="code" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)direction withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate 
+<a name="l00044"></a>00044     startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
+<a name="l00045"></a>00045 - (void)backInFrom:(<a class="code" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)direction withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate;
+<a name="l00046"></a>00046 - (void)backInFrom:(<a class="code" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)direction withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate 
+<a name="l00047"></a>00047      startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049 <span class="comment">//Use the enclosing view</span>
+<a name="l00050"></a>00050 - (void)backOutTo:(<a class="code" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)direction inView:(UIView*)enclosingView withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate 
+<a name="l00051"></a>00051     startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
+<a name="l00052"></a>00052 - (void)backInFrom:(<a class="code" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)direction inView:(UIView*)enclosingView withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate 
+<a name="l00053"></a>00053      startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
 <a name="l00054"></a>00054 
-<a name="l00055"></a>00055 - (void)popIn:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate;
-<a name="l00056"></a>00056 - (void)popIn:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
-<a name="l00057"></a>00057 - (void)popOut:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate;
-<a name="l00058"></a>00058 - (void)popOut:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
+<a name="l00055"></a>00055 - (void)fadeIn:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate;
+<a name="l00056"></a>00056 - (void)fadeIn:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
+<a name="l00057"></a>00057 - (void)fadeOut:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate;
+<a name="l00058"></a>00058 - (void)fadeOut:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
 <a name="l00059"></a>00059 
-<a name="l00060"></a>00060 - (void)fallIn:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate;
-<a name="l00061"></a>00061 - (void)fallIn:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
-<a name="l00062"></a>00062 - (void)fallOut:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate;
-<a name="l00063"></a>00063 - (void)fallOut:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
-<a name="l00064"></a>00064 
-<a name="l00065"></a>00065 - (void)flyOut:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate;
-<a name="l00066"></a>00066 - (void)flyOut:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
-<a name="l00067"></a>00067 
-<a name="l00068"></a>00068 <span class="keyword">@end</span>
+<a name="l00060"></a>00060 - (void)fadeBackgroundColorIn:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate;
+<a name="l00061"></a>00061 - (void)fadeBackgroundColorIn:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate 
+<a name="l00062"></a>00062                 startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
+<a name="l00063"></a>00063 - (void)fadeBackgroundColorOut:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate;
+<a name="l00064"></a>00064 - (void)fadeBackgroundColorOut:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate 
+<a name="l00065"></a>00065                  startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 - (void)popIn:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate;
+<a name="l00068"></a>00068 - (void)popIn:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
+<a name="l00069"></a>00069 - (void)popOut:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate;
+<a name="l00070"></a>00070 - (void)popOut:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072 - (void)fallIn:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate;
+<a name="l00073"></a>00073 - (void)fallIn:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
+<a name="l00074"></a>00074 - (void)fallOut:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate;
+<a name="l00075"></a>00075 - (void)fallOut:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077 - (void)flyOut:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate;
+<a name="l00078"></a>00078 - (void)flyOut:(NSTimeInterval)duration delegate:(<span class="keywordtype">id</span>)delegate startSelector:(<span class="keywordtype">SEL</span>)startSelector stopSelector:(<span class="keywordtype">SEL</span>)stopSelector;
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080 <span class="keyword">@end</span>
 </pre></div></div>
-<hr size="1"/><address style="text-align: right;"><small>Generated on Wed Dec 23 15:36:49 2009 for FTUtils by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Wed Oct 13 16:15:00 2010 for FTUtils by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

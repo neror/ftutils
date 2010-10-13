@@ -25,27 +25,56 @@
 </div>
 <div class="contents">
 <h1>Headers/FTUtils/FTUtils.h File Reference</h1>
+<p>A collection of macros used throughout the FTUtils set of tools.  
+<a href="#_details">More...</a></p>
+
 <p><a href="_f_t_utils_8h_source.html">Go to the source code of this file.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Defines</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Logging</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p><a class="anchor" id="amgrp8db7df66ab1d7ab5f1dc947acdb5fae4"></a> </p>
+<br/><br/></div></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_f_t_utils_8h.html#a16258f784f9d725d403eac1802222647">FTLOG</a>(...)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_f_t_utils_8h.html#a7561efff7e670767b2aa10ee433b6bae">FTLOGEXT</a>(...)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_f_t_utils_8h.html#a979e12645005b55cb60f7ef1d94ac360">FTLOGCALL</a></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Memory Management</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p><a class="anchor" id="amgrpfd3cbd78bed8cf1ca02da7abadef5f9b"></a> </p>
+<br/><br/></div></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_f_t_utils_8h.html#a54c86dc517e597de31852e7c1f40236d">FTRELEASE</a>(_obj)&nbsp;&nbsp;&nbsp;[_obj release], _obj = nil</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_f_t_utils_8h.html#a58923174d90614c684733bd6924d5a85">FTFREE</a>(_ptr)&nbsp;&nbsp;&nbsp;if(_ptr != NULL) { free(_ptr); _ptr = NULL; }</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Math</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p><a class="anchor" id="amgrpa49950aa047c2292e989e368a97a3aae"></a> </p>
+<br/><br/></div></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_f_t_utils_8h.html#afedbf2a2e78a816908f22683a69a493d">DEGREES_TO_RADIANS</a>(d)&nbsp;&nbsp;&nbsp;(d * M_PI / 180)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_f_t_utils_8h.html#a2f956dc29da48600fd18c2989d3a0678">RADIANS_TO_DEGREES</a>(r)&nbsp;&nbsp;&nbsp;(r * 180 / M_PI)</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Colors</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p><a class="anchor" id="amgrp5d50889672f6f860d14f502de3de1957"></a> </p>
+<br/><br/></div></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_f_t_utils_8h.html#a8c95497c3ba480b658024236df4e5dc9">RGBCOLOR</a>(r, g, b)&nbsp;&nbsp;&nbsp;[UIColor colorWithRed:r/256.f green:g/256.f blue:b/256.f alpha:1.f]</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_f_t_utils_8h.html#a4daacba7f109faac091a582ab498d188">RGBACOLOR</a>(r, g, b, a)&nbsp;&nbsp;&nbsp;[UIColor colorWithRed:r/256.f green:g/256.f blue:b/256.f alpha:a]</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_f_t_utils_8h.html#a6dc1dbdce5977ff88503e046f59881ba">UIColorFromRGB</a>(rgbValue)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_f_t_utils_8h.html#af6e8aad41847f403e5199afa93fcc746">UIColorFromRGBA</a>(rgbValue, alphaValue)</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Delegates</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p><a class="anchor" id="amgrpa76a8367caaba7851618d00319c98e56"></a> </p>
+<br/><br/></div></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_f_t_utils_8h.html#a340217447e2ac0c60217ae7cef8fd8a3">FT_CALL_DELEGATE</a>(_delegate, _selector)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_f_t_utils_8h.html#a7c18c975d2480a90e3e4c56987a69481">FT_CALL_DELEGATE_WITH_ARG</a>(_delegate, _selector, _argument)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_f_t_utils_8h.html#ac6ad409f6f8b9de3e087cf7ac313efc8">FT_CALL_DELEGATE_WITH_ARGS</a>(_delegate, _selector, _arg1, _arg2)</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Core Data</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p><a class="anchor" id="amgrp3f6f02753b5a3f21f61bcb459d4e5e89"></a> </p>
+<br/><br/></div></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_f_t_utils_8h.html#a30d984412f45098e47dbe68472713ea9">FT_SAVE_MOC</a>(_ft_moc)</td></tr>
 <tr><td colspan="2"><h2>Functions</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">File System</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p><a class="anchor" id="amgrp6c202452e44c42e323204da2a3a3c24a"></a> </p>
+<br/><br/></div></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static NSString *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_f_t_utils_8h.html#a7859b3e11c3cf85c272672cbeec4654a">FTPathForFileInDocumentsDirectory</a> (NSString *filename)</td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>A collection of macros used throughout the FTUtils set of tools. </p>
+<p>This file need not be included directly since it's included by the other pieces of the library. The macros are useful throughout a project, and it's recommended that you just include the file in your prefix header. </p>
+
+<p>Definition in file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
 <hr/><h2>Define Documentation</h2>
 <a class="anchor" id="afedbf2a2e78a816908f22683a69a493d"></a><!-- doxytag: member="FTUtils.h::DEGREES_TO_RADIANS" ref="afedbf2a2e78a816908f22683a69a493d" args="(d)" -->
 <div class="memitem">
@@ -63,7 +92,7 @@
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00047">47</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
+<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00087">87</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
 
 </div>
 </div>
@@ -93,8 +122,9 @@
     [_theDelegate performSelector:_selector]; \
   } \
 } <span class="keywordflow">while</span>(0);
-</pre></div>
-<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00070">70</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
+</pre></div><p>Call a delegate method if the selector exists. </p>
+
+<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00142">142</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
 
 </div>
 </div>
@@ -129,8 +159,9 @@
     [_theDelegate performSelector:_selector withObject:_argument]; \
   } \
 } <span class="keywordflow">while</span>(0);
-</pre></div>
-<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00078">78</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
+</pre></div><p>Call a delegate method that accepts one argument if the selector exists. </p>
+
+<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00153">153</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
 
 </div>
 </div>
@@ -170,8 +201,9 @@
     [_theDelegate performSelector:_selector withObject:_arg1 withObject:_arg2]; \
   } \
 } <span class="keywordflow">while</span>(0);
-</pre></div>
-<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00086">86</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
+</pre></div><p>Call a delegate method that accepts two arguments if the selector exists. </p>
+
+<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00164">164</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
 
 </div>
 </div>
@@ -205,8 +237,9 @@
     } \
   } \
 } <span class="keywordflow">while</span>(0);
-</pre></div>
-<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00107">107</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
+</pre></div><p>Save a Core Data NSManagedObjectContext and pretty print any errors. </p>
+
+<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00200">200</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
 
 </div>
 </div>
@@ -225,8 +258,9 @@
       </table>
 </div>
 <div class="memdoc">
+<p>Safely free a pointer and set its variable to NULL. </p>
 
-<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00042">42</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
+<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00079">79</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
 
 </div>
 </div>
@@ -245,8 +279,9 @@
       </table>
 </div>
 <div class="memdoc">
+<p>A simple wrapper for NSLog() that is automatically removed from release builds. </p>
 
-<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00033">33</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
+<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00060">60</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
 
 </div>
 </div>
@@ -260,8 +295,9 @@
       </table>
 </div>
 <div class="memdoc">
+<p>Logs a method call's class and selector. </p>
 
-<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00035">35</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
+<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00062">62</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
 
 </div>
 </div>
@@ -280,8 +316,9 @@
       </table>
 </div>
 <div class="memdoc">
+<p>More detailed loogging. Logs the function name and line number after the log message. </p>
 
-<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00034">34</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
+<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00061">61</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
 
 </div>
 </div>
@@ -300,8 +337,9 @@
       </table>
 </div>
 <div class="memdoc">
+<p>Safely release an objective-c object and set its variable to nil. </p>
 
-<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00041">41</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
+<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00074">74</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
 
 </div>
 </div>
@@ -321,7 +359,7 @@
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00048">48</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
+<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00088">88</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
 
 </div>
 </div>
@@ -355,8 +393,9 @@
       </table>
 </div>
 <div class="memdoc">
+<p>Create a UIColor with r,g,b,a values between 0.0 and 1.0. </p>
 
-<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00054">54</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
+<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00108">108</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
 
 </div>
 </div>
@@ -385,8 +424,9 @@
       </table>
 </div>
 <div class="memdoc">
+<p>Create a UIColor with r,g,b values between 0.0 and 1.0. </p>
 
-<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00053">53</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
+<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00102">102</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
 
 </div>
 </div>
@@ -406,12 +446,13 @@
 </div>
 <div class="memdoc">
 <b>Value:</b><div class="fragment"><pre class="fragment">[UIColor \
-                                   colorWithRed:((float)((rgbValue &amp; 0xFF0000) &gt;&gt; 16))/255.0 \
-                                          green:((float)((rgbValue &amp; 0x00FF00) &gt;&gt; 8))/255.0 \
-                                           blue:((float)(rgbValue &amp; 0x0000FF))/255.0 \
-                                          alpha:1.0]
-</pre></div>
-<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00055">55</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
+  colorWithRed:((float)((rgbValue &amp; 0xFF0000) &gt;&gt; 16))/255.0 \
+         green:((float)((rgbValue &amp; 0x00FF00) &gt;&gt; 8))/255.0 \
+          blue:((float)(rgbValue &amp; 0x0000FF))/255.0 \
+         alpha:1.0]
+</pre></div><p>Create a UIColor from a hex value. For example, <a class="el" href="_f_t_utils_8h.html#a6dc1dbdce5977ff88503e046f59881ba">UIColorFromRGB(0xFF0000)</a> creates a UIColor object representing the color red. </p>
+
+<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00114">114</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
 
 </div>
 </div>
@@ -436,12 +477,14 @@
 </div>
 <div class="memdoc">
 <b>Value:</b><div class="fragment"><pre class="fragment">[UIColor \
-                                                colorWithRed:((float)((rgbValue &amp; 0xFF0000) &gt;&gt; 16))/255.0 \
-                                                       green:((float)((rgbValue &amp; 0x00FF00) &gt;&gt; 8))/255.0 \
-                                                        blue:((float)(rgbValue &amp; 0x0000FF))/255.0 \
-                                                       alpha:alphaValue]
-</pre></div>
-<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00061">61</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
+  colorWithRed:((float)((rgbValue &amp; 0xFF0000) &gt;&gt; 16))/255.0 \
+         green:((float)((rgbValue &amp; 0x00FF00) &gt;&gt; 8))/255.0 \
+          blue:((float)(rgbValue &amp; 0x0000FF))/255.0 \
+         alpha:alphaValue]
+</pre></div><p>Create a UIColor with an alpha value from a hex value.</p>
+<p>For example, UIColorFromRGBA(0xFF0000, .5) creates a UIColor object representing a half-transparent red. </p>
+
+<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00126">126</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
 
 </div>
 </div>
@@ -461,21 +504,29 @@
       </table>
 </div>
 <div class="memdoc">
+<p>Get the full path for a file name in the documents directory. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>filename</em>&nbsp;</td><td>the name of the file <em>(the file need not exist yet)</em>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The full path to the filename. </dd></dl>
 
-<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00097">97</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
+<p>Definition at line <a class="el" href="_f_t_utils_8h_source.html#l00184">184</a> of file <a class="el" href="_f_t_utils_8h_source.html">FTUtils.h</a>.</p>
 
-<p><div class="fragment"><pre class="fragment"><a name="l00097"></a>00097                                                                               {
-<a name="l00098"></a>00098   NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-<a name="l00099"></a>00099   NSString *documentsDirectory = [paths objectAtIndex:0];
-<a name="l00100"></a>00100   NSString *path = [documentsDirectory stringByAppendingPathComponent:filename];
-<a name="l00101"></a>00101   <span class="keywordflow">return</span> path;
-<a name="l00102"></a>00102 }
+<p><div class="fragment"><pre class="fragment"><a name="l00184"></a>00184                                                                               {
+<a name="l00185"></a>00185   NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+<a name="l00186"></a>00186   NSString *documentsDirectory = [paths objectAtIndex:0];
+<a name="l00187"></a>00187   NSString *path = [documentsDirectory stringByAppendingPathComponent:filename];
+<a name="l00188"></a>00188   <span class="keywordflow">return</span> path;
+<a name="l00189"></a>00189 }
 </pre></div></p>
 
 </div>
 </div>
 </div>
-<hr size="1"/><address style="text-align: right;"><small>Generated on Wed Dec 23 15:36:49 2009 for FTUtils by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Wed Oct 13 16:15:00 2010 for FTUtils by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

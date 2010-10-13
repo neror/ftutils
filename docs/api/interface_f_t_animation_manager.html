@@ -25,6 +25,9 @@
 </div>
 <div class="contents">
 <h1>FTAnimationManager Class Reference</h1><!-- doxytag: class="FTAnimationManager" -->
+<p>The <a class="el" href="interface_f_t_animation_manager.html" title="The FTAnimationManager class is the heart of the FTUtils Core Animation utilities...">FTAnimationManager</a> class is the heart of the FTUtils Core Animation utilities.  
+<a href="#_details">More...</a></p>
+
 <p><code>#import &lt;<a class="el" href="_f_t_animation_manager_8h_source.html">FTAnimationManager.h</a>&gt;</code></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
@@ -34,8 +37,12 @@
 <tr><td class="memItemLeft" align="right" valign="top">(CAAnimationGroup *)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_f_t_animation_manager.html#a6697a7cf89b0cd33987bf25c64955696">animationGroupFor:withView:duration:delegate:startSelector:stopSelector:name:type:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(CAAnimation *)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_f_t_animation_manager.html#a0630f981b0b4d3cf014ee2302a55b784">slideInAnimationFor:direction:duration:delegate:startSelector:stopSelector:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(CAAnimation *)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_f_t_animation_manager.html#ae604172ae5d82ff56d3fce47d7d635e8">slideOutAnimationFor:direction:duration:delegate:startSelector:stopSelector:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(CAAnimation *)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_f_t_animation_manager.html#a84c71b6240b166e7855655e366323fd3">slideInAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(CAAnimation *)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_f_t_animation_manager.html#a7760726f35682ff01cd622dc1e75a7d0">slideOutAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(CAAnimation *)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_f_t_animation_manager.html#aa3d70c2d22eb38c5f228e7443f8a6aee">backOutAnimationFor:withFade:direction:duration:delegate:startSelector:stopSelector:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(CAAnimation *)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_f_t_animation_manager.html#a9adb30a0639d8cb4674b67987575821d">backInAnimationFor:withFade:direction:duration:delegate:startSelector:stopSelector:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(CAAnimation *)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_f_t_animation_manager.html#a10e4184c9216ed4e8c0fd6ef25da4b13">backOutAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(CAAnimation *)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_f_t_animation_manager.html#a02ff7fa908d0e8f016ea5ef7b7d46ab2">backInAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(CAAnimation *)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_f_t_animation_manager.html#ad7e9f2aee032fada634dbd86c81f26ab">fadeAnimationFor:duration:delegate:startSelector:stopSelector:fadeOut:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(CAAnimation *)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_f_t_animation_manager.html#a8dd1a72a0e1b33ab4def5679481e336f">fadeBackgroundColorAnimationFor:duration:delegate:startSelector:stopSelector:fadeOut:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(CAAnimation *)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_f_t_animation_manager.html#a6a9b47ce6b404730799f2a58fd8b63f4">popInAnimationFor:duration:delegate:startSelector:stopSelector:</a></td></tr>
@@ -51,8 +58,10 @@
 <tr><td class="memItemLeft" align="right" valign="top">CGFloat&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_f_t_animation_manager.html#a36a19a2396a2355a5ac71df6b53f925b">overshootThreshold</a></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>The <a class="el" href="interface_f_t_animation_manager.html" title="The FTAnimationManager class is the heart of the FTUtils Core Animation utilities...">FTAnimationManager</a> class is the heart of the FTUtils Core Animation utilities. </p>
+<p>This class is meant to be used as a singleton. Developers should avoid creating mulitple instances and should get a reference to an instance via the <a class="el" href="interface_f_t_animation_manager.html#a1c7c2a8f9cb1ab6e67b6d7d11c0cc674">sharedManager (FTAnimationManager)</a> class method. </p>
 
-<p>Definition at line <a class="el" href="_f_t_animation_manager_8h_source.html#l00087">87</a> of file <a class="el" href="_f_t_animation_manager_8h_source.html">FTAnimationManager.h</a>.</p>
+<p>Definition at line <a class="el" href="_f_t_animation_manager_8h_source.html#l00161">161</a> of file <a class="el" href="_f_t_animation_manager_8h_source.html">FTAnimationManager.h</a>.</p>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a6697a7cf89b0cd33987bf25c64955696"></a><!-- doxytag: member="FTAnimationManager::animationGroupFor:withView:duration:delegate:startSelector:stopSelector:name:type:" ref="a6697a7cf89b0cd33987bf25c64955696" args="(NSArray *animations,[withView] UIView *view,[duration] NSTimeInterval duration,[delegate] id delegate,[startSelector] SEL startSelector,[stopSelector] SEL stopSelector,[name] NSString *name,[type] NSString *type)" -->
 <div class="memitem">
@@ -174,6 +183,69 @@
 
 </div>
 </div>
+<a class="anchor" id="a02ff7fa908d0e8f016ea5ef7b7d46ab2"></a><!-- doxytag: member="FTAnimationManager::backInAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:" ref="a02ff7fa908d0e8f016ea5ef7b7d46ab2" args="(UIView *view,[withFade] BOOL fade,[direction] FTAnimationDirection direction,[inView] UIView *enclosingView,[duration] NSTimeInterval duration,[delegate] id delegate,[startSelector] SEL startSelector,[stopSelector] SEL stopSelector)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (CAAnimation *) backInAnimationFor: </td>
+          <td></td>
+          <td class="paramtype">(UIView *)&nbsp;</td>
+          <td class="paramname"> <em>view</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">withFade:</td>
+          <td></td>
+          <td class="paramtype">(BOOL)&nbsp;</td>
+          <td class="paramname"> <em>fade</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">direction:</td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)&nbsp;</td>
+          <td class="paramname"> <em>direction</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">inView:</td>
+          <td></td>
+          <td class="paramtype">(UIView *)&nbsp;</td>
+          <td class="paramname"> <em>enclosingView</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">duration:</td>
+          <td></td>
+          <td class="paramtype">(NSTimeInterval)&nbsp;</td>
+          <td class="paramname"> <em>duration</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">delegate:</td>
+          <td></td>
+          <td class="paramtype">(id)&nbsp;</td>
+          <td class="paramname"> <em>delegate</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">startSelector:</td>
+          <td></td>
+          <td class="paramtype">(SEL)&nbsp;</td>
+          <td class="paramname"> <em>startSelector</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">stopSelector:</td>
+          <td></td>
+          <td class="paramtype">(SEL)&nbsp;</td>
+          <td class="paramname"> <em>stopSelector</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aa3d70c2d22eb38c5f228e7443f8a6aee"></a><!-- doxytag: member="FTAnimationManager::backOutAnimationFor:withFade:direction:duration:delegate:startSelector:stopSelector:" ref="aa3d70c2d22eb38c5f228e7443f8a6aee" args="(UIView *view,[withFade] BOOL fade,[direction] FTAnimationDirection direction,[duration] NSTimeInterval duration,[delegate] id delegate,[startSelector] SEL startSelector,[stopSelector] SEL stopSelector)" -->
 <div class="memitem">
 <div class="memproto">
@@ -195,6 +267,69 @@
           <td></td>
           <td class="paramtype">(<a class="el" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)&nbsp;</td>
           <td class="paramname"> <em>direction</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">duration:</td>
+          <td></td>
+          <td class="paramtype">(NSTimeInterval)&nbsp;</td>
+          <td class="paramname"> <em>duration</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">delegate:</td>
+          <td></td>
+          <td class="paramtype">(id)&nbsp;</td>
+          <td class="paramname"> <em>delegate</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">startSelector:</td>
+          <td></td>
+          <td class="paramtype">(SEL)&nbsp;</td>
+          <td class="paramname"> <em>startSelector</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">stopSelector:</td>
+          <td></td>
+          <td class="paramtype">(SEL)&nbsp;</td>
+          <td class="paramname"> <em>stopSelector</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a10e4184c9216ed4e8c0fd6ef25da4b13"></a><!-- doxytag: member="FTAnimationManager::backOutAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:" ref="a10e4184c9216ed4e8c0fd6ef25da4b13" args="(UIView *view,[withFade] BOOL fade,[direction] FTAnimationDirection direction,[inView] UIView *enclosingView,[duration] NSTimeInterval duration,[delegate] id delegate,[startSelector] SEL startSelector,[stopSelector] SEL stopSelector)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (CAAnimation *) backOutAnimationFor: </td>
+          <td></td>
+          <td class="paramtype">(UIView *)&nbsp;</td>
+          <td class="paramname"> <em>view</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">withFade:</td>
+          <td></td>
+          <td class="paramtype">(BOOL)&nbsp;</td>
+          <td class="paramname"> <em>fade</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">direction:</td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)&nbsp;</td>
+          <td class="paramname"> <em>direction</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">inView:</td>
+          <td></td>
+          <td class="paramtype">(UIView *)&nbsp;</td>
+          <td class="paramname"> <em>enclosingView</em></td>
         </tr>
         <tr>
           <td class="paramkey">duration:</td>
@@ -653,6 +788,8 @@
       </table>
 </div>
 <div class="memdoc">
+<p>Get a reference to the <a class="el" href="interface_f_t_animation_manager.html" title="The FTAnimationManager class is the heart of the FTUtils Core Animation utilities...">FTAnimationManager</a> singleton creating it if necessary. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The singleton. </dd></dl>
 
 </div>
 </div>
@@ -671,6 +808,63 @@
           <td></td>
           <td class="paramtype">(<a class="el" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)&nbsp;</td>
           <td class="paramname"> <em>direction</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">duration:</td>
+          <td></td>
+          <td class="paramtype">(NSTimeInterval)&nbsp;</td>
+          <td class="paramname"> <em>duration</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">delegate:</td>
+          <td></td>
+          <td class="paramtype">(id)&nbsp;</td>
+          <td class="paramname"> <em>delegate</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">startSelector:</td>
+          <td></td>
+          <td class="paramtype">(SEL)&nbsp;</td>
+          <td class="paramname"> <em>startSelector</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">stopSelector:</td>
+          <td></td>
+          <td class="paramtype">(SEL)&nbsp;</td>
+          <td class="paramname"> <em>stopSelector</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a84c71b6240b166e7855655e366323fd3"></a><!-- doxytag: member="FTAnimationManager::slideInAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:" ref="a84c71b6240b166e7855655e366323fd3" args="(UIView *view,[direction] FTAnimationDirection direction,[inView] UIView *enclosingView,[duration] NSTimeInterval duration,[delegate] id delegate,[startSelector] SEL startSelector,[stopSelector] SEL stopSelector)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (CAAnimation *) slideInAnimationFor: </td>
+          <td></td>
+          <td class="paramtype">(UIView *)&nbsp;</td>
+          <td class="paramname"> <em>view</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">direction:</td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)&nbsp;</td>
+          <td class="paramname"> <em>direction</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">inView:</td>
+          <td></td>
+          <td class="paramtype">(UIView *)&nbsp;</td>
+          <td class="paramname"> <em>enclosingView</em></td>
         </tr>
         <tr>
           <td class="paramkey">duration:</td>
@@ -758,6 +952,63 @@
 
 </div>
 </div>
+<a class="anchor" id="a7760726f35682ff01cd622dc1e75a7d0"></a><!-- doxytag: member="FTAnimationManager::slideOutAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:" ref="a7760726f35682ff01cd622dc1e75a7d0" args="(UIView *view,[direction] FTAnimationDirection direction,[inView] UIView *enclosingView,[duration] NSTimeInterval duration,[delegate] id delegate,[startSelector] SEL startSelector,[stopSelector] SEL stopSelector)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (CAAnimation *) slideOutAnimationFor: </td>
+          <td></td>
+          <td class="paramtype">(UIView *)&nbsp;</td>
+          <td class="paramname"> <em>view</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">direction:</td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="_f_t_animation_manager_8h.html#aed874e8d037f387b6c0f576313ba0308">FTAnimationDirection</a>)&nbsp;</td>
+          <td class="paramname"> <em>direction</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">inView:</td>
+          <td></td>
+          <td class="paramtype">(UIView *)&nbsp;</td>
+          <td class="paramname"> <em>enclosingView</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">duration:</td>
+          <td></td>
+          <td class="paramtype">(NSTimeInterval)&nbsp;</td>
+          <td class="paramname"> <em>duration</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">delegate:</td>
+          <td></td>
+          <td class="paramtype">(id)&nbsp;</td>
+          <td class="paramname"> <em>delegate</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">startSelector:</td>
+          <td></td>
+          <td class="paramtype">(SEL)&nbsp;</td>
+          <td class="paramname"> <em>startSelector</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">stopSelector:</td>
+          <td></td>
+          <td class="paramtype">(SEL)&nbsp;</td>
+          <td class="paramname"> <em>stopSelector</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/><h2>Field Documentation</h2>
 <a class="anchor" id="aff1b2874908266ce8eebaad5209b6ac3"></a><!-- doxytag: member="FTAnimationManager::overshootThreshold_" ref="aff1b2874908266ce8eebaad5209b6ac3" args="" -->
 <div class="memitem">
@@ -770,7 +1021,7 @@
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_f_t_animation_manager_8h_source.html#l00088">88</a> of file <a class="el" href="_f_t_animation_manager_8h_source.html">FTAnimationManager.h</a>.</p>
+<p>Definition at line <a class="el" href="_f_t_animation_manager_8h_source.html#l00162">162</a> of file <a class="el" href="_f_t_animation_manager_8h_source.html">FTAnimationManager.h</a>.</p>
 
 </div>
 </div>
@@ -785,8 +1036,9 @@
       </table>
 </div>
 <div class="memdoc">
+<p>The maximum value (in pixels) that the bouncing animations will travel past their end vlaue before coming to rest. The default is 10.0. </p>
 
-<p>Definition at line <a class="el" href="_f_t_animation_manager_8h_source.html#l00091">91</a> of file <a class="el" href="_f_t_animation_manager_8h_source.html">FTAnimationManager.h</a>.</p>
+<p>Definition at line <a class="el" href="_f_t_animation_manager_8h_source.html#l00168">168</a> of file <a class="el" href="_f_t_animation_manager_8h_source.html">FTAnimationManager.h</a>.</p>
 
 </div>
 </div>
@@ -794,7 +1046,7 @@
 <li>Headers/FTUtils/<a class="el" href="_f_t_animation_manager_8h_source.html">FTAnimationManager.h</a></li>
 </ul>
 </div>
-<hr size="1"/><address style="text-align: right;"><small>Generated on Wed Dec 23 15:36:49 2009 for FTUtils by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Wed Oct 13 16:15:00 2010 for FTUtils by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

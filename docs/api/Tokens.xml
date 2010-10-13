@@ -8,6 +8,7 @@
       <Scope></Scope>
     </TokenIdentifier>
     <Path>_f_t_animation_manager_8h.html</Path>
+    <Abstract>The FTAnimationManager.h file is the heart of the FTUtils animation utilites.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -18,6 +19,16 @@
     </TokenIdentifier>
     <Path>_f_t_animation_manager_8h.html</Path>
     <Anchor>aed874e8d037f387b6c0f576313ba0308</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>FTAnimationOutOfViewCenterPoint</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+      <Scope></Scope>
+    </TokenIdentifier>
+    <Path>_f_t_animation_manager_8h.html</Path>
+    <Anchor>af97c3953245f45c41baca03d736e8ec6</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -251,12 +262,53 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>kFTAnimationTopLeft</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+      <Scope></Scope>
+    </TokenIdentifier>
+    <Path>_f_t_animation_manager_8h.html</Path>
+    <Anchor>af7d4e322c20617fe2fbe6084d181c939afbdbad6a52b215058983051cca316ce6</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>kFTAnimationTopRight</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+      <Scope></Scope>
+    </TokenIdentifier>
+    <Path>_f_t_animation_manager_8h.html</Path>
+    <Anchor>af7d4e322c20617fe2fbe6084d181c939affbbe704fd9f89f151bc334461c1a754</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>kFTAnimationBottomLeft</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+      <Scope></Scope>
+    </TokenIdentifier>
+    <Path>_f_t_animation_manager_8h.html</Path>
+    <Anchor>af7d4e322c20617fe2fbe6084d181c939a944d8b7132f9f52c97d8f2e70c84be94</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>kFTAnimationBottomRight</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+      <Scope></Scope>
+    </TokenIdentifier>
+    <Path>_f_t_animation_manager_8h.html</Path>
+    <Anchor>af7d4e322c20617fe2fbe6084d181c939afc46b34a1849c96d08efb0e2a5ed4111</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>FTUtils.h</Name>
       <APILanguage>c</APILanguage>
       <Type>file</Type>
       <Scope></Scope>
     </TokenIdentifier>
     <Path>_f_t_utils_8h.html</Path>
+    <Abstract>A collection of macros used throughout the FTUtils set of tools.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -456,6 +508,7 @@
       <Scope></Scope>
     </TokenIdentifier>
     <Path>interface_f_t_animation_manager.html</Path>
+    <Abstract>The FTAnimationManager class is the heart of the FTUtils Core Animation utilities...</Abstract>
     <DeclaredIn>FTAnimationManager.h</DeclaredIn>
   </Token>
   <Token>
@@ -520,6 +573,26 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>slideInAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>FTAnimationManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_f_t_animation_manager.html</Path>
+    <Anchor>a84c71b6240b166e7855655e366323fd3</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>slideOutAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>FTAnimationManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_f_t_animation_manager.html</Path>
+    <Anchor>a7760726f35682ff01cd622dc1e75a7d0</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>backOutAnimationFor:withFade:direction:duration:delegate:startSelector:stopSelector:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
@@ -537,6 +610,26 @@
     </TokenIdentifier>
     <Path>interface_f_t_animation_manager.html</Path>
     <Anchor>a9adb30a0639d8cb4674b67987575821d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>backOutAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>FTAnimationManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_f_t_animation_manager.html</Path>
+    <Anchor>a10e4184c9216ed4e8c0fd6ef25da4b13</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>backInAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>FTAnimationManager</Scope>
+    </TokenIdentifier>
+    <Path>interface_f_t_animation_manager.html</Path>
+    <Anchor>a02ff7fa908d0e8f016ea5ef7b7d46ab2</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -798,6 +891,26 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>slideInFrom:inView:duration:delegate:startSelector:stopSelector:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>UIView(FTAnimationAdditions)</Scope>
+    </TokenIdentifier>
+    <Path>interface_u_i_view_07_f_t_animation_additions_08.html</Path>
+    <Anchor>a03e0cc18247c848b4c10eb137b2b75f3</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>slideOutTo:inView:duration:delegate:startSelector:stopSelector:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>UIView(FTAnimationAdditions)</Scope>
+    </TokenIdentifier>
+    <Path>interface_u_i_view_07_f_t_animation_additions_08.html</Path>
+    <Anchor>a98bb6a880bd4bfb0e46e506b9e39816b</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>backOutTo:withFade:duration:delegate:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
@@ -835,6 +948,26 @@
     </TokenIdentifier>
     <Path>interface_u_i_view_07_f_t_animation_additions_08.html</Path>
     <Anchor>ae3de723e3c4744e41a7a17691f3783d1</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>backOutTo:inView:withFade:duration:delegate:startSelector:stopSelector:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>UIView(FTAnimationAdditions)</Scope>
+    </TokenIdentifier>
+    <Path>interface_u_i_view_07_f_t_animation_additions_08.html</Path>
+    <Anchor>a2904e74e29246ab07efa80289bceaea7</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>backInFrom:inView:withFade:duration:delegate:startSelector:stopSelector:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>UIView(FTAnimationAdditions)</Scope>
+    </TokenIdentifier>
+    <Path>interface_u_i_view_07_f_t_animation_additions_08.html</Path>
+    <Anchor>a4f096b6180c5955882f517379c047434</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
