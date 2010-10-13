@@ -24,7 +24,13 @@ If you're viewing the API docs on [ftutils.com](http://ftutils.com/ "FTUtils") s
 Contributors
 ------------
 
-FTUtils was written by [Nathan Eror](http://www.neror.com/ "neror.com") ([@neror](http://twitter.com/neror)) for use in iPhone games built and distributed by [Free Time Studios](http://www.freetimestudios.com/ "Free Time Studios") ([@freetimestudios](http://twitter.com/freetimestudios)).
+FTUtils was created by [Nathan Eror](http://www.neror.com/ "neror.com") ([@neror](http://twitter.com/neror)) of [Free Time Studios](http://www.freetimestudios.com). 
+
+The following people have also contributed code to the project:
+
+* [Corey Floyd](http://www.theflyingjalapenolives.com/)
+* [Ben Lenarts](http://github.com/benlenarts)
+
 
 License
 -------
