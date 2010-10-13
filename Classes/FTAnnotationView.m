@@ -189,7 +189,7 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
   if ([keyPath isEqualToString:@"anchorPosition"]) {
-    //TODO: Calculate the height and move the anchorPoint if necessary
+    //TODO: Calculate the height and move the anchorPoint to the top if necessary
   	[self setNeedsLayout];
   } else if([keyPath isEqualToString:@"titleText"]) {
     self.titleLabel.text = self.titleText;
@@ -277,7 +277,7 @@
   [subjectContainerView addSubview:self];
   
   if(animated) {
-    [self popIn:.3f delegate:nil];
+    [self popIn:.33f delegate:nil];
   }
 }
 
