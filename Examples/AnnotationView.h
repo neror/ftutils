@@ -24,18 +24,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AnimationChaining : UIViewController {
-  UIView *redView_;
-  UIView *greenView_;
-  UIView *blueView_;
-  
-  UIButton *performAnimationButton_;
+@class FTAnnotationView;
+
+@interface AnnotationView : UIViewController {
+
 }
 
-@property(nonatomic, retain) UIView *redView;
-@property(nonatomic, retain) UIView *blueView;
-@property(nonatomic, retain) UIView *greenView;
-
-@property(nonatomic,retain) UIButton *performAnimationButton;
+@property (nonatomic, retain) IBOutlet FTAnnotationView *annotationView;
 
 @end

@@ -10,6 +10,8 @@
 		AA747D9F0F9514B9006C5449 /* FTUtils_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* FTUtils_Prefix.pch */; };
 		DF12FE4712665DDA000E8B89 /* FTAnnotationView.h in Headers */ = {isa = PBXBuildFile; fileRef = DF12FE4412665DDA000E8B89 /* FTAnnotationView.h */; };
 		DF12FE4812665DDA000E8B89 /* FTAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF12FE4512665DDA000E8B89 /* FTAnnotationView.m */; };
+		DF12FE7212665F5C000E8B89 /* AnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF12FE7012665F5C000E8B89 /* AnnotationView.m */; };
+		DF12FE7312665F5C000E8B89 /* AnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF12FE7112665F5C000E8B89 /* AnnotationView.xib */; };
 		DF16614D1174CAC700054B46 /* AnimationChaining.m in Sources */ = {isa = PBXBuildFile; fileRef = DF16614C1174CAC700054B46 /* AnimationChaining.m */; };
 		DF1E44EF10C29C1500F80FC0 /* FTAnimation+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1E44EE10C29C1500F80FC0 /* FTAnimation+UIView.m */; };
 		DF1E44F010C29C1500F80FC0 /* FTAnimation+UIView.h in Headers */ = {isa = PBXBuildFile; fileRef = DF1E44ED10C29C1500F80FC0 /* FTAnimation+UIView.h */; };
@@ -81,6 +83,9 @@
 		D2AAC07E0554694100DB518D /* libFTUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFTUtils.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF12FE4412665DDA000E8B89 /* FTAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTAnnotationView.h; path = FTUtils/FTAnnotationView.h; sourceTree = "<group>"; };
 		DF12FE4512665DDA000E8B89 /* FTAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAnnotationView.m; sourceTree = "<group>"; };
+		DF12FE6F12665F5C000E8B89 /* AnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationView.h; sourceTree = "<group>"; };
+		DF12FE7012665F5C000E8B89 /* AnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationView.m; sourceTree = "<group>"; };
+		DF12FE7112665F5C000E8B89 /* AnnotationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnnotationView.xib; sourceTree = "<group>"; };
 		DF16614B1174CAC700054B46 /* AnimationChaining.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationChaining.h; sourceTree = "<group>"; };
 		DF16614C1174CAC700054B46 /* AnimationChaining.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationChaining.m; sourceTree = "<group>"; };
 		DF19192010E2A94900906A0D /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
@@ -287,6 +292,7 @@
 		DF3E064410C71181004434C3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DF12FE7112665F5C000E8B89 /* AnnotationView.xib */,
 				DFFDB68110C2EA1400F7BF95 /* Checkers.png */,
 				DFFDB62510C2E67100F7BF95 /* ViewBackground.png */,
 			);
@@ -314,6 +320,8 @@
 				DF3E075A10C7278D004434C3 /* FlyOut.m */,
 				DF16614B1174CAC700054B46 /* AnimationChaining.h */,
 				DF16614C1174CAC700054B46 /* AnimationChaining.m */,
+				DF12FE6F12665F5C000E8B89 /* AnnotationView.h */,
+				DF12FE7012665F5C000E8B89 /* AnnotationView.m */,
 				DFFDB5BC10C2DDB600F7BF95 /* Supporting Classes */,
 				DF3E064410C71181004434C3 /* Resources */,
 			);
@@ -448,6 +456,7 @@
 			files = (
 				DFFDB62610C2E67100F7BF95 /* ViewBackground.png in Resources */,
 				DFFDB68210C2EA1400F7BF95 /* Checkers.png in Resources */,
+				DF12FE7312665F5C000E8B89 /* AnnotationView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +518,7 @@
 				DF3E073410C72689004434C3 /* FallInOut.m in Sources */,
 				DF3E075B10C7278D004434C3 /* FlyOut.m in Sources */,
 				DF16614D1174CAC700054B46 /* AnimationChaining.m in Sources */,
+				DF12FE7212665F5C000E8B89 /* AnnotationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,8 +554,8 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = /usr/local/lib;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
-				OTHER_CFLAGS = "-D__IPHONE_OS_VERSION_MIN_REQUIRED=030103";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				OTHER_CFLAGS = "-D__IPHONE_OS_VERSION_MIN_REQUIRED=030200";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -572,7 +582,8 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = /usr/local/lib;
-				OTHER_CFLAGS = "-D__IPHONE_OS_VERSION_MIN_REQUIRED=030103";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				OTHER_CFLAGS = "-D__IPHONE_OS_VERSION_MIN_REQUIRED=030200";
 				PRODUCT_NAME = FTUtils;
 				SDKROOT = iphoneos4.1;
 			};
@@ -592,7 +603,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphonesimulator3.0;
+				SDKROOT = iphoneos4.1;
 			};
 			name = Debug;
 		};
@@ -609,7 +620,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos4.1;
 			};
 			name = Release;
 		};
@@ -685,8 +696,8 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "FTAnimationExamples-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
-				OTHER_CFLAGS = "-D__IPHONE_OS_VERSION_MIN_REQUIRED=030103";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				OTHER_CFLAGS = "-D__IPHONE_OS_VERSION_MIN_REQUIRED=030200";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -706,14 +717,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Don't Code Sign";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "FTAnimationExamples-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				OTHER_CFLAGS = "-D__IPHONE_OS_VERSION_MIN_REQUIRED=030200";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -722,7 +736,8 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = FTAnimationExamples;
-				SDKROOT = iphoneos3.1.2;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos4.1;
 				ZERO_LINK = NO;
 			};
 			name = Release;
