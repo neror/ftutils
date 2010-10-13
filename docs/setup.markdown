@@ -1,7 +1,6 @@
 ---
 layout: default
 title: FTUtils Setup
-permalink: setup
 
 ---
 

@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Building and Installing the API Docs and Xcode Docset
-permalink: docset
 
 ---
 
