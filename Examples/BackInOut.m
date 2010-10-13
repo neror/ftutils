@@ -37,11 +37,9 @@
 
 - (void)performAnimation:(id)sender {
   if(self.viewToAnimate.hidden) {
-	  //[self.viewToAnimate backInFrom:self.directionControl.selectedSegmentIndex+4 withFade:NO duration:.4 delegate:nil];
-	  [self.viewToAnimate backInFrom:self.directionControl.selectedSegmentIndex+4 inView:self.viewToAnimate.superview withFade:NO duration:0.4 delegate:nil startSelector:nil stopSelector:nil];
+	  [self.viewToAnimate backInFrom:self.directionControl.selectedSegmentIndex inView:self.viewToAnimate.superview withFade:NO duration:0.4 delegate:nil startSelector:nil stopSelector:nil];
   } else {
-	  //[self.viewToAnimate backOutTo:self.directionControl.selectedSegmentIndex+4 withFade:NO duration:.4 delegate:nil];
-	  [self.viewToAnimate backOutTo:self.directionControl.selectedSegmentIndex+4 inView:self.viewToAnimate.superview withFade:NO duration:0.4 delegate:nil startSelector:nil stopSelector:nil];
+	  [self.viewToAnimate backOutTo:self.directionControl.selectedSegmentIndex inView:self.viewToAnimate.superview withFade:NO duration:0.4 delegate:nil startSelector:nil stopSelector:nil];
 
   }
 }

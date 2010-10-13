@@ -79,7 +79,7 @@
   [self.performAnimationButton setTitle:@"Run Animation" forState:UIControlStateNormal];
   [self.performAnimationButton addTarget:self action:@selector(performAnimation:) forControlEvents:UIControlEventTouchUpInside];
   
-  NSArray *directionItems = [NSArray arrayWithObjects:@"Top", @"Right", @"Bottom", @"Left", nil];
+  NSArray *directionItems = [NSArray arrayWithObjects:@"T", @"R", @"B", @"L", @"TL", @"TR", @"BL", @"BR", nil];
   self.directionControl = [[[UISegmentedControl alloc] initWithItems:directionItems] autorelease];
   self.directionControl.selectedSegmentIndex = 0;
   self.directionControl.frame = CGRectMake(10., 300., 300., 44.);
