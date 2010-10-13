@@ -18,4 +18,4 @@ docs: docbuild
 	cp -R $(REPO_TEMP)/apidocs/html/ $(DOCS_DEST)
 
 serve:
-	$(JEKYLL) --pygments
+	$(JEKYLL) --pygments --safe
