@@ -216,6 +216,23 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
+		DF12FDBB12664B5A000E8B89 /* General Utilites */ = {
+			isa = PBXGroup;
+			children = (
+				DFFBF80910ADF405008DB0B9 /* FTUtils+NSObject.m */,
+			);
+			name = "General Utilites";
+			sourceTree = "<group>";
+		};
+		DF12FDBC12664B6E000E8B89 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				DF2962E90FE18E0000B9D71D /* FTAnimationManager.m */,
+				DF1E44EE10C29C1500F80FC0 /* FTAnimation+UIView.m */,
+			);
+			name = Animation;
+			sourceTree = "<group>";
+		};
 		DF2962DE0FE18E0000B9D71D /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,9 +256,8 @@
 		DF2962E80FE18E0000B9D71D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DFFBF80910ADF405008DB0B9 /* FTUtils+NSObject.m */,
-				DF2962E90FE18E0000B9D71D /* FTAnimationManager.m */,
-				DF1E44EE10C29C1500F80FC0 /* FTAnimation+UIView.m */,
+				DF12FDBC12664B6E000E8B89 /* Animation */,
+				DF12FDBB12664B5A000E8B89 /* General Utilites */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -510,12 +526,16 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FTUtils_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
+				OTHER_CFLAGS = "-D__IPHONE_OS_VERSION_MIN_REQUIRED=030103";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = FTUtils;
+				SDKROOT = iphoneos4.1;
 			};
 			name = Debug;
 		};
@@ -524,6 +544,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "Don't Code Sign";
 				DSTROOT = /tmp/FTUtils.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -533,8 +554,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FTUtils_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = /usr/local/lib;
+				OTHER_CFLAGS = "-D__IPHONE_OS_VERSION_MIN_REQUIRED=030103";
 				PRODUCT_NAME = FTUtils;
+				SDKROOT = iphoneos4.1;
 			};
 			name = Release;
 		};
@@ -636,15 +660,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Don't Code Sign";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Examples/Examples_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "FTAnimationExamples-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
+				OTHER_CFLAGS = "-D__IPHONE_OS_VERSION_MIN_REQUIRED=030103";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -655,6 +681,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = FTAnimationExamples;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos4.1;
 			};
 			name = Debug;
