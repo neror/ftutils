@@ -66,11 +66,11 @@
   [self removeObserver:self forKeyPath:@"bodyText"];
   self.titleText = nil;
   self.bodyText = nil;
-  [gradient_ release], gradient_ = nil;
-  [bubble_ release], bubble_ = nil;
-  [arrow_ release], arrow_ = nil;
-  [titleLabel_ release], titleLabel_ = nil;
-  [bodyLabel_ release], bodyLabel_ = nil;
+  FTRELEASE(gradient_);
+  FTRELEASE(bubble_);
+  FTRELEASE(arrow_);
+  FTRELEASE(titleLabel_);
+  FTRELEASE(bodyLabel_);
   [super dealloc];
 }
 
