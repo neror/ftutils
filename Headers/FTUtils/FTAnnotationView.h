@@ -39,6 +39,9 @@
 @property (assign) CGPoint anchorPosition;
 @property (copy) NSString *titleText;
 @property (copy) NSString *bodyText;
+@property (assign) CGFloat bubbleCornerRadius;
+@property (assign) CGFloat arrowWidth;
+@property (readonly) CGFloat windowMargin;
 
 - (void)showForRect:(CGRect)subjectRect inView:(UIView *)subjectContainerView animated:(BOOL)animated;
 - (void)dismiss;

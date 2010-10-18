@@ -25,8 +25,6 @@
 #import <FTUtils/FTAnnotationView.h>
 #import <FTUtils/FTAnimation.h>
 
-#define WINDOW_MARGIN 20.f
-
 @interface FTAnnotationView (Private)
 
 - (void)setupView;
@@ -42,9 +40,9 @@
 
 @implementation FTAnnotationView
 
-@synthesize anchorPosition;
 @synthesize titleText;
 @synthesize bodyText;
+@synthesize arrowWidth;
 
 #pragma mark -
 #pragma mark Object creation
@@ -61,7 +59,6 @@
 }
 
 - (void)dealloc {
-  [self removeObserver:self forKeyPath:@"anchorPosition"];
   [self removeObserver:self forKeyPath:@"titleText"];
   [self removeObserver:self forKeyPath:@"bodyText"];
   self.titleText = nil;
@@ -75,6 +72,9 @@
 }
 
 - (void)setupView {
+  self.bubbleCornerRadius = 6.f;
+  self.arrowWidth = 20.f;
+  
   self.opaque = NO;
   self.layer.backgroundColor = [[UIColor clearColor] CGColor];
   self.layer.anchorPoint = CGPointMake(.5f, 1.f);
@@ -91,29 +91,52 @@
   self.bodyLabel.text = @"The Body";
   [self addSubview:self.bodyLabel];
   
-  [self addObserver:self forKeyPath:@"anchorPosition" options:NSKeyValueObservingOptionNew context:nil];
   [self addObserver:self forKeyPath:@"titleText" options:NSKeyValueObservingOptionNew context:nil];
   [self addObserver:self forKeyPath:@"bodyText" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 #pragma mark -
+#pragma mark Simple properties
+
+- (CGPoint)anchorPosition {
+  return anchorPosition_;
+}
+
+- (void)setAnchorPosition:(CGPoint)newPosition {
+  NSAssert(self.window, @"We need a window");
+  CGRect windowBounds = CGRectInset(self.window.bounds, self.windowMargin, self.windowMargin);
+  newPosition.x = fminf(fmaxf(newPosition.x, CGRectGetMinX(windowBounds)), CGRectGetMaxX(windowBounds));
+  anchorPosition_ = newPosition;
+  [self setNeedsLayout];
+}
+
+- (CGFloat)windowMargin {
+  return (self.arrowWidth / 2.f) + self.bubbleCornerRadius;
+}
+
+- (void)setBubbleCornerRadius:(CGFloat)radius {
+  self.bubbleLayer.cornerRadius = radius;
+}
+
+- (CGFloat)bubbleCornerRadius {
+  return self.bubbleLayer.cornerRadius;
+}
+
 #pragma mark Lazy properties
 
 - (CALayer *)bubbleLayer {
   if(!bubble_) {
     bubble_ = [[CALayer alloc] init];
-    bubble_.cornerRadius = 6.f;
     bubble_.backgroundColor = [[UIColor blackColor] CGColor];
   }
   return bubble_;
 }
 
 - (CAShapeLayer *)arrowLayer {
-  if(!arrow_)
-  {
+  if(!arrow_) {
     arrow_ = [[CAShapeLayer alloc] init];
     
-    CGRect arrowRect = CGRectMake(0.f, 0.f, 20.f, 10.f);
+    CGRect arrowRect = CGRectMake(0.f, 0.f, self.arrowWidth, self.arrowWidth / 2.f);
     arrow_.bounds = arrowRect;
     
     CGMutablePathRef arrowPath = CGPathCreateMutable();
@@ -188,10 +211,7 @@
 #pragma mark KVO observering
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-  if ([keyPath isEqualToString:@"anchorPosition"]) {
-    //TODO: Calculate the height and move the anchorPoint to the top if necessary
-  	[self setNeedsLayout];
-  } else if([keyPath isEqualToString:@"titleText"]) {
+  if([keyPath isEqualToString:@"titleText"]) {
     self.titleLabel.text = self.titleText;
     [self setNeedsLayout];
   } else if([keyPath isEqualToString:@"bodyText"]) {
@@ -204,11 +224,12 @@
 #pragma mark View display/drawing
 
 - (void)sizeLabelsToFitText {
+  NSAssert(self.window, @"We need a window");
   NSArray *labels = [NSArray arrayWithObjects:self.titleLabel, self.bodyLabel, nil];
   
   CGSize maxSize = self.window.bounds.size;
-  maxSize.width -= WINDOW_MARGIN * 2.f;
-  maxSize.height -= WINDOW_MARGIN * 2.f;
+  maxSize.width -= self.windowMargin * 2.f;
+  maxSize.height -= self.windowMargin * 2.f;
   
   CGFloat longestWidth = 0.f;
   
@@ -228,10 +249,16 @@
 }
 
 - (void)adjustAnchorPoint {
+  NSAssert(self.window, @"We need a window");
   CGRect layerFrame = self.layer.frame;
-  CGRect windowBounds = CGRectInset(self.window.bounds, WINDOW_MARGIN, WINDOW_MARGIN);
-  if(layerFrame.origin.x < windowBounds.origin.x || CGRectGetMaxX(layerFrame) > CGRectGetMaxX(windowBounds)) {
-    layerFrame.origin.x = windowBounds.origin.x;
+  CGRect insetWindow = CGRectInset(self.window.bounds, self.windowMargin, self.windowMargin);
+  CGRect windowBounds = [self.layer.superlayer convertRect:insetWindow fromLayer:self.window.layer];
+  
+  if(CGRectGetMinX(layerFrame) < CGRectGetMinX(windowBounds) || 
+     CGRectGetMaxX(layerFrame) > CGRectGetMaxX(windowBounds))
+  {
+    layerFrame.origin.x = fminf(fmaxf(CGRectGetMinX(layerFrame), CGRectGetMinX(windowBounds)),
+                                CGRectGetMaxX(windowBounds) - layerFrame.size.width);
     CGPoint anchorPoint = self.layer.anchorPoint;
     anchorPoint.x = self.anchorPosition.x / layerFrame.size.width;
     self.layer.anchorPoint = anchorPoint;
@@ -252,15 +279,14 @@
   layerBounds.size = fullSize;
   self.layer.bounds = layerBounds;
   self.layer.position = self.anchorPosition;
-  
+
   [self adjustAnchorPoint];
   
   CGRect bubbleFrame = self.layer.bounds;
   bubbleFrame.size.height -= (self.arrowLayer.bounds.size.height - 1.f);
   self.bubbleLayer.frame = bubbleFrame;
   
-  self.arrowLayer.position = CGPointMake(self.layer.bounds.size.width * self.layer.anchorPoint.x, 
-                                         self.layer.bounds.size.height * self.layer.anchorPoint.y);
+  self.arrowLayer.position = [self.layer convertPoint:self.layer.position fromLayer:self.layer.superlayer];
   
   self.gradientLayer.frame = CGRectInset(self.bubbleLayer.bounds, 1.f, 1.f);
   self.gradientLayer.cornerRadius = self.bubbleLayer.cornerRadius;
@@ -273,9 +299,8 @@
 }
 
 - (void)showForRect:(CGRect)subjectRect inView:(UIView *)subjectContainerView animated:(BOOL)animated {
-  self.anchorPosition = CGPointMake(CGRectGetMidX(subjectRect), CGRectGetMinY(subjectRect));
   [subjectContainerView addSubview:self];
-  
+  self.anchorPosition = CGPointMake(CGRectGetMidX(subjectRect), CGRectGetMinY(subjectRect));
   if(animated) {
     [self popIn:.33f delegate:nil];
   }
