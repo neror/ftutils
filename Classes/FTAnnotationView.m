@@ -61,8 +61,8 @@
 - (void)dealloc {
   [self removeObserver:self forKeyPath:@"titleText"];
   [self removeObserver:self forKeyPath:@"bodyText"];
-  self.titleText = nil;
-  self.bodyText = nil;
+  FTRELEASE(titleText);
+  FTRELEASE(bodyText);
   FTRELEASE(gradient_);
   FTRELEASE(bubble_);
   FTRELEASE(arrow_);
