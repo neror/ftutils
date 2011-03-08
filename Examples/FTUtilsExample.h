@@ -22,42 +22,11 @@
  THE SOFTWARE.
 */
 
-#import "FTUtils+UIGestureRecognizer.h"
-#import <objc/runtime.h>
+#import <Foundation/Foundation.h>
 
-@interface UIGestureRecognizer()
 
-- (void)handleAction:(UIGestureRecognizer *)recognizer;
+@protocol FTUtilsExample <NSObject>
 
-@end
-
-static char * kFTGestureActionKey = "ft_gestureAction";
-
-@implementation UIGestureRecognizer(FTBlockAdditions)
-
-+ (id)recognizer {
-  return [self recognizerWithActionBlock:nil];
-}
-
-+ (id)recognizerWithActionBlock:(FTUIGestureActionBlock)action {
-  id me = [[self class] alloc];
-  me = [me initWithTarget:me action:@selector(handleAction:)];
-  [me setActionBlock:action];
-  return [me autorelease];
-}
-
-- (void)handleAction:(UIGestureRecognizer *)recognizer {
-  if(self.actionBlock) {
-    self.actionBlock(recognizer);
-  }
-}
-
-- (FTUIGestureActionBlock)actionBlock {
-  return objc_getAssociatedObject(self, kFTGestureActionKey);
-}
-
-- (void)setActionBlock:(FTUIGestureActionBlock)actionBlock {
-  objc_setAssociatedObject(self, kFTGestureActionKey, actionBlock, OBJC_ASSOCIATION_COPY);
-}
++ (NSString *)displayName;
 
 @end

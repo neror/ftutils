@@ -23,9 +23,9 @@
 */
 
 #import <UIKit/UIKit.h>
+#import "FTUtilsExample.h"
 
-
-@interface SimpleAnimationExample : UIViewController {
+@interface SimpleAnimationExample : UIViewController<FTUtilsExample> {
   UIImageView *viewToAnimate_;
   UIButton *performAnimationButton_;
   UISegmentedControl *directionControl_;

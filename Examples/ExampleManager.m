@@ -22,6 +22,7 @@
  THE SOFTWARE.
 */
 
+#import "FTUtilsExample.h"
 #import "ExampleManager.h"
 #import <objc/runtime.h>
 #import "BackInOut.h"
@@ -32,16 +33,11 @@
 #import "FallInOut.h"
 #import "FlyOut.h"
 #import "AnimationChaining.h"
+#import "GestureRecognizerBlocks.h"
 
 @interface ExampleManager ()
 
 + (ExampleManager *)sharedSampleManager;
-
-@end
-
-@interface UIViewController (ThisIsHereToAviodACompilerWarning)
-
-+ (NSString *)displayName;
 
 @end
 
@@ -66,6 +62,7 @@ static ExampleManager *sharedSampleManager = nil;
   if (self != nil) {
     groups_ = [[NSArray alloc] initWithObjects:@"Animating Single Views",
                                                @"Advanced Features",
+                                               @"Non-Animation Features",
                                                nil];
     
     samples_ = [[NSArray alloc] initWithObjects:[NSArray arrayWithObjects:[BackInOut class], 
@@ -77,6 +74,7 @@ static ExampleManager *sharedSampleManager = nil;
                                                                           [FlyOut class],
                                                                           nil], 
                                                 [NSArray arrayWithObject:[AnimationChaining class]],
+                                                [NSArray arrayWithObject:[GestureRecognizerBlocks class]],
                                                 nil]; 
   }
   return self;
@@ -103,7 +101,7 @@ static ExampleManager *sharedSampleManager = nil;
 + (NSString *)sampleNameAtIndexPath:(NSIndexPath *)indexPath {
   ExampleManager *SELF = [ExampleManager sharedSampleManager];
   NSArray *samples = [SELF->samples_ objectAtIndex:indexPath.section];
-  Class clazz = [samples objectAtIndex:indexPath.row];
+  Class<FTUtilsExample> clazz = [samples objectAtIndex:indexPath.row];
   return [clazz displayName];
 }
 
@@ -117,7 +115,7 @@ static ExampleManager *sharedSampleManager = nil;
 
 + (NSString *)groupTitleAtIndex:(NSUInteger)index {
   ExampleManager *SELF = [ExampleManager sharedSampleManager];
- return [[[SELF->groups_ objectAtIndex:index] copy] autorelease];
+  return [[[SELF->groups_ objectAtIndex:index] copy] autorelease];
 }
 
 @end

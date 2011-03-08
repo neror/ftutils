@@ -37,6 +37,7 @@
 		DF3E073410C72689004434C3 /* FallInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3E073310C72689004434C3 /* FallInOut.m */; };
 		DF3E075B10C7278D004434C3 /* FlyOut.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3E075A10C7278D004434C3 /* FlyOut.m */; };
 		DFA2EA8A10C2AC89003A76FF /* FTUtils+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFBF80910ADF405008DB0B9 /* FTUtils+NSObject.m */; };
+		DFD9B2A01325B68200774275 /* GestureRecognizerBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD9B29F1325B68100774275 /* GestureRecognizerBlocks.m */; };
 		DFFDB56D10C2DA6400F7BF95 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA50FE19638001E9F62 /* UIKit.framework */; };
 		DFFDB56E10C2DA6400F7BF95 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA40FE19638001E9F62 /* QuartzCore.framework */; };
 		DFFDB56F10C2DA6500F7BF95 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA30FE19638001E9F62 /* Foundation.framework */; };
@@ -118,6 +119,9 @@
 		DF3E075910C7278D004434C3 /* FlyOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyOut.h; sourceTree = "<group>"; };
 		DF3E075A10C7278D004434C3 /* FlyOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyOut.m; sourceTree = "<group>"; };
 		DF6D06470FE1A6F200CC44C6 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
+		DFD9B29D1325B4ED00774275 /* FTUtilsExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTUtilsExample.h; sourceTree = "<group>"; };
+		DFD9B29E1325B68100774275 /* GestureRecognizerBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureRecognizerBlocks.h; sourceTree = "<group>"; };
+		DFD9B29F1325B68100774275 /* GestureRecognizerBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureRecognizerBlocks.m; sourceTree = "<group>"; };
 		DFE4EF0C1035CBCB006A7598 /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
 		DFE4EF131035CC4D006A7598 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = Support/OCMock.framework; sourceTree = "<group>"; };
 		DFFBF80810ADF405008DB0B9 /* FTUtils+NSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FTUtils+NSObject.h"; path = "FTUtils/FTUtils+NSObject.h"; sourceTree = "<group>"; };
@@ -335,6 +339,8 @@
 				DF3E075A10C7278D004434C3 /* FlyOut.m */,
 				DF16614B1174CAC700054B46 /* AnimationChaining.h */,
 				DF16614C1174CAC700054B46 /* AnimationChaining.m */,
+				DFD9B29E1325B68100774275 /* GestureRecognizerBlocks.h */,
+				DFD9B29F1325B68100774275 /* GestureRecognizerBlocks.m */,
 				DFFDB5BC10C2DDB600F7BF95 /* Supporting Classes */,
 				DF3E064410C71181004434C3 /* Resources */,
 			);
@@ -352,6 +358,7 @@
 				DFFDB5A510C2DD1600F7BF95 /* RootViewController.m */,
 				DFFDB57810C2DAED00F7BF95 /* ExamplesAppDelegate.h */,
 				DFFDB57910C2DAED00F7BF95 /* ExamplesAppDelegate.m */,
+				DFD9B29D1325B4ED00774275 /* FTUtilsExample.h */,
 			);
 			name = "Supporting Classes";
 			sourceTree = "<group>";
@@ -531,6 +538,7 @@
 				DF3E075B10C7278D004434C3 /* FlyOut.m in Sources */,
 				DF16614D1174CAC700054B46 /* AnimationChaining.m in Sources */,
 				DF2FCB671325A9D100B38930 /* FTUtils+UIGestureRecognizer.m in Sources */,
+				DFD9B2A01325B68200774275 /* GestureRecognizerBlocks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -794,6 +802,7 @@
 				DF2FCB8C1325AEAE00B38930 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DFFDB4AF10C2DA2300F7BF95 /* Build configuration list for PBXNativeTarget "FTAnimationExamples" */ = {
 			isa = XCConfigurationList;

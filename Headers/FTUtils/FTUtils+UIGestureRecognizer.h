@@ -26,6 +26,9 @@ typedef void (^FTUIGestureActionBlock)(UIGestureRecognizer *recognizer);
 
 @interface UIGestureRecognizer(FTBlockAdditions)
 
-+ (id)recognizerWithAction:(FTUIGestureActionBlock)action;
++ (id)recognizer;
++ (id)recognizerWithActionBlock:(FTUIGestureActionBlock)action;
+
+@property (copy) FTUIGestureActionBlock actionBlock;
 
 @end
