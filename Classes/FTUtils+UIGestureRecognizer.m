@@ -22,6 +22,8 @@
  THE SOFTWARE.
 */
 
+#if NS_BLOCKS_AVAILABLE
+
 #import "FTUtils+UIGestureRecognizer.h"
 #import <objc/runtime.h>
 
@@ -61,3 +63,5 @@ static char * kFTGestureActionKey = "ft_gestureAction";
 }
 
 @end
+
+#endif

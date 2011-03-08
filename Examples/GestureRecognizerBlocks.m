@@ -35,6 +35,8 @@
   [self.performAnimationButton removeFromSuperview];
   self.viewToAnimate.userInteractionEnabled = YES;
   self.viewToAnimate.multipleTouchEnabled = YES;
+
+#if NS_BLOCKS_AVAILABLE  
   
   [self.viewToAnimate addGestureRecognizer:
    [UIPanGestureRecognizer recognizerWithActionBlock:^(UIGestureRecognizer *recognizer) {
@@ -59,6 +61,8 @@
     }
   };
   [self.viewToAnimate addGestureRecognizer:thePinch];
+  
+#endif
 }
 
 - (void)viewDidUnload {

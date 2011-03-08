@@ -22,6 +22,8 @@
  THE SOFTWARE.
 */
 
+#if NS_BLOCKS_AVAILABLE
+
 typedef void (^FTUIGestureActionBlock)(UIGestureRecognizer *recognizer);
 
 @interface UIGestureRecognizer(FTBlockAdditions)
@@ -32,3 +34,5 @@ typedef void (^FTUIGestureActionBlock)(UIGestureRecognizer *recognizer);
 @property (copy) FTUIGestureActionBlock actionBlock;
 
 @end
+
+#endif
