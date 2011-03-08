@@ -23,7 +23,7 @@
 */
 
 #import <SenTestingKit/SenTestingKit.h>
-#import "FTAnimationManager.h"
+#import <FTUtils/FTAnimation.h>
 
 @interface TestFTAnimationManager : SenTestCase {
   UIView *rootView;

@@ -7,18 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA747D9F0F9514B9006C5449 /* FTUtils_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* FTUtils_Prefix.pch */; };
 		DF16614D1174CAC700054B46 /* AnimationChaining.m in Sources */ = {isa = PBXBuildFile; fileRef = DF16614C1174CAC700054B46 /* AnimationChaining.m */; };
-		DF1E44EF10C29C1500F80FC0 /* FTAnimation+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1E44EE10C29C1500F80FC0 /* FTAnimation+UIView.m */; };
-		DF1E44F010C29C1500F80FC0 /* FTAnimation+UIView.h in Headers */ = {isa = PBXBuildFile; fileRef = DF1E44ED10C29C1500F80FC0 /* FTAnimation+UIView.h */; };
+		DF1E44F010C29C1500F80FC0 /* FTAnimation+UIView.h in Headers */ = {isa = PBXBuildFile; fileRef = DF1E44ED10C29C1500F80FC0 /* FTAnimation+UIView.h */; settings = {ATTRIBUTES = (); }; };
 		DF1E44F110C29C1500F80FC0 /* FTAnimation+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1E44EE10C29C1500F80FC0 /* FTAnimation+UIView.m */; };
-		DF1E44F510C29D7500F80FC0 /* FTAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = DF1E44F410C29D7500F80FC0 /* FTAnimation.h */; };
 		DF287AAE0FE19638001E9F62 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA20FE19638001E9F62 /* CoreGraphics.framework */; };
 		DF287AAF0FE19638001E9F62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA30FE19638001E9F62 /* Foundation.framework */; };
 		DF287AB00FE19638001E9F62 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA40FE19638001E9F62 /* QuartzCore.framework */; };
 		DF287AB10FE19638001E9F62 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA50FE19638001E9F62 /* UIKit.framework */; };
-		DF2962EE0FE18E0000B9D71D /* FTAnimationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2962E40FE18E0000B9D71D /* FTAnimationManager.h */; };
+		DF2962EE0FE18E0000B9D71D /* FTAnimationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2962E40FE18E0000B9D71D /* FTAnimationManager.h */; settings = {ATTRIBUTES = (); }; };
 		DF2962F20FE18E0000B9D71D /* FTAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2962E90FE18E0000B9D71D /* FTAnimationManager.m */; };
+		DF2FCB671325A9D100B38930 /* FTUtils+UIGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2FCB661325A9D100B38930 /* FTUtils+UIGestureRecognizer.m */; };
+		DF2FCB691325AA8400B38930 /* FTUtils+UIGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2FCB681325AA8400B38930 /* FTUtils+UIGestureRecognizer.h */; settings = {ATTRIBUTES = (); }; };
+		DF2FCB6A1325AC4A00B38930 /* FTUtils+UIGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2FCB661325A9D100B38930 /* FTUtils+UIGestureRecognizer.m */; };
+		DF2FCB6B1325AC7300B38930 /* FTUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = DFFBF82610ADF55A008DB0B9 /* FTUtils.h */; settings = {ATTRIBUTES = (); }; };
+		DF2FCB6D1325ACBB00B38930 /* FTAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = DF2FCB6C1325ACB400B38930 /* FTAnimation.h */; settings = {ATTRIBUTES = (); }; };
+		DF2FCB7C1325AEAE00B38930 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA50FE19638001E9F62 /* UIKit.framework */; };
+		DF2FCB7D1325AEAE00B38930 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA30FE19638001E9F62 /* Foundation.framework */; };
+		DF2FCB7E1325AEAE00B38930 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA20FE19638001E9F62 /* CoreGraphics.framework */; };
+		DF2FCB841325AEAE00B38930 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF2FCB821325AEAE00B38930 /* InfoPlist.strings */; };
+		DF2FCB8D1325AECA00B38930 /* TestFTAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2962E10FE18E0000B9D71D /* TestFTAnimationManager.m */; };
+		DF2FCB8E1325AED200B38930 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFE4EF131035CC4D006A7598 /* OCMock.framework */; };
+		DF2FCB8F1325AED800B38930 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA40FE19638001E9F62 /* QuartzCore.framework */; };
+		DF2FCB951325AF6800B38930 /* libFTUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libFTUtils.a */; };
+		DF2FCB9E1325B19300B38930 /* OCMock.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DFE4EF131035CC4D006A7598 /* OCMock.framework */; };
 		DF3E06A110C71FF7004434C3 /* SlideInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3E06A010C71FF7004434C3 /* SlideInOut.m */; };
 		DF3E06C610C721E0004434C3 /* FadeInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3E06C510C721E0004434C3 /* FadeInOut.m */; };
 		DF3E06F110C723F0004434C3 /* FadeBackgroundColorInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3E06F010C723F0004434C3 /* FadeBackgroundColorInOut.m */; };
@@ -26,15 +37,6 @@
 		DF3E073410C72689004434C3 /* FallInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3E073310C72689004434C3 /* FallInOut.m */; };
 		DF3E075B10C7278D004434C3 /* FlyOut.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3E075A10C7278D004434C3 /* FlyOut.m */; };
 		DFA2EA8A10C2AC89003A76FF /* FTUtils+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFBF80910ADF405008DB0B9 /* FTUtils+NSObject.m */; };
-		DFE4EF141035CC4D006A7598 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFE4EF131035CC4D006A7598 /* OCMock.framework */; };
-		DFE4EF1C1035CC97006A7598 /* OCMock.framework in Copy OCMock */ = {isa = PBXBuildFile; fileRef = DFE4EF131035CC4D006A7598 /* OCMock.framework */; };
-		DFE4EF241035CCC1006A7598 /* TestFTAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2962E10FE18E0000B9D71D /* TestFTAnimationManager.m */; };
-		DFE4EFE21035CCCD006A7598 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA20FE19638001E9F62 /* CoreGraphics.framework */; };
-		DFE4EFE31035CCCD006A7598 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA30FE19638001E9F62 /* Foundation.framework */; };
-		DFE4EFE41035CCCD006A7598 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA40FE19638001E9F62 /* QuartzCore.framework */; };
-		DFE4EFE51035CCCD006A7598 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA50FE19638001E9F62 /* UIKit.framework */; };
-		DFF7F0601035CE350067ED5B /* FTAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2962E90FE18E0000B9D71D /* FTAnimationManager.m */; };
-		DFFBF80A10ADF405008DB0B9 /* FTUtils+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFBF80910ADF405008DB0B9 /* FTUtils+NSObject.m */; };
 		DFFDB56D10C2DA6400F7BF95 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA50FE19638001E9F62 /* UIKit.framework */; };
 		DFFDB56E10C2DA6400F7BF95 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA40FE19638001E9F62 /* QuartzCore.framework */; };
 		DFFDB56F10C2DA6500F7BF95 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287AA30FE19638001E9F62 /* Foundation.framework */; };
@@ -51,6 +53,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		DF2FCB931325AF2B00B38930 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = FTUtils;
+		};
 		DFFDB4B010C2DA5200F7BF95 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -61,15 +70,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		DFE4EF1B1035CC68006A7598 /* Copy OCMock */ = {
+		DF2FCB9D1325B18100B38930 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "$(BUILT_PRODUCTS_DIR)";
-			dstSubfolderSpec = 0;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
-				DFE4EF1C1035CC97006A7598 /* OCMock.framework in Copy OCMock */,
+				DF2FCB9E1325B19300B38930 /* OCMock.framework in CopyFiles */,
 			);
-			name = "Copy OCMock";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -82,7 +90,6 @@
 		DF19192010E2A94900906A0D /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		DF1E44ED10C29C1500F80FC0 /* FTAnimation+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FTAnimation+UIView.h"; path = "FTUtils/FTAnimation+UIView.h"; sourceTree = "<group>"; };
 		DF1E44EE10C29C1500F80FC0 /* FTAnimation+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTAnimation+UIView.m"; sourceTree = "<group>"; };
-		DF1E44F410C29D7500F80FC0 /* FTAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAnimation.h; sourceTree = "<group>"; };
 		DF2879B50FE192A1001E9F62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF287AA20FE19638001E9F62 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		DF287AA30FE19638001E9F62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -91,6 +98,13 @@
 		DF2962E10FE18E0000B9D71D /* TestFTAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestFTAnimationManager.m; sourceTree = "<group>"; };
 		DF2962E40FE18E0000B9D71D /* FTAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTAnimationManager.h; path = FTUtils/FTAnimationManager.h; sourceTree = "<group>"; };
 		DF2962E90FE18E0000B9D71D /* FTAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAnimationManager.m; sourceTree = "<group>"; };
+		DF2FCB661325A9D100B38930 /* FTUtils+UIGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTUtils+UIGestureRecognizer.m"; sourceTree = "<group>"; };
+		DF2FCB681325AA8400B38930 /* FTUtils+UIGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FTUtils+UIGestureRecognizer.h"; path = "FTUtils/FTUtils+UIGestureRecognizer.h"; sourceTree = "<group>"; };
+		DF2FCB6C1325ACB400B38930 /* FTAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FTAnimation.h; path = FTUtils/FTAnimation.h; sourceTree = "<group>"; };
+		DF2FCB7B1325AEAE00B38930 /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF2FCB811325AEAE00B38930 /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
+		DF2FCB831325AEAE00B38930 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DF2FCB851325AEAE00B38930 /* UnitTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UnitTests-Prefix.pch"; sourceTree = "<group>"; };
 		DF3E069F10C71FF7004434C3 /* SlideInOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideInOut.h; sourceTree = "<group>"; };
 		DF3E06A010C71FF7004434C3 /* SlideInOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideInOut.m; sourceTree = "<group>"; };
 		DF3E06C410C721E0004434C3 /* FadeInOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FadeInOut.h; sourceTree = "<group>"; };
@@ -104,7 +118,6 @@
 		DF3E075910C7278D004434C3 /* FlyOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyOut.h; sourceTree = "<group>"; };
 		DF3E075A10C7278D004434C3 /* FlyOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyOut.m; sourceTree = "<group>"; };
 		DF6D06470FE1A6F200CC44C6 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
-		DFE4EF0B1035CBCB006A7598 /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE4EF0C1035CBCB006A7598 /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
 		DFE4EF131035CC4D006A7598 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = Support/OCMock.framework; sourceTree = "<group>"; };
 		DFFBF80810ADF405008DB0B9 /* FTUtils+NSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FTUtils+NSObject.h"; path = "FTUtils/FTUtils+NSObject.h"; sourceTree = "<group>"; };
@@ -140,15 +153,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DFE4EF081035CBCB006A7598 /* Frameworks */ = {
+		DF2FCB771325AEAE00B38930 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFE4EFE21035CCCD006A7598 /* CoreGraphics.framework in Frameworks */,
-				DFE4EFE31035CCCD006A7598 /* Foundation.framework in Frameworks */,
-				DFE4EFE41035CCCD006A7598 /* QuartzCore.framework in Frameworks */,
-				DFE4EFE51035CCCD006A7598 /* UIKit.framework in Frameworks */,
-				DFE4EF141035CC4D006A7598 /* OCMock.framework in Frameworks */,
+				DF2FCB7C1325AEAE00B38930 /* UIKit.framework in Frameworks */,
+				DF2FCB7D1325AEAE00B38930 /* Foundation.framework in Frameworks */,
+				DF2FCB7E1325AEAE00B38930 /* CoreGraphics.framework in Frameworks */,
+				DF2FCB8E1325AED200B38930 /* OCMock.framework in Frameworks */,
+				DF2FCB8F1325AED800B38930 /* QuartzCore.framework in Frameworks */,
+				DF2FCB951325AF6800B38930 /* libFTUtils.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,9 +184,8 @@
 		034768DFFF38A50411DB9C8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D2AAC07E0554694100DB518D /* libFTUtils.a */,
-				DFE4EF0B1035CBCB006A7598 /* UnitTests.octest */,
 				DFFDB4AA10C2DA2200F7BF95 /* FTAnimationExamples.app */,
+				DF2FCB7B1325AEAE00B38930 /* UnitTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,8 +199,10 @@
 				DF2962DE0FE18E0000B9D71D /* Tests */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				DF29630D0FE18F2600B9D71D /* Support */,
+				DF2FCB7F1325AEAE00B38930 /* UnitTests */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
+				D2AAC07E0554694100DB518D /* libFTUtils.a */,
 				DF19192010E2A94900906A0D /* Makefile */,
 				DF6D06470FE1A6F200CC44C6 /* README.mdown */,
 				DF2879B50FE192A1001E9F62 /* Info.plist */,
@@ -220,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				DFFBF80910ADF405008DB0B9 /* FTUtils+NSObject.m */,
+				DF2FCB661325A9D100B38930 /* FTUtils+UIGestureRecognizer.m */,
 			);
 			name = "General Utilites";
 			sourceTree = "<group>";
@@ -245,10 +261,11 @@
 			isa = PBXGroup;
 			children = (
 				DFFBF82610ADF55A008DB0B9 /* FTUtils.h */,
+				DF2FCB6C1325ACB400B38930 /* FTAnimation.h */,
 				DFFBF80810ADF405008DB0B9 /* FTUtils+NSObject.h */,
-				DF1E44F410C29D7500F80FC0 /* FTAnimation.h */,
 				DF2962E40FE18E0000B9D71D /* FTAnimationManager.h */,
 				DF1E44ED10C29C1500F80FC0 /* FTAnimation+UIView.h */,
+				DF2FCB681325AA8400B38930 /* FTUtils+UIGestureRecognizer.h */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -268,6 +285,24 @@
 				DFE4EF131035CC4D006A7598 /* OCMock.framework */,
 			);
 			name = Support;
+			sourceTree = "<group>";
+		};
+		DF2FCB7F1325AEAE00B38930 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				DF2FCB801325AEAE00B38930 /* Supporting Files */,
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
+		DF2FCB801325AEAE00B38930 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DF2FCB811325AEAE00B38930 /* UnitTests-Info.plist */,
+				DF2FCB821325AEAE00B38930 /* InfoPlist.strings */,
+				DF2FCB851325AEAE00B38930 /* UnitTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		DF3E064410C71181004434C3 /* Resources */ = {
@@ -328,10 +363,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA747D9F0F9514B9006C5449 /* FTUtils_Prefix.pch in Headers */,
+				DF2FCB6B1325AC7300B38930 /* FTUtils.h in Headers */,
+				DF2FCB6D1325ACBB00B38930 /* FTAnimation.h in Headers */,
 				DF2962EE0FE18E0000B9D71D /* FTAnimationManager.h in Headers */,
 				DF1E44F010C29C1500F80FC0 /* FTAnimation+UIView.h in Headers */,
-				DF1E44F510C29D7500F80FC0 /* FTAnimation.h in Headers */,
+				DF2FCB691325AA8400B38930 /* FTUtils+UIGestureRecognizer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,23 +391,24 @@
 			productReference = D2AAC07E0554694100DB518D /* libFTUtils.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		DFE4EF0A1035CBCB006A7598 /* UnitTests */ = {
+		DF2FCB7A1325AEAE00B38930 /* UnitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DFE4EF0F1035CBCC006A7598 /* Build configuration list for PBXNativeTarget "UnitTests" */;
+			buildConfigurationList = DF2FCB8A1325AEAE00B38930 /* Build configuration list for PBXNativeTarget "UnitTests" */;
 			buildPhases = (
-				DFE4EF061035CBCB006A7598 /* Resources */,
-				DFE4EF071035CBCB006A7598 /* Sources */,
-				DFE4EF1B1035CC68006A7598 /* Copy OCMock */,
-				DFE4EF081035CBCB006A7598 /* Frameworks */,
-				DFE4EF091035CBCB006A7598 /* ShellScript */,
+				DF2FCB761325AEAE00B38930 /* Sources */,
+				DF2FCB771325AEAE00B38930 /* Frameworks */,
+				DF2FCB9D1325B18100B38930 /* CopyFiles */,
+				DF2FCB781325AEAE00B38930 /* Resources */,
+				DF2FCB791325AEAE00B38930 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DF2FCB941325AF2B00B38930 /* PBXTargetDependency */,
 			);
 			name = UnitTests;
 			productName = UnitTests;
-			productReference = DFE4EF0B1035CBCB006A7598 /* UnitTests.octest */;
+			productReference = DF2FCB7B1325AEAE00B38930 /* UnitTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 		DFFDB4A910C2DA2200F7BF95 /* FTAnimationExamples */ = {
@@ -406,6 +443,7 @@
 				Japanese,
 				French,
 				German,
+				en,
 			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* FTUtils */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
@@ -413,17 +451,18 @@
 			projectRoot = "";
 			targets = (
 				D2AAC07D0554694100DB518D /* FTUtils */,
-				DFE4EF0A1035CBCB006A7598 /* UnitTests */,
 				DFFDB4A910C2DA2200F7BF95 /* FTAnimationExamples */,
+				DF2FCB7A1325AEAE00B38930 /* UnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DFE4EF061035CBCB006A7598 /* Resources */ = {
+		DF2FCB781325AEAE00B38930 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF2FCB841325AEAE00B38930 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +478,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		DFE4EF091035CBCB006A7598 /* ShellScript */ = {
+		DF2FCB791325AEAE00B38930 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -450,7 +489,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+			shellScript = "# Run the unit tests in this test bundle.\nTEST_AFTER_BUILD=YES \"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -462,17 +501,15 @@
 				DF2962F20FE18E0000B9D71D /* FTAnimationManager.m in Sources */,
 				DF1E44F110C29C1500F80FC0 /* FTAnimation+UIView.m in Sources */,
 				DFA2EA8A10C2AC89003A76FF /* FTUtils+NSObject.m in Sources */,
+				DF2FCB6A1325AC4A00B38930 /* FTUtils+UIGestureRecognizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DFE4EF071035CBCB006A7598 /* Sources */ = {
+		DF2FCB761325AEAE00B38930 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFE4EF241035CCC1006A7598 /* TestFTAnimationManager.m in Sources */,
-				DFF7F0601035CE350067ED5B /* FTAnimationManager.m in Sources */,
-				DFFBF80A10ADF405008DB0B9 /* FTUtils+NSObject.m in Sources */,
-				DF1E44EF10C29C1500F80FC0 /* FTAnimation+UIView.m in Sources */,
+				DF2FCB8D1325AECA00B38930 /* TestFTAnimationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,12 +530,18 @@
 				DF3E073410C72689004434C3 /* FallInOut.m in Sources */,
 				DF3E075B10C7278D004434C3 /* FlyOut.m in Sources */,
 				DF16614D1174CAC700054B46 /* AnimationChaining.m in Sources */,
+				DF2FCB671325A9D100B38930 /* FTUtils+UIGestureRecognizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		DF2FCB941325AF2B00B38930 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AAC07D0554694100DB518D /* FTUtils */;
+			targetProxy = DF2FCB931325AF2B00B38930 /* PBXContainerItemProxy */;
+		};
 		DFFDB4B110C2DA5200F7BF95 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D2AAC07D0554694100DB518D /* FTUtils */;
@@ -506,13 +549,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		DF2FCB821325AEAE00B38930 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF2FCB831325AEAE00B38930 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		1DEB921F08733DC00010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "Don't Code Sign";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/FTUtils.dst;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -528,14 +582,16 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = /usr/local/lib;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
-				OTHER_CFLAGS = "-D__IPHONE_OS_VERSION_MIN_REQUIRED=030103";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = FTUtils;
-				SDKROOT = iphoneos4.1;
+				PROVISIONING_PROFILE = "";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -544,7 +600,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "Don't Code Sign";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				DSTROOT = /tmp/FTUtils.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -556,9 +612,11 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = /usr/local/lib;
-				OTHER_CFLAGS = "-D__IPHONE_OS_VERSION_MIN_REQUIRED=030103";
+				OTHER_CFLAGS = "";
 				PRODUCT_NAME = FTUtils;
-				SDKROOT = iphoneos4.1;
+				PROVISIONING_PROFILE = "";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
@@ -566,17 +624,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = (
-					Headers/,
-					Support/yajl/yajl_iphone/,
-				);
+				HEADER_SEARCH_PATHS = Headers/;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphonesimulator3.0;
+				PROVISIONING_PROFILE = "";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -584,75 +644,68 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = (
-					Headers/,
-					Support/yajl/yajl_iphone/,
-				);
+				HEADER_SEARCH_PATHS = Headers/;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.0;
+				PROVISIONING_PROFILE = "";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
-		DFE4EF0D1035CBCB006A7598 /* Debug */ = {
+		DF2FCB8B1325AEAE00B38930 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "Don't Code Sign";
-				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 					"\"$(SRCROOT)/Support\"",
 				);
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				INFOPLIST_FILE = "UnitTests-Info.plist";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UnitTests/UnitTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				INFOPLIST_FILE = "UnitTests/UnitTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = (
 					"-framework",
-					Foundation,
-					"-framework",
 					SenTestingKit,
-					"-framework",
-					UIKit,
 				);
-				PREBINDING = NO;
-				PRODUCT_NAME = UnitTests;
-				SDKROOT = iphonesimulator3.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
-		DFE4EF0E1035CBCB006A7598 /* Release */ = {
+		DF2FCB8C1325AEAE00B38930 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 					"\"$(SRCROOT)/Support\"",
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				INFOPLIST_FILE = "UnitTests-Info.plist";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UnitTests/UnitTests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				INFOPLIST_FILE = "UnitTests/UnitTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = (
 					"-framework",
-					Foundation,
-					"-framework",
 					SenTestingKit,
-					"-framework",
-					UIKit,
 				);
-				PREBINDING = NO;
-				PRODUCT_NAME = UnitTests;
-				SDKROOT = iphonesimulator3.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
-				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -660,7 +713,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "Don't Code Sign";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -669,8 +722,8 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "FTAnimationExamples-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
-				OTHER_CFLAGS = "-D__IPHONE_OS_VERSION_MIN_REQUIRED=030103";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -682,7 +735,7 @@
 				PREBINDING = NO;
 				PRODUCT_NAME = FTAnimationExamples;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -690,7 +743,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -698,6 +751,7 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				INFOPLIST_FILE = "FTAnimationExamples-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -706,7 +760,8 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = FTAnimationExamples;
-				SDKROOT = iphoneos3.1.2;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -732,14 +787,13 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DFE4EF0F1035CBCC006A7598 /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
+		DF2FCB8A1325AEAE00B38930 /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DFE4EF0D1035CBCB006A7598 /* Debug */,
-				DFE4EF0E1035CBCB006A7598 /* Release */,
+				DF2FCB8B1325AEAE00B38930 /* Debug */,
+				DF2FCB8C1325AEAE00B38930 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 		DFFDB4AF10C2DA2300F7BF95 /* Build configuration list for PBXNativeTarget "FTAnimationExamples" */ = {
 			isa = XCConfigurationList;
