@@ -24,7 +24,7 @@
 
 #if NS_BLOCKS_AVAILABLE
 
-typedef void (^FTUIGestureActionBlock)(UIGestureRecognizer *recognizer);
+typedef void (^FTUIGestureActionBlock)(id recognizer);
 
 @interface UIGestureRecognizer(FTBlockAdditions)
 

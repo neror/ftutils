@@ -39,8 +39,7 @@
 #if NS_BLOCKS_AVAILABLE  
   
   [self.viewToAnimate addGestureRecognizer:
-   [UIPanGestureRecognizer recognizerWithActionBlock:^(UIGestureRecognizer *recognizer) {
-    UIPanGestureRecognizer *pan = (UIPanGestureRecognizer *)recognizer;
+   [UIPanGestureRecognizer recognizerWithActionBlock:^(UIPanGestureRecognizer *pan) {
     if(pan.state == UIGestureRecognizerStateBegan || 
        pan.state == UIGestureRecognizerStateChanged) {
       CGPoint translation = [pan translationInView:self.viewToAnimate.superview];
@@ -52,8 +51,7 @@
   }]];
   
   UIPinchGestureRecognizer *thePinch = [UIPinchGestureRecognizer recognizer];
-  thePinch.actionBlock = ^(UIGestureRecognizer *recognizer) {
-    UIPinchGestureRecognizer *pinch = (UIPinchGestureRecognizer *)recognizer;
+  thePinch.actionBlock = ^(UIPinchGestureRecognizer *pinch) {
     if ([pinch state] == UIGestureRecognizerStateBegan || 
         [pinch state] == UIGestureRecognizerStateChanged) {
       self.viewToAnimate.transform = CGAffineTransformScale(self.viewToAnimate.transform, pinch.scale, pinch.scale);
