@@ -23,7 +23,6 @@
 */
 
 #import "FTUtils+NSObject.h"
-#import <QuartzCore/QuartzCore.h>
 
 @implementation NSObject (FTUtilsAdditions)
 

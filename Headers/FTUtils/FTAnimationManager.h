@@ -22,10 +22,6 @@
  THE SOFTWARE.
 */
 
-/*!
- @file FTAnimationManager.h
- @brief The FTAnimationManager.h file is the heart of the FTUtils animation utilites.
-*/
 #import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
@@ -66,6 +62,17 @@ extern NSString *const kFTAnimationTargetViewKey;
 
 #pragma mark Inline Functions
 
+/**
+ Find a `CGPoint` that will cause the *viewFrame* to be placed at the edge or corner of 
+ the *enclosingViewFrame* in the specified *direction*.
+ 
+ @return A center point which will place the given view at the edge or corner of the *enclosingViewFrame*
+ 
+ @param enclosingViewFrame The view whose edge or corner will be used to calculate the point
+ @param viewFrame The rect of the view to be moved
+ @param viewCenter The center of the view to be moved
+ @param direction The edge or corner of the *enclosingView* used to calculate the point
+*/
 static inline CGPoint FTAnimationOutOfViewCenterPoint(CGRect enclosingViewFrame, CGRect viewFrame, CGPoint viewCenter, FTAnimationDirection direction) {
 	switch (direction) {
 		case kFTAnimationBottom: {
@@ -116,6 +123,15 @@ static inline CGPoint FTAnimationOutOfViewCenterPoint(CGRect enclosingViewFrame,
 	return CGPointZero;
 }
 
+/**
+ Find a `CGPoint` that will cause the *viewFrame* to be completely offscreen in a specified *direction*.
+ 
+ @return A center point which will place the given view rect offscreen
+ 
+ @param viewFrame The view rect to be placed offscreen
+ @param viewCenter The center of the view to be placed offscreen
+ @param direction The edge or corner of the screen the view rect will be placed. 
+*/
 static inline CGPoint FTAnimationOffscreenCenterPoint(CGRect viewFrame, CGPoint viewCenter, FTAnimationDirection direction) {
   CGRect screenRect = [[UIScreen mainScreen] bounds];
   if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
@@ -150,94 +166,225 @@ static inline CGPoint FTAnimationOffscreenCenterPoint(CGRect viewFrame, CGPoint 
 	return FTAnimationOutOfViewCenterPoint([[UIScreen mainScreen] bounds], viewFrame, viewCenter, direction);
 }
 
-/*!
- @class FTAnimationManager
- @brief The FTAnimationManager class is the heart of the FTUtils Core Animation utilities.
-
- This class is meant to be used as a singleton. Developers should avoid creating
- mulitple instances and should get a reference to an instance via the 
- FTAnimationManager#sharedManager class method.
+/**
+ The FTAnimationManager class is the heart of the FTUtils Core Animation utilities. It is
+ meant to be used as a singleton. Developers should avoid creating mulitple instances
+ and should get a reference to an instance via the sharedManager class method.
 */
 @interface FTAnimationManager : NSObject {
+@private
   CGFloat overshootThreshold_;
 }
 
-/*!
- The maximum value (in pixels) that the bouncing animations will travel past their end vlaue before coming to rest. The default is 10.0.
+/**
+ The maximum value (in points) that the bouncing animations will travel past their
+ end value before coming to rest. The default is 10.0.
 */
 @property(assign) CGFloat overshootThreshold;
 
-/*!
+///---------------------------------------------------------------------------
+/// @name Accessing the animation manager
+///---------------------------------------------------------------------------
+/**
  Get a reference to the FTAnimationManager singleton creating it if necessary.
+
  @return The singleton.
 */
 + (FTAnimationManager *)sharedManager;
 
+///---------------------------------------------------------------------------
+/// @name Controlling animation timing
+///---------------------------------------------------------------------------
+
+/**
+ Wraps a `CAAnimation` in a `CAAnimationGroup` which will delay the start of 
+ the animation once it is added to a `CALayer`.
+ 
+ @param animation The animation to be delayed
+ @param delayTime The duration (in seconds) of the delay
+*/
 - (CAAnimationGroup *)delayStartOfAnimation:(CAAnimation *)animation withDelay:(CFTimeInterval)delayTime;
+
+/**
+ Wraps a `CAAnimation` in a `CAAnimationGroup` which will delay the firing of the 
+ `animationDidStop:finished:` delegate method once the animation has stopped.
+ 
+ @param animation The animation to be delayed
+ @param delayTime The duration (in seconds) of the delay
+ */
 - (CAAnimationGroup *)pauseAtEndOfAnimation:(CAAnimation *)animation withDelay:(CFTimeInterval)delayTime;
+
+/**
+ Chains a sequence of animation objects to be run sequentially.
+ 
+ @warning *Important:* The animation chaining only works with animations created 
+ with one of the FTAnimationManager animations. If you want to sequence your own
+ `CAAnimation` objects, you must wrap each of them with the 
+ animationGroupFor:withView:duration:delegate:startSelector:stopSelector:name:type:
+ method.
+ 
+ @param animations An array of animations to be run sequentially
+ @param run If `YES`, the sequence begins immediately after this method returns. If
+ `NO`, you must add the returned `CAAnimation` object to a `CALayer` to begin the 
+ sequence.
+*/
 - (CAAnimation *)chainAnimations:(NSArray *)animations run:(BOOL)run;
 
+/**
+ Groups a list of `CAAnimations` and associates them with _view_. All animations
+ created by FTAnimationManager are ultimately created by this method.
+ 
+ @param animations A list of animations to group together.
+ @param view The target view for the _animations_.
+ @param duration The duration (in seconds) of the returned animation group.
+ @param delegate An optional delegate to send animation start and stop messages to.
+ @param startSelector An optional selector to be called on _delegate_ when the animation starts.
+ @param stopSelector An optional selector to be called on _delegate_ when the animation stops.
+ @param name A unique name used as a key internally to store and retrieve this animation object.
+ @param type Either kFTAnimationTypeIn or kFTAnimationTypeOut to denote whether this animation 
+ is designed to show or hide its associated _view_.
+*/
 - (CAAnimationGroup *)animationGroupFor:(NSArray *)animations withView:(UIView *)view 
                                duration:(NSTimeInterval)duration delegate:(id)delegate 
                           startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector 
                                    name:(NSString *)name type:(NSString *)type;
 
+///---------------------------------------------------------------------------
+/// @name Creating animation objects
+///---------------------------------------------------------------------------
+
+/**
+ Slides a view in from offscreen
+*/
 - (CAAnimation *)slideInAnimationFor:(UIView *)view direction:(FTAnimationDirection)direction 
                             duration:(NSTimeInterval)duration delegate:(id)delegate 
                        startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
+/**
+ Slides a view offscreen
+*/
 - (CAAnimation *)slideOutAnimationFor:(UIView *)view direction:(FTAnimationDirection)direction 
                              duration:(NSTimeInterval)duration delegate:(id)delegate 
                         startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
 
+/**
+ Slides a view in from offscreen
+*/
 - (CAAnimation *)slideInAnimationFor:(UIView *)view direction:(FTAnimationDirection)direction inView:(UIView*)enclosingView
                             duration:(NSTimeInterval)duration delegate:(id)delegate 
                        startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
 
+/**
+ Slides a view offscreen
+*/
 - (CAAnimation *)slideOutAnimationFor:(UIView *)view direction:(FTAnimationDirection)direction inView:(UIView*)enclosingView
                              duration:(NSTimeInterval)duration delegate:(id)delegate 
                         startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
 
-
+/**
+ Backs a view offscreen
+*/
 - (CAAnimation *)backOutAnimationFor:(UIView *)view withFade:(BOOL)fade direction:(FTAnimationDirection)direction 
                             duration:(NSTimeInterval)duration delegate:(id)delegate 
                        startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
+
+/**
+ Backs a view in from offscreen
+*/
 - (CAAnimation *)backInAnimationFor:(UIView *)view withFade:(BOOL)fade direction:(FTAnimationDirection)direction 
                            duration:(NSTimeInterval)duration delegate:(id)delegate 
                       startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
-
+/**
+ Backs a view offscreen
+*/
 - (CAAnimation *)backOutAnimationFor:(UIView *)view withFade:(BOOL)fade direction:(FTAnimationDirection)direction inView:(UIView*)enclosingView
                             duration:(NSTimeInterval)duration delegate:(id)delegate 
                        startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
+/**
+ Backs a view in from offscreen
+*/
 - (CAAnimation *)backInAnimationFor:(UIView *)view withFade:(BOOL)fade direction:(FTAnimationDirection)direction inView:(UIView*)enclosingView
                            duration:(NSTimeInterval)duration delegate:(id)delegate 
                       startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
 
+/**
+ Aniamtes the `alpha` of the _view_.
+*/
 - (CAAnimation *)fadeAnimationFor:(UIView *)view duration:(NSTimeInterval)duration 
                          delegate:(id)delegate startSelector:(SEL)startSelector 
                      stopSelector:(SEL)stopSelector fadeOut:(BOOL)fadeOut;
 
+/**
+ Animates the `backgroundColor` of the _view_.
+*/
 - (CAAnimation *)fadeBackgroundColorAnimationFor:(UIView *)view duration:(NSTimeInterval)duration 
                                         delegate:(id)delegate startSelector:(SEL)startSelector 
                                     stopSelector:(SEL)stopSelector fadeOut:(BOOL)fadeOut;
 
+/**
+ Pops a view in from offscreen
+*/
 - (CAAnimation *)popInAnimationFor:(UIView *)view duration:(NSTimeInterval)duration delegate:(id)delegate 
                      startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
+
+/**
+ Pops a view offscreen
+*/
 - (CAAnimation *)popOutAnimationFor:(UIView *)view duration:(NSTimeInterval)duration delegate:(id)delegate 
                       startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
 
+/** 
+ Shrinks and fades out view.
+*/
 - (CAAnimation *)fallInAnimationFor:(UIView *)view duration:(NSTimeInterval)duration delegate:(id)delegate 
                       startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
+
+/** 
+ Shrinks and fades in view which starts scaled to double of its original size.
+*/
 - (CAAnimation *)fallOutAnimationFor:(UIView *)view duration:(NSTimeInterval)duration delegate:(id)delegate 
                        startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
+
+/**
+ Scales up and fades out a view.
+*/
 - (CAAnimation *)flyOutAnimationFor:(UIView *)view duration:(NSTimeInterval)duration delegate:(id)delegate 
                       startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector;
 
 
 @end
 
+/**
+ This category on `CAAnimation` allows for using individual selectors
+ on arbitrary objects to respond the `CAAnimationDelegate` calls.
+ 
+ @warning *Important:* You must not set the `CAAnimation` `delegate` property
+ when using a start or stop selector. If you call setStartSelector:withTarget: or
+ setStopSelector:withTarget: the `CAAnimation`'s `delegate` will be overwritten.
+*/
 @interface CAAnimation (FTAnimationAdditions)
 
+/**
+ Called right before the animation starts. This has the same effect as 
+ implementing the `animationDidStart:` delegate method.
+ 
+ The selector should accept a single argument of type `CAAnimation`.
+ 
+ @param selector The selector to call on _target_.
+ @param target An object to send the `animationDidStart:` message to.
+*/
 - (void)setStartSelector:(SEL)selector withTarget:(id)target;
+
+/**
+ Called right before the animation stops. This has the same effect as 
+ implementing the `animationDidStop:finished:` delegate method.
+ 
+ The selector should accept a two arguments. The first argument is the
+ `CAAnimation` object sending the message and the second is a `BOOL` 
+ indicating whether the animation ran to completion.
+ 
+ @param selector The selector to call on _target_.
+ @param target An object to send the `animationDidStart:finished:` message to.
+*/
 - (void)setStopSelector:(SEL)selector withTarget:(id)target;
 
 @end

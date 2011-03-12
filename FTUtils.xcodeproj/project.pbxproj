@@ -91,6 +91,7 @@
 		DF19192010E2A94900906A0D /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		DF1E44ED10C29C1500F80FC0 /* FTAnimation+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FTAnimation+UIView.h"; path = "FTUtils/FTAnimation+UIView.h"; sourceTree = "<group>"; };
 		DF1E44EE10C29C1500F80FC0 /* FTAnimation+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTAnimation+UIView.m"; sourceTree = "<group>"; };
+		DF1E80ED132C03CB00F421CE /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		DF2879B50FE192A1001E9F62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF287AA20FE19638001E9F62 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		DF287AA30FE19638001E9F62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -203,15 +204,11 @@
 				DF2962DE0FE18E0000B9D71D /* Tests */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				DF29630D0FE18F2600B9D71D /* Support */,
+				DF1E80EB132C039D00F421CE /* Resources */,
 				DF2FCB7F1325AEAE00B38930 /* UnitTests */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
 				D2AAC07E0554694100DB518D /* libFTUtils.a */,
-				DF19192010E2A94900906A0D /* Makefile */,
-				DF6D06470FE1A6F200CC44C6 /* README.mdown */,
-				DF2879B50FE192A1001E9F62 /* Info.plist */,
-				DFE4EF0C1035CBCB006A7598 /* UnitTests-Info.plist */,
-				DFFDB4AC10C2DA2300F7BF95 /* FTAnimationExamples-Info.plist */,
 			);
 			name = FTUtils;
 			sourceTree = "<group>";
@@ -251,6 +248,19 @@
 				DF1E44EE10C29C1500F80FC0 /* FTAnimation+UIView.m */,
 			);
 			name = Animation;
+			sourceTree = "<group>";
+		};
+		DF1E80EB132C039D00F421CE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DF1E80ED132C03CB00F421CE /* LICENSE */,
+				DF19192010E2A94900906A0D /* Makefile */,
+				DF6D06470FE1A6F200CC44C6 /* README.mdown */,
+				DF2879B50FE192A1001E9F62 /* Info.plist */,
+				DFE4EF0C1035CBCB006A7598 /* UnitTests-Info.plist */,
+				DFFDB4AC10C2DA2300F7BF95 /* FTAnimationExamples-Info.plist */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		DF2962DE0FE18E0000B9D71D /* Tests */ = {

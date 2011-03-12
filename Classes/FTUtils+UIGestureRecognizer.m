@@ -41,7 +41,7 @@ static char * kFTGestureActionKey = "ft_gestureAction";
   return [self recognizerWithActionBlock:nil];
 }
 
-+ (id)recognizerWithActionBlock:(FTUIGestureActionBlock)action {
++ (id)recognizerWithActionBlock:(FTGestureActionBlock)action {
   id me = [[self class] alloc];
   me = [me initWithTarget:me action:@selector(handleAction:)];
   [me setActionBlock:action];
@@ -54,11 +54,11 @@ static char * kFTGestureActionKey = "ft_gestureAction";
   }
 }
 
-- (FTUIGestureActionBlock)actionBlock {
+- (FTGestureActionBlock)actionBlock {
   return objc_getAssociatedObject(self, kFTGestureActionKey);
 }
 
-- (void)setActionBlock:(FTUIGestureActionBlock)actionBlock {
+- (void)setActionBlock:(FTGestureActionBlock)actionBlock {
   objc_setAssociatedObject(self, kFTGestureActionKey, actionBlock, OBJC_ASSOCIATION_COPY);
 }
 

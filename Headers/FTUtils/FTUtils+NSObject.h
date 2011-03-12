@@ -35,12 +35,18 @@
 
 @interface NSArray (FTUtilsAdditions)
 
+/**
+ Returns a new `NSArray` with the elements in reverse order.
+*/
 - (NSArray *)reversedArray;
 
 @end
 
 @interface NSMutableArray (FTUtilsAdditions)
 
+/**
+ Reorders the elements of the array in place.
+*/
 - (void)reverse;
 
 @end

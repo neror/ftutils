@@ -24,14 +24,59 @@
 
 #if NS_BLOCKS_AVAILABLE
 
-typedef void (^FTUIGestureActionBlock)(id recognizer);
+typedef void (^FTGestureActionBlock)(id recognizer);
 
+/**
+ This category defines methods and properties which allow the use of blocks 
+ for working with `UIGestureRecognizer` and its subclasses.
+ 
+ For more information on working with gestures in iOS, see Apple's 
+ [Event Handling Guide for iOS][1].
+ 
+ [1]:http://developer.apple.com/library/ios/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/Introduction/Introduction.html
+*/
 @interface UIGestureRecognizer(FTBlockAdditions)
 
-+ (id)recognizer;
-+ (id)recognizerWithActionBlock:(FTUIGestureActionBlock)action;
+#pragma mark - Creating a block based Gesture Recognizer
 
-@property (copy) FTUIGestureActionBlock actionBlock;
+///---------------------------------------------------------------------------
+/// @name Creating a block based Gesture Recognizer
+///---------------------------------------------------------------------------
+
+/**
+ Creates an autoreleased instance of a `UIGestureRecognizer` subclass with
+ its actionBlock set to `nil`.
+ 
+ @warning *Important:* Until the actionBlock is set, the returned object will do nothing.
+ 
+ @return An instance of a `UIGestureRecognizer` subclass.
+ @see actionBlock
+*/
++ (id)recognizer;
+
+/**
+ Creates an autoreleased instance of a `UIGestureRecognizer` subclass which
+ uses _action_ to handle gesture actions.
+ 
+ @return An instance of a `UIGestureRecognizer` subclass.
+ @param action A block which will handle the gesture actions.
+ @see actionBlock
+*/
++ (id)recognizerWithActionBlock:(FTGestureActionBlock)action;
+
+#pragma mark - Setting and getting the action handler blocks
+
+///---------------------------------------------------------------------------
+/// @name Setting and getting the action handler blocks
+///---------------------------------------------------------------------------
+
+/**
+ A block to be executed when a `UIGestureRecognizer` action is fired. 
+
+ The block is passed a single parameter which is the `UIGestureRecognizer`
+ instance for this property.
+*/
+@property (copy) FTGestureActionBlock actionBlock;
 
 @end
 

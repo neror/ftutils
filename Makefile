@@ -1,36 +1,44 @@
-SCAN_BUILD ?= $(HOME)/Work/iphone/checker-224/scan-build
-SCAN_ARGS=-analyze-headers -k -v -checker-cfref -warn-dead-stores -warn-objc-methodsigs -warn-objc-missing-dealloc -warn-objc-unused-ivars
 XCODEBUILD ?= xcodebuild
-SIMULATOR_SDK ?= iphonesimulator3.0
-DEVICE_SDK ?= iphoneos3.0
+SIMULATOR_SDK ?= iphonesimulator4.0
+DEVICE_SDK ?= iphoneos4.0
 BUILD_TARGET ?= FTUtils
 BUILD_ARGS=-target $(BUILD_TARGET) -sdk $(SIMULATOR_SDK) -configuration
-DOXYGEN ?= doxygen
 
 CLOC ?= $(HOME)/Work/cloc-1.07.pl
 CLOC_ARGS=--force-lang="Objective C",m --exclude-dir=Support,build,.git,Tests,Classes/GameObjects,../../iphone --no3
 
+APPLEDOC ?= appledoc
+APPLEDOC_TEMPLATE_DIR ?= apidocs/.templates
+APPLEDOC_OPTS = --output apidocs \
+								--templates $(APPLEDOC_TEMPLATE_DIR) \
+								--project-name FTUtils \
+								--project-version $(shell cat VERSION) \
+								--project-company "Free Time Studios, LLC" \
+								--company-id com.freetimestudios \
+								--create-html \
+								--no-create-docset \
+								--no-install-docset \
+								--no-publish-docset \
+								--keep-intermediate-files \
+								--verbose 0
+APPLEDOC_EXTRA_OPTS ?= 
+
 all: cleandebug test
 
-docs:
-	mkdir -p apidocs
-	$(DOXYGEN) Doxyfile
+cleandocs:
+	rm -rf apidocs/html
+	rm -rf apidocs/docset
 
-docset: docs
-	$(MAKE) -C apidocs/html docset
-	
-docsetinstall: docs
-	$(MAKE) -C apidocs/html install
-	
-scan: cleandebug scandebug
+docs: cleandocs
+	$(APPLEDOC) $(APPLEDOC_OPTS) $(APPLEDOC_EXTRA_OPTS) Headers
 
+docset: cleandocs
+	$(APPLEDOC) $(APPLEDOC_OPTS) --create-docset $(APPLEDOC_EXTRA_OPTS) Headers
+	
+docsetinstall: cleandocs
+	$(APPLEDOC) $(APPLEDOC_OPTS) --create-docset --install-docset $(APPLEDOC_EXTRA_OPTS) Headers
+	
 clean: cleandebug cleanrelease
-
-scanviewdbg:
-	$(SCAN_BUILD) $(SCAN_ARGS) --view $(XCODEBUILD) $(BUILD_ARGS) Debug
-
-scanviewrel:
-	$(SCAN_BUILD) $(SCAN_ARGS) --view $(XCODEBUILD) $(BUILD_ARGS) Release
 
 count:
 	$(CLOC) $(CLOC_ARGS) .
@@ -46,12 +54,6 @@ release:
 	
 devicerelease:
 	$(XCODEBUILD) -target $(BUILD_TARGET) -sdk $(DEVICE_SDK) -configuration Release
-
-scandebug:
-	$(SCAN_BUILD) $(SCAN_ARGS) $(XCODEBUILD) $(BUILD_ARGS) Debug
-
-scanrelease:
-	$(SCAN_BUILD) $(SCAN_ARGS) $(XCODEBUILD) $(BUILD_ARGS) Release
 
 cleandebug:
 	$(XCODEBUILD) $(BUILD_ARGS) Debug clean

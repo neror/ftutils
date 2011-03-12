@@ -26,10 +26,9 @@
 #import "FTUtils.h"
 #import "FTUtils+NSObject.h"
 
-
 @implementation UIView (FTAnimationAdditions)
 
-#pragma mark Slide Animations
+#pragma mark - Sliding Animations
 
 - (void)slideInFrom:(FTAnimationDirection)direction duration:(NSTimeInterval)duration delegate:(id)delegate 
       startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
@@ -51,12 +50,9 @@
   [self.layer addAnimation:slideOutAnim forKey:kFTAnimationSlideOut];
 }
 
-
 - (void)slideOutTo:(FTAnimationDirection)direction duration:(NSTimeInterval)duration delegate:(id)delegate {
   [self slideOutTo:direction duration:duration delegate:delegate startSelector:nil stopSelector:nil];
 }
-
-#pragma mark -
 
 - (void)slideInFrom:(FTAnimationDirection)direction inView:(UIView*)enclosingView duration:(NSTimeInterval)duration delegate:(id)delegate 
       startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
@@ -75,7 +71,7 @@
 }
 
 
-#pragma mark Back In/Out Animations
+#pragma mark - Back In/Out Animations
 
 - (void)backOutTo:(FTAnimationDirection)direction withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(id)delegate 
     startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
@@ -101,8 +97,6 @@
   [self backInFrom:direction withFade:fade duration:duration delegate:delegate startSelector:nil stopSelector:nil];
 }
 
-#pragma mark -
-
 - (void)backOutTo:(FTAnimationDirection)direction inView:(UIView*)enclosingView withFade:(BOOL)fade duration:(NSTimeInterval)duration delegate:(id)delegate 
     startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
 	CAAnimation *backOutAnim = [[FTAnimationManager sharedManager] backOutAnimationFor:self withFade:fade direction:direction inView:enclosingView
@@ -119,9 +113,7 @@
 	[self.layer addAnimation:backInAnim forKey:kFTAnimationBackIn];
 }
 
-
-#pragma mark -
-#pragma mark Fade Animations
+#pragma mark - Fade Animations
 
 - (void)fadeIn:(NSTimeInterval)duration delegate:(id)delegate startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
   CAAnimation *anim = [[FTAnimationManager sharedManager] fadeAnimationFor:self duration:duration delegate:delegate 
@@ -167,8 +159,7 @@
   [self fadeBackgroundColorOut:duration delegate:delegate startSelector:nil stopSelector:nil];
 }
 
-#pragma mark -
-#pragma mark Pop Animations
+#pragma mark - Popping Animations
 
 - (void)popIn:(NSTimeInterval)duration delegate:(id)delegate startSelector:(SEL)startSelector stopSelector:(SEL)stopSelector {
   CAAnimation *anim = [[FTAnimationManager sharedManager] popInAnimationFor:self duration:duration delegate:delegate 
@@ -190,8 +181,7 @@
   [self popOut:duration delegate:delegate startSelector:nil stopSelector:nil];
 }
 
-#pragma mark -
-#pragma mark Fall In and Fly Out
+#pragma mark - Fall In and Fly Out
 
 - (void)fallIn:(NSTimeInterval)duration delegate:(id)delegate {
   [self fallIn:duration delegate:delegate startSelector:nil stopSelector:nil];
@@ -222,6 +212,5 @@
                                                                startSelector:startSelector stopSelector:stopSelector];
   [self.layer addAnimation:anim forKey:kFTAnimationFlyOut];
 }
-
 
 @end
