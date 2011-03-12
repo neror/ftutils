@@ -1,5 +1,4 @@
 GIT=git
-DOXYGEN=doxygen
 REPO_TEMP=/tmp/ftutils_docbuild
 GEN_DOCS_DIR=$(REPO_TEMP)/apidocs/html/
 DOCS_DEST=docs/api
