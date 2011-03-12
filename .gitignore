@@ -4,3 +4,4 @@ build
 *.perspectivev3
 /apidocs/html
 /apidocs/docset
+/apidocs/publish

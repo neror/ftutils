@@ -28,6 +28,7 @@ all: cleandebug test
 cleandocs:
 	rm -rf apidocs/html
 	rm -rf apidocs/docset
+	rm -rf apidocs/publish
 
 docs: cleandocs
 	$(APPLEDOC) $(APPLEDOC_OPTS) $(APPLEDOC_EXTRA_OPTS) Headers
@@ -38,6 +39,14 @@ docset: cleandocs
 docsetinstall: cleandocs
 	$(APPLEDOC) $(APPLEDOC_OPTS) --create-docset --install-docset $(APPLEDOC_EXTRA_OPTS) Headers
 	
+docsetpublish: cleandocs
+	$(APPLEDOC) $(APPLEDOC_OPTS) 	--create-docset \
+																--install-docset \
+															 	--publish-docset \
+																--docset-feed-url http://ftutils.com/docs/api/docset/%DOCSETATOMFILENAME \
+																--docset-package-url  http://ftutils.com/docs/api/docset/%DOCSETPACKAGEFILENAME \
+																$(APPLEDOC_EXTRA_OPTS) Headers
+
 clean: cleandebug cleanrelease
 
 count:
