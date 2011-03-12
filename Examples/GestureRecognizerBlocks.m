@@ -60,6 +60,15 @@
   };
   [self.viewToAnimate addGestureRecognizer:thePinch];
   
+  UITapGestureRecognizer *doubleTap = [UITapGestureRecognizer recognizerWithActionBlock:^(id dTap) {
+    thePinch.actionBlock = nil;
+    [UIView animateWithDuration:.25f animations:^{
+      self.viewToAnimate.transform = CGAffineTransformIdentity;
+    }];
+  }];
+  doubleTap.numberOfTapsRequired = 2;
+  [self.viewToAnimate addGestureRecognizer:doubleTap];
+  
 #endif
 }
 
