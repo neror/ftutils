@@ -5,3 +5,5 @@ build
 /apidocs/html
 /apidocs/docset
 /apidocs/publish
+*.xcworkspace
+*xcuserdata
