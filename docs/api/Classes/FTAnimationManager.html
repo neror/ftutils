@@ -1,0 +1,1424 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>FTAnimationManager Class Reference</title>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" />
+		<meta name="generator" content="appledoc 2.0.3 (build 632)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">FTAnimationManager Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/overshootThreshold">&nbsp;&nbsp;&nbsp;&nbsp;overshootThreshold</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/sharedManager">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedManager</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/animationGroupFor:withView:duration:delegate:startSelector:stopSelector:name:type:">&nbsp;&nbsp;&nbsp;&nbsp;- animationGroupFor:withView:duration:delegate:startSelector:stopSelector:name:type:</option>
+	
+	<option value="//api/name/backInAnimationFor:withFade:direction:duration:delegate:startSelector:stopSelector:">&nbsp;&nbsp;&nbsp;&nbsp;- backInAnimationFor:withFade:direction:duration:delegate:startSelector:stopSelector:</option>
+	
+	<option value="//api/name/backInAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:">&nbsp;&nbsp;&nbsp;&nbsp;- backInAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:</option>
+	
+	<option value="//api/name/backOutAnimationFor:withFade:direction:duration:delegate:startSelector:stopSelector:">&nbsp;&nbsp;&nbsp;&nbsp;- backOutAnimationFor:withFade:direction:duration:delegate:startSelector:stopSelector:</option>
+	
+	<option value="//api/name/backOutAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:">&nbsp;&nbsp;&nbsp;&nbsp;- backOutAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:</option>
+	
+	<option value="//api/name/chainAnimations:run:">&nbsp;&nbsp;&nbsp;&nbsp;- chainAnimations:run:</option>
+	
+	<option value="//api/name/delayStartOfAnimation:withDelay:">&nbsp;&nbsp;&nbsp;&nbsp;- delayStartOfAnimation:withDelay:</option>
+	
+	<option value="//api/name/fadeAnimationFor:duration:delegate:startSelector:stopSelector:fadeOut:">&nbsp;&nbsp;&nbsp;&nbsp;- fadeAnimationFor:duration:delegate:startSelector:stopSelector:fadeOut:</option>
+	
+	<option value="//api/name/fadeBackgroundColorAnimationFor:duration:delegate:startSelector:stopSelector:fadeOut:">&nbsp;&nbsp;&nbsp;&nbsp;- fadeBackgroundColorAnimationFor:duration:delegate:startSelector:stopSelector:fadeOut:</option>
+	
+	<option value="//api/name/fallInAnimationFor:duration:delegate:startSelector:stopSelector:">&nbsp;&nbsp;&nbsp;&nbsp;- fallInAnimationFor:duration:delegate:startSelector:stopSelector:</option>
+	
+	<option value="//api/name/fallOutAnimationFor:duration:delegate:startSelector:stopSelector:">&nbsp;&nbsp;&nbsp;&nbsp;- fallOutAnimationFor:duration:delegate:startSelector:stopSelector:</option>
+	
+	<option value="//api/name/flyOutAnimationFor:duration:delegate:startSelector:stopSelector:">&nbsp;&nbsp;&nbsp;&nbsp;- flyOutAnimationFor:duration:delegate:startSelector:stopSelector:</option>
+	
+	<option value="//api/name/pauseAtEndOfAnimation:withDelay:">&nbsp;&nbsp;&nbsp;&nbsp;- pauseAtEndOfAnimation:withDelay:</option>
+	
+	<option value="//api/name/popInAnimationFor:duration:delegate:startSelector:stopSelector:">&nbsp;&nbsp;&nbsp;&nbsp;- popInAnimationFor:duration:delegate:startSelector:stopSelector:</option>
+	
+	<option value="//api/name/popOutAnimationFor:duration:delegate:startSelector:stopSelector:">&nbsp;&nbsp;&nbsp;&nbsp;- popOutAnimationFor:duration:delegate:startSelector:stopSelector:</option>
+	
+	<option value="//api/name/slideInAnimationFor:direction:duration:delegate:startSelector:stopSelector:">&nbsp;&nbsp;&nbsp;&nbsp;- slideInAnimationFor:direction:duration:delegate:startSelector:stopSelector:</option>
+	
+	<option value="//api/name/slideInAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:">&nbsp;&nbsp;&nbsp;&nbsp;- slideInAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:</option>
+	
+	<option value="//api/name/slideOutAnimationFor:direction:duration:delegate:startSelector:stopSelector:">&nbsp;&nbsp;&nbsp;&nbsp;- slideOutAnimationFor:direction:duration:delegate:startSelector:stopSelector:</option>
+	
+	<option value="//api/name/slideOutAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:">&nbsp;&nbsp;&nbsp;&nbsp;- slideOutAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Accessing the animation manager">Accessing the animation manager</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Controlling animation timing">Controlling animation timing</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating animation objects">Creating animation objects</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/overshootThreshold">overshootThreshold</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedManager">sharedManager</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/animationGroupFor:withView:duration:delegate:startSelector:stopSelector:name:type:">animationGroupFor:withView:duration:delegate:startSelector:stopSelector:name:type:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/backInAnimationFor:withFade:direction:duration:delegate:startSelector:stopSelector:">backInAnimationFor:withFade:direction:duration:delegate:startSelector:stopSelector:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/backInAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:">backInAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/backOutAnimationFor:withFade:direction:duration:delegate:startSelector:stopSelector:">backOutAnimationFor:withFade:direction:duration:delegate:startSelector:stopSelector:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/backOutAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:">backOutAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/chainAnimations:run:">chainAnimations:run:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/delayStartOfAnimation:withDelay:">delayStartOfAnimation:withDelay:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fadeAnimationFor:duration:delegate:startSelector:stopSelector:fadeOut:">fadeAnimationFor:duration:delegate:startSelector:stopSelector:fadeOut:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fadeBackgroundColorAnimationFor:duration:delegate:startSelector:stopSelector:fadeOut:">fadeBackgroundColorAnimationFor:duration:delegate:startSelector:stopSelector:fadeOut:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fallInAnimationFor:duration:delegate:startSelector:stopSelector:">fallInAnimationFor:duration:delegate:startSelector:stopSelector:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fallOutAnimationFor:duration:delegate:startSelector:stopSelector:">fallOutAnimationFor:duration:delegate:startSelector:stopSelector:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/flyOutAnimationFor:duration:delegate:startSelector:stopSelector:">flyOutAnimationFor:duration:delegate:startSelector:stopSelector:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pauseAtEndOfAnimation:withDelay:">pauseAtEndOfAnimation:withDelay:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/popInAnimationFor:duration:delegate:startSelector:stopSelector:">popInAnimationFor:duration:delegate:startSelector:stopSelector:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/popOutAnimationFor:duration:delegate:startSelector:stopSelector:">popOutAnimationFor:duration:delegate:startSelector:stopSelector:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/slideInAnimationFor:direction:duration:delegate:startSelector:stopSelector:">slideInAnimationFor:direction:duration:delegate:startSelector:stopSelector:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/slideInAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:">slideInAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/slideOutAnimationFor:direction:duration:delegate:startSelector:stopSelector:">slideOutAnimationFor:direction:duration:delegate:startSelector:stopSelector:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/slideOutAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:">slideOutAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="FTAnimationManager Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">FTAnimationManager Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">FTAnimationManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The <a href="FTAnimationManager.html">FTAnimationManager</a> class is the heart of the FTUtils Core Animation utilities. It is
+meant to be used as a singleton. Developers should avoid creating mulitple instances
+and should get a reference to an instance via the <a href="#//api/name/sharedManager">sharedManager</a> class method.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/overshootThreshold">&nbsp;&nbsp;overshootThreshold</a></code>
+		<span class="tooltip"><p>The maximum value (in points) that the bouncing animations will travel past their
+end value before coming to rest. The default is 10.0.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Accessing the animation manager" name="task_Accessing the animation manager"></a>
+						<h3 class="subsubtitle task-title">Accessing the animation manager</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sharedManager">+&nbsp;sharedManager</a></code>
+		<span class="tooltip"><p>Get a reference to the <a href="FTAnimationManager.html">FTAnimationManager</a> singleton creating it if necessary.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Controlling animation timing" name="task_Controlling animation timing"></a>
+						<h3 class="subsubtitle task-title">Controlling animation timing</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/delayStartOfAnimation:withDelay:">&ndash;&nbsp;delayStartOfAnimation:withDelay:</a></code>
+		<span class="tooltip"><p>Wraps a <code>CAAnimation</code> in a <code>CAAnimationGroup</code> which will delay the start of
+the animation once it is added to a <code>CALayer</code>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/pauseAtEndOfAnimation:withDelay:">&ndash;&nbsp;pauseAtEndOfAnimation:withDelay:</a></code>
+		<span class="tooltip"><p>Wraps a <code>CAAnimation</code> in a <code>CAAnimationGroup</code> which will delay the firing of the
+<code>animationDidStop:finished:</code> delegate method once the animation has stopped.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/chainAnimations:run:">&ndash;&nbsp;chainAnimations:run:</a></code>
+		<span class="tooltip"><p>Chains a sequence of animation objects to be run sequentially.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/animationGroupFor:withView:duration:delegate:startSelector:stopSelector:name:type:">&ndash;&nbsp;animationGroupFor:withView:duration:delegate:startSelector:stopSelector:name:type:</a></code>
+		<span class="tooltip"><p>Groups a list of <code>CAAnimations</code> and associates them with <em>view</em>. All animations
+created by <a href="FTAnimationManager.html">FTAnimationManager</a> are ultimately created by this method.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Creating animation objects" name="task_Creating animation objects"></a>
+						<h3 class="subsubtitle task-title">Creating animation objects</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/slideInAnimationFor:direction:duration:delegate:startSelector:stopSelector:">&ndash;&nbsp;slideInAnimationFor:direction:duration:delegate:startSelector:stopSelector:</a></code>
+		<span class="tooltip"><p>Slides a view in from offscreen</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/slideOutAnimationFor:direction:duration:delegate:startSelector:stopSelector:">&ndash;&nbsp;slideOutAnimationFor:direction:duration:delegate:startSelector:stopSelector:</a></code>
+		<span class="tooltip"><p>Slides a view offscreen</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/slideInAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:">&ndash;&nbsp;slideInAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:</a></code>
+		<span class="tooltip"><p>Slides a view in from offscreen</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/slideOutAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:">&ndash;&nbsp;slideOutAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:</a></code>
+		<span class="tooltip"><p>Slides a view offscreen</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/backOutAnimationFor:withFade:direction:duration:delegate:startSelector:stopSelector:">&ndash;&nbsp;backOutAnimationFor:withFade:direction:duration:delegate:startSelector:stopSelector:</a></code>
+		<span class="tooltip"><p>Backs a view offscreen</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/backInAnimationFor:withFade:direction:duration:delegate:startSelector:stopSelector:">&ndash;&nbsp;backInAnimationFor:withFade:direction:duration:delegate:startSelector:stopSelector:</a></code>
+		<span class="tooltip"><p>Backs a view in from offscreen</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/backOutAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:">&ndash;&nbsp;backOutAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:</a></code>
+		<span class="tooltip"><p>Backs a view offscreen</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/backInAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:">&ndash;&nbsp;backInAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:</a></code>
+		<span class="tooltip"><p>Backs a view in from offscreen</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fadeAnimationFor:duration:delegate:startSelector:stopSelector:fadeOut:">&ndash;&nbsp;fadeAnimationFor:duration:delegate:startSelector:stopSelector:fadeOut:</a></code>
+		<span class="tooltip"><p>Aniamtes the <code>alpha</code> of the <em>view</em>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fadeBackgroundColorAnimationFor:duration:delegate:startSelector:stopSelector:fadeOut:">&ndash;&nbsp;fadeBackgroundColorAnimationFor:duration:delegate:startSelector:stopSelector:fadeOut:</a></code>
+		<span class="tooltip"><p>Animates the <code>backgroundColor</code> of the <em>view</em>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/popInAnimationFor:duration:delegate:startSelector:stopSelector:">&ndash;&nbsp;popInAnimationFor:duration:delegate:startSelector:stopSelector:</a></code>
+		<span class="tooltip"><p>Pops a view in from offscreen</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/popOutAnimationFor:duration:delegate:startSelector:stopSelector:">&ndash;&nbsp;popOutAnimationFor:duration:delegate:startSelector:stopSelector:</a></code>
+		<span class="tooltip"><p>Pops a view offscreen</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fallInAnimationFor:duration:delegate:startSelector:stopSelector:">&ndash;&nbsp;fallInAnimationFor:duration:delegate:startSelector:stopSelector:</a></code>
+		<span class="tooltip"><p>Shrinks and fades out view.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fallOutAnimationFor:duration:delegate:startSelector:stopSelector:">&ndash;&nbsp;fallOutAnimationFor:duration:delegate:startSelector:stopSelector:</a></code>
+		<span class="tooltip"><p>Shrinks and fades in view which starts scaled to double of its original size.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/flyOutAnimationFor:duration:delegate:startSelector:stopSelector:">&ndash;&nbsp;flyOutAnimationFor:duration:delegate:startSelector:stopSelector:</a></code>
+		<span class="tooltip"><p>Scales up and fades out a view.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/overshootThreshold" title="overshootThreshold"></a>
+	<h3 class="subsubtitle method-title">overshootThreshold</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The maximum value (in points) that the bouncing animations will travel past their
+end value before coming to rest. The default is 10.0.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (assign) CGFloat overshootThreshold</code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The maximum value (in points) that the bouncing animations will travel past their
+end value before coming to rest. The default is 10.0.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FTAnimationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/sharedManager" title="sharedManager"></a>
+	<h3 class="subsubtitle method-title">sharedManager</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get a reference to the <a href="FTAnimationManager.html">FTAnimationManager</a> singleton creating it if necessary.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (FTAnimationManager *)sharedManager</code></div>
+	
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The singleton.</p>
+	</div>
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Get a reference to the <a href="FTAnimationManager.html">FTAnimationManager</a> singleton creating it if necessary.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FTAnimationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/animationGroupFor:withView:duration:delegate:startSelector:stopSelector:name:type:" title="animationGroupFor:withView:duration:delegate:startSelector:stopSelector:name:type:"></a>
+	<h3 class="subsubtitle method-title">animationGroupFor:withView:duration:delegate:startSelector:stopSelector:name:type:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Groups a list of <code>CAAnimations</code> and associates them with <em>view</em>. All animations
+created by <a href="FTAnimationManager.html">FTAnimationManager</a> are ultimately created by this method.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CAAnimationGroup *)animationGroupFor:(NSArray *)<em>animations</em> withView:(UIView *)<em>view</em> duration:(NSTimeInterval)<em>duration</em> delegate:(id)<em>delegate</em> startSelector:(SEL)<em>startSelector</em> stopSelector:(SEL)<em>stopSelector</em> name:(NSString *)<em>name</em> type:(NSString *)<em>type</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>animations</em></dt>
+			<dd><p>A list of animations to group together.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>view</em></dt>
+			<dd><p>The target view for the <em>animations</em>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>duration</em></dt>
+			<dd><p>The duration (in seconds) of the returned animation group.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delegate</em></dt>
+			<dd><p>An optional delegate to send animation start and stop messages to.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>startSelector</em></dt>
+			<dd><p>An optional selector to be called on <em>delegate</em> when the animation starts.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>stopSelector</em></dt>
+			<dd><p>An optional selector to be called on <em>delegate</em> when the animation stops.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>A unique name used as a key internally to store and retrieve this animation object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>type</em></dt>
+			<dd><p>Either kFTAnimationTypeIn or kFTAnimationTypeOut to denote whether this animation
+is designed to show or hide its associated <em>view</em>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Groups a list of <code>CAAnimations</code> and associates them with <em>view</em>. All animations
+created by <a href="FTAnimationManager.html">FTAnimationManager</a> are ultimately created by this method.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FTAnimationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/backInAnimationFor:withFade:direction:duration:delegate:startSelector:stopSelector:" title="backInAnimationFor:withFade:direction:duration:delegate:startSelector:stopSelector:"></a>
+	<h3 class="subsubtitle method-title">backInAnimationFor:withFade:direction:duration:delegate:startSelector:stopSelector:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Backs a view in from offscreen</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CAAnimation *)backInAnimationFor:(UIView *)<em>view</em> withFade:(BOOL)<em>fade</em> direction:(FTAnimationDirection)<em>direction</em> duration:(NSTimeInterval)<em>duration</em> delegate:(id)<em>delegate</em> startSelector:(SEL)<em>startSelector</em> stopSelector:(SEL)<em>stopSelector</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Backs a view in from offscreen</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FTAnimationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/backInAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:" title="backInAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:"></a>
+	<h3 class="subsubtitle method-title">backInAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Backs a view in from offscreen</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CAAnimation *)backInAnimationFor:(UIView *)<em>view</em> withFade:(BOOL)<em>fade</em> direction:(FTAnimationDirection)<em>direction</em> inView:(UIView *)<em>enclosingView</em> duration:(NSTimeInterval)<em>duration</em> delegate:(id)<em>delegate</em> startSelector:(SEL)<em>startSelector</em> stopSelector:(SEL)<em>stopSelector</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Backs a view in from offscreen</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FTAnimationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/backOutAnimationFor:withFade:direction:duration:delegate:startSelector:stopSelector:" title="backOutAnimationFor:withFade:direction:duration:delegate:startSelector:stopSelector:"></a>
+	<h3 class="subsubtitle method-title">backOutAnimationFor:withFade:direction:duration:delegate:startSelector:stopSelector:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Backs a view offscreen</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CAAnimation *)backOutAnimationFor:(UIView *)<em>view</em> withFade:(BOOL)<em>fade</em> direction:(FTAnimationDirection)<em>direction</em> duration:(NSTimeInterval)<em>duration</em> delegate:(id)<em>delegate</em> startSelector:(SEL)<em>startSelector</em> stopSelector:(SEL)<em>stopSelector</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Backs a view offscreen</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FTAnimationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/backOutAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:" title="backOutAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:"></a>
+	<h3 class="subsubtitle method-title">backOutAnimationFor:withFade:direction:inView:duration:delegate:startSelector:stopSelector:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Backs a view offscreen</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CAAnimation *)backOutAnimationFor:(UIView *)<em>view</em> withFade:(BOOL)<em>fade</em> direction:(FTAnimationDirection)<em>direction</em> inView:(UIView *)<em>enclosingView</em> duration:(NSTimeInterval)<em>duration</em> delegate:(id)<em>delegate</em> startSelector:(SEL)<em>startSelector</em> stopSelector:(SEL)<em>stopSelector</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Backs a view offscreen</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FTAnimationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/chainAnimations:run:" title="chainAnimations:run:"></a>
+	<h3 class="subsubtitle method-title">chainAnimations:run:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Chains a sequence of animation objects to be run sequentially.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CAAnimation *)chainAnimations:(NSArray *)<em>animations</em> run:(BOOL)<em>run</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>animations</em></dt>
+			<dd><p>An array of animations to be run sequentially</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>run</em></dt>
+			<dd><p>If <code>YES</code>, the sequence begins immediately after this method returns. If
+<code>NO</code>, you must add the returned <code>CAAnimation</code> object to a <code>CALayer</code> to begin the
+sequence.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Chains a sequence of animation objects to be run sequentially.</p><div class="warning"><p><strong>Important:</strong> The animation chaining only works with animations created
+with one of the <a href="FTAnimationManager.html">FTAnimationManager</a> animations. If you want to sequence your own
+<code>CAAnimation</code> objects, you must wrap each of them with the
+<a href="#//api/name/animationGroupFor:withView:duration:delegate:startSelector:stopSelector:name:type:">animationGroupFor:withView:duration:delegate:startSelector:stopSelector:name:type:</a>
+method.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FTAnimationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/delayStartOfAnimation:withDelay:" title="delayStartOfAnimation:withDelay:"></a>
+	<h3 class="subsubtitle method-title">delayStartOfAnimation:withDelay:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Wraps a <code>CAAnimation</code> in a <code>CAAnimationGroup</code> which will delay the start of
+the animation once it is added to a <code>CALayer</code>.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CAAnimationGroup *)delayStartOfAnimation:(CAAnimation *)<em>animation</em> withDelay:(CFTimeInterval)<em>delayTime</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>animation</em></dt>
+			<dd><p>The animation to be delayed</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delayTime</em></dt>
+			<dd><p>The duration (in seconds) of the delay</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Wraps a <code>CAAnimation</code> in a <code>CAAnimationGroup</code> which will delay the start of
+the animation once it is added to a <code>CALayer</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FTAnimationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fadeAnimationFor:duration:delegate:startSelector:stopSelector:fadeOut:" title="fadeAnimationFor:duration:delegate:startSelector:stopSelector:fadeOut:"></a>
+	<h3 class="subsubtitle method-title">fadeAnimationFor:duration:delegate:startSelector:stopSelector:fadeOut:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Aniamtes the <code>alpha</code> of the <em>view</em>.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CAAnimation *)fadeAnimationFor:(UIView *)<em>view</em> duration:(NSTimeInterval)<em>duration</em> delegate:(id)<em>delegate</em> startSelector:(SEL)<em>startSelector</em> stopSelector:(SEL)<em>stopSelector</em> fadeOut:(BOOL)<em>fadeOut</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Aniamtes the <code>alpha</code> of the <em>view</em>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FTAnimationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fadeBackgroundColorAnimationFor:duration:delegate:startSelector:stopSelector:fadeOut:" title="fadeBackgroundColorAnimationFor:duration:delegate:startSelector:stopSelector:fadeOut:"></a>
+	<h3 class="subsubtitle method-title">fadeBackgroundColorAnimationFor:duration:delegate:startSelector:stopSelector:fadeOut:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Animates the <code>backgroundColor</code> of the <em>view</em>.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CAAnimation *)fadeBackgroundColorAnimationFor:(UIView *)<em>view</em> duration:(NSTimeInterval)<em>duration</em> delegate:(id)<em>delegate</em> startSelector:(SEL)<em>startSelector</em> stopSelector:(SEL)<em>stopSelector</em> fadeOut:(BOOL)<em>fadeOut</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Animates the <code>backgroundColor</code> of the <em>view</em>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FTAnimationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fallInAnimationFor:duration:delegate:startSelector:stopSelector:" title="fallInAnimationFor:duration:delegate:startSelector:stopSelector:"></a>
+	<h3 class="subsubtitle method-title">fallInAnimationFor:duration:delegate:startSelector:stopSelector:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Shrinks and fades out view.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CAAnimation *)fallInAnimationFor:(UIView *)<em>view</em> duration:(NSTimeInterval)<em>duration</em> delegate:(id)<em>delegate</em> startSelector:(SEL)<em>startSelector</em> stopSelector:(SEL)<em>stopSelector</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Shrinks and fades out view.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FTAnimationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fallOutAnimationFor:duration:delegate:startSelector:stopSelector:" title="fallOutAnimationFor:duration:delegate:startSelector:stopSelector:"></a>
+	<h3 class="subsubtitle method-title">fallOutAnimationFor:duration:delegate:startSelector:stopSelector:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Shrinks and fades in view which starts scaled to double of its original size.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CAAnimation *)fallOutAnimationFor:(UIView *)<em>view</em> duration:(NSTimeInterval)<em>duration</em> delegate:(id)<em>delegate</em> startSelector:(SEL)<em>startSelector</em> stopSelector:(SEL)<em>stopSelector</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Shrinks and fades in view which starts scaled to double of its original size.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FTAnimationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/flyOutAnimationFor:duration:delegate:startSelector:stopSelector:" title="flyOutAnimationFor:duration:delegate:startSelector:stopSelector:"></a>
+	<h3 class="subsubtitle method-title">flyOutAnimationFor:duration:delegate:startSelector:stopSelector:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Scales up and fades out a view.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CAAnimation *)flyOutAnimationFor:(UIView *)<em>view</em> duration:(NSTimeInterval)<em>duration</em> delegate:(id)<em>delegate</em> startSelector:(SEL)<em>startSelector</em> stopSelector:(SEL)<em>stopSelector</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Scales up and fades out a view.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FTAnimationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/pauseAtEndOfAnimation:withDelay:" title="pauseAtEndOfAnimation:withDelay:"></a>
+	<h3 class="subsubtitle method-title">pauseAtEndOfAnimation:withDelay:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Wraps a <code>CAAnimation</code> in a <code>CAAnimationGroup</code> which will delay the firing of the
+<code>animationDidStop:finished:</code> delegate method once the animation has stopped.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CAAnimationGroup *)pauseAtEndOfAnimation:(CAAnimation *)<em>animation</em> withDelay:(CFTimeInterval)<em>delayTime</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>animation</em></dt>
+			<dd><p>The animation to be delayed</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delayTime</em></dt>
+			<dd><p>The duration (in seconds) of the delay</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Wraps a <code>CAAnimation</code> in a <code>CAAnimationGroup</code> which will delay the firing of the
+<code>animationDidStop:finished:</code> delegate method once the animation has stopped.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FTAnimationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/popInAnimationFor:duration:delegate:startSelector:stopSelector:" title="popInAnimationFor:duration:delegate:startSelector:stopSelector:"></a>
+	<h3 class="subsubtitle method-title">popInAnimationFor:duration:delegate:startSelector:stopSelector:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Pops a view in from offscreen</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CAAnimation *)popInAnimationFor:(UIView *)<em>view</em> duration:(NSTimeInterval)<em>duration</em> delegate:(id)<em>delegate</em> startSelector:(SEL)<em>startSelector</em> stopSelector:(SEL)<em>stopSelector</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Pops a view in from offscreen</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FTAnimationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/popOutAnimationFor:duration:delegate:startSelector:stopSelector:" title="popOutAnimationFor:duration:delegate:startSelector:stopSelector:"></a>
+	<h3 class="subsubtitle method-title">popOutAnimationFor:duration:delegate:startSelector:stopSelector:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Pops a view offscreen</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CAAnimation *)popOutAnimationFor:(UIView *)<em>view</em> duration:(NSTimeInterval)<em>duration</em> delegate:(id)<em>delegate</em> startSelector:(SEL)<em>startSelector</em> stopSelector:(SEL)<em>stopSelector</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Pops a view offscreen</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FTAnimationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/slideInAnimationFor:direction:duration:delegate:startSelector:stopSelector:" title="slideInAnimationFor:direction:duration:delegate:startSelector:stopSelector:"></a>
+	<h3 class="subsubtitle method-title">slideInAnimationFor:direction:duration:delegate:startSelector:stopSelector:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Slides a view in from offscreen</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CAAnimation *)slideInAnimationFor:(UIView *)<em>view</em> direction:(FTAnimationDirection)<em>direction</em> duration:(NSTimeInterval)<em>duration</em> delegate:(id)<em>delegate</em> startSelector:(SEL)<em>startSelector</em> stopSelector:(SEL)<em>stopSelector</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Slides a view in from offscreen</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FTAnimationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/slideInAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:" title="slideInAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:"></a>
+	<h3 class="subsubtitle method-title">slideInAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Slides a view in from offscreen</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CAAnimation *)slideInAnimationFor:(UIView *)<em>view</em> direction:(FTAnimationDirection)<em>direction</em> inView:(UIView *)<em>enclosingView</em> duration:(NSTimeInterval)<em>duration</em> delegate:(id)<em>delegate</em> startSelector:(SEL)<em>startSelector</em> stopSelector:(SEL)<em>stopSelector</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Slides a view in from offscreen</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FTAnimationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/slideOutAnimationFor:direction:duration:delegate:startSelector:stopSelector:" title="slideOutAnimationFor:direction:duration:delegate:startSelector:stopSelector:"></a>
+	<h3 class="subsubtitle method-title">slideOutAnimationFor:direction:duration:delegate:startSelector:stopSelector:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Slides a view offscreen</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CAAnimation *)slideOutAnimationFor:(UIView *)<em>view</em> direction:(FTAnimationDirection)<em>direction</em> duration:(NSTimeInterval)<em>duration</em> delegate:(id)<em>delegate</em> startSelector:(SEL)<em>startSelector</em> stopSelector:(SEL)<em>stopSelector</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Slides a view offscreen</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FTAnimationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/slideOutAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:" title="slideOutAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:"></a>
+	<h3 class="subsubtitle method-title">slideOutAnimationFor:direction:inView:duration:delegate:startSelector:stopSelector:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Slides a view offscreen</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CAAnimation *)slideOutAnimationFor:(UIView *)<em>view</em> direction:(FTAnimationDirection)<em>direction</em> inView:(UIView *)<em>enclosingView</em> duration:(NSTimeInterval)<em>duration</em> delegate:(id)<em>delegate</em> startSelector:(SEL)<em>startSelector</em> stopSelector:(SEL)<em>stopSelector</em></code></div>
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Slides a view offscreen</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FTAnimationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2011 Free Time Studios, LLC. All rights reserved. (Last updated: 2011-03-12)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.3 (build 632)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+		</script>
+	</body>
+</html>

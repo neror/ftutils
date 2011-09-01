@@ -1,94 +1,59 @@
 ---
 layout: default
-title: FTUtils iPhone Utility Code Library
+title: FTUtils
 ---
 
 FTUtils iPhone Utility Code Library
-===================================
+-----------------------------------
 
-The code in FTUtils is common utility code extracted from [Free Time Studios](http://www.freetimestudios.com/) iPhone projects. Currently, there is only one primary utility (`FTAnimationManager`) and some simple preprocessor macros. Some unit tests exist for the code, but more are needed. The documentation is also still under development.
+The code in FTUtils is common utility code extracted from [Free Time Studios](http://www.freetimestudios.com/) iPhone projects. Currently, there is only one primary utility (`FTAnimation`) and some simple preprocessor macros. Some unit tests exist for the code, but more are needed.
 
-Setting Up FTUtils
-------------------
+Documentation, Examples, & Screecasts
+-------------------------------------
 
-FTUtils is most easily used by simply copying `FTUtils.h`, `FTAnimationManager.h` and `FTAnimationManager.m` into your project. Be sure to add the QuartzCore framework to your project as well (step 5 below). The preferred way to integrate FTUtils into your projects is by adding it as a static library. This will keep it separate from your code.
+The documentation is still under heavy development, and will be updated as pieces are finished. Keep an eye on the [gh-pages](http://github.com/neror/ftutils/tree/gh-pages "neror's ftutils at gh-pages - GitHub") branch of the github repository to see when it's updated. Some [basic examples](http://github.com/neror/ftutils/tree/master/Examples/ "Examples at master from neror's ftutils - GitHub") are already available, and the example code is also being updated regularly. Screencasts of the examples are also being created. Here is the first to wet your whistle.
 
-The following is the process to add the FTUtils static library to your Xcode project (these steps were borrowed from the [three20 project](http://github.com/joehewitt/three20/tree/master "joehewitt's three20 at master - GitHub") and modified):
+<object width="480" height="385"><param name="movie" value="http://www.youtube.com/v/UMYP-qEKs9Q&hl=en_US&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/UMYP-qEKs9Q&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="385"></embed></object>
+<p></p>
 
- 1. Clone the ftutils git repository: `git clone git://github.com/neror/ftutils.git`. Make sure you store the repository in a permanent place because Xcode will need to reference the files every time you compile your project.
- 
- 1(a). If you are already using git to manage your source files, you can also add the ftutils repository as a submodule to your project.
+A Note About the Generated API Docs
+-----------------------------------
 
- 2. Locate the "FTUtils.xcodeproj" file under "ftutils". Drag FTUtils.xcodeproj and drop it onto the root of your Xcode project's "Groups and Files" sidebar. A dialog will appear -- make sure "Copy items" is unchecked and "Reference Type" is "Relative to Project" before clicking "Add".
-
- 3. Now you need to link the FTUtils static library to your project. Click the "FTUtils.xcodeproj" item that has just been added to the sidebar. Under the "Details" table, you will see a single item: libFTUtils.a. Check the checkbox on the far right of libFTUtils.a.
-
- 4. Now you need to add FTUtils as a dependency of your project, so Xcode compiles it whenever you compile your project. Expand the "Targets" section of the sidebar and double-click your application's target. Under the "General" tab you will see a "Direct Dependencies" section. Click the "+" button, select "FTUtils", and click "Add Target".
-
- 5. Now you need to add the Core Animation framework to your project. Right click on the "Frameworks" group in your project (or equivalent) and select Add > Existing Frameworks. Then locate QuartzCore.framework and add it to the project.
-
- 6. Finally, we need to tell your project where to find the FTUtils headers. Open your "Project Settings" and go to the "Build" tab. Look for "Header Search Paths" and double-click it. Add the relative path from your project's directory to the "ftutils/Headers" directory.
-
- 7. While you are in Project Settings, go to "Other Linker Flags" under the "Linker" section, and add "-ObjC" and "-all_load" to the list of flags.
-
-You're ready to go! Just import the header(s) in your code for the parts of the library you'd like to use. The FTAnimation.h header includes everything in the library. So you can just include it:
-
-    #import <FTUtils/FTAnimation.h>
-
-Enjoy! And extra super special thanks to [Joe Hewitt](http://www.joehewitt.com/ "Joe Hewitt") for writing these steps out for his [three20 project](http://github.com/joehewitt/three20/tree/master "joehewitt's three20 at master - GitHub")! I don't think I have the patience to pull it off.
-
-Using FTAnimation
------------------
-
-FTAnimation was designed to make complex Core Animation based animations simple to create and use. The primary interface into the pre-built animations is a category on `UIView`. Animating a view is as simple as:
-
-    [myView slideInFrom:kFTAnimationBottom duration:.33f delegate:self];
-    
-You can also access the `CAAnimation` instances that power the category methods via the `FTAnimationManager` singleton like so:
-
-    CAAnimation *anim = [[FTAnimationManager sharedManager] slideInAnimationFor:myView direction:kFTAnimationBottom
-                                                            duration:.33f delegate:self];
-                                                            
-modify it to your satisfaction and/or add it to a `CAAnimationGroup` and add it to the view's layer when you're ready to use it:
-
-    anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInOut];
-    [myView.layer addAnimation:anim forKey:@"MySpecialAnimation"];
-    
-See the code for details.
-
-The FTAnimation UIView Category
--------------------------------
-
-FTAnimation ships with 13 canned `UIView` animations for animating the showing and hiding of views in the interface. These animations are all available through a category on the `UIView` class.
-
-
+If you're viewing the API docs on [ftutils.com](http://ftutils.com/ "FTUtils") some of the links are broken. This is due to [a bug](http://github.com/mojombo/jekyll/issues#issue/107 "Issues - mojombo/jekyll - GitHub") in github pages that is supposed to be fixed soon. You'll have to [build the docs yourself](/docs/docset "Building the API Docs Yourself") to get around this.
 
 Contributors
 ------------
 
-FTUtils was written by [Nathan Eror](http://www.neror.com/ "neror.com") ([@neror](http://twitter.com/neror)) for use in iPhone games built and distributed by [Free Time Studios](http://www.freetimestudios.com/ "Free Time Studios") ([@freetimestudios](http://twitter.com/freetimestudios)).
+FTUtils was created by [Nathan Eror](http://www.neror.com/ "neror.com") ([@neror](http://twitter.com/neror)) of [Free Time Studios](http://www.freetimestudios.com). 
+
+The following people have also contributed code to the project:
+
+* [Corey Floyd](http://www.theflyingjalapenolives.com/)
+* [Ben Lenarts](http://github.com/benlenarts)
+
 
 License
 -------
-    The MIT License
-    
-    Copyright (c) 2009 Free Time Studios and Nathan Eror
-    
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-    
-    The above copyright notice and this permission notice shall be included in
-    all copies or substantial portions of the Software.
-    
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-    THE SOFTWARE.
+
+>The MIT License
+>   
+>Copyright (c) 2009 Free Time Studios and Nathan Eror
+>    
+>Permission is hereby granted, free of charge, to any person obtaining a copy
+>of this software and associated documentation files (the "Software"), to deal
+>in the Software without restriction, including without limitation the rights
+>to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+>copies of the Software, and to permit persons to whom the Software is
+>furnished to do so, subject to the following conditions:
+>
+>The above copyright notice and this permission notice shall be included in
+>all copies or substantial portions of the Software.
+>
+>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+>IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+>FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+>AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+>LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+>OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+>THE SOFTWARE.
      

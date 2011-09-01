@@ -1,78 +1,107 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <title>GitHub Pages - {{ page.title }}</title>
-    <link href="http://github.com/stylesheets/bundle_common.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="http://github.com/stylesheets/bundle_github.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <div id="main">
-      <div id="header" class="basic">
+<head>
+  <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>{{page.title}}</title>
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/text.css" />
+  <link rel="stylesheet" href="/css/960.css" />
+  <link rel="stylesheet" href="/css/syntax.css" />
+  <link rel="stylesheet" href="/css/demo.css" />
+</head>
+<body>
+  <a href="http://github.com/neror/ftutils"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+  
+  <div class="container_12">
+    <div class="grid_4">
+      <h1><a href="/">FTUtils</a></h1>
+      <h5>Utilities for iOS Applications</h5>
+  	</div>
+  	<div class="grid_8">
+      <!-- <ul id="nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/docs/">Documentation</a></li>
+        <li><a href="http://github.com/neror/ftutils">Code</a></li>
+      </ul> -->
+  	</div>
+  </div>
 
-        <div class="site">
-          <div class="logo">
-            <a href="/"><img src="http://github.com/images/modules/header/logo_pages.png" alt="github pages" /></a>
-          </div>
-          <div class="actions">
-            <a href="http://github.com">home</a>
-            <a href="http://github.com/login">login</a>
-            <a href="http://github.com/signup">signup!</a>
-          </div>
-        </div>
-      </div>
-
-      <div id="content" class="site">
-
-        {{ content }}
-
-      </div>
-
-      <div class="push"></div>
+  <div id="maincontent" class="container_12">
+  	<div class="grid_9">
+      {{content}}
     </div>
-
-    <div id="footer">
-      <div class="site">
-
-        <div class="info">
-          <div class="links">
-            <a href="http://github.com/blog/148-github-shirts-now-available">T-Shirts</a> |
-            <a href="http://github.com/blog">Blog</a> |
-            <a href="http://support.github.com/">Support</a> |
-            <a href="http://github.com/training">Git Training</a> |
-            <a href="http://github.com/contact">Contact</a> |
-            <a href="http://groups.google.com/group/github/">Google Group</a> |
-            <a href="http://github.wordpress.com">Status</a>
-          </div>
-          <div class="company">
-            GitHub is <a href="http://logicalawesome.com/">Logical Awesome</a> &copy;2009 | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>
-          </div>
-        </div>
-        <div class="sponsor">
-          <div>
-            Powered by the <a href="http://www.rackspace.com ">Dedicated
-            Servers</a> and<br/> <a href="http://www.rackspacecloud.com">Cloud
-            Computing</a> of Rackspace Hosting<span>&reg;</span>
-          </div>
-          <a href="http://www.rackspace.com">
-            <img src="http://github.com/images/modules/footer/rackspace_logo.png" alt="Dedicated Server" />
-          </a>
-        </div>
+    <div class="grid_3">
+      <h3>Download</h3>
+      <div class="download">
+        <a href="http://github.com/neror/ftutils/zipball/master">
+          <img border="0" width="90" src="http://github.com/images/modules/download/zip.png">
+        </a>
+        <a href="http://github.com/neror/ftutils/tarball/master">
+          <img border="0" width="90" src="http://github.com/images/modules/download/tar.png">
+        </a>
+      </div>
+      <h3>Documentation</h3>
+      <div>
+        <ul>
+          <li><a href="/docs/setup">Setting Up FTUtils</a></li>
+          <li><a href="/docs/docset">Install the Xcode Docset</a></li>
+          <li><a href="/docs/animation">FTAnimation</a>
+            <ul>
+              <li><a href="/docs/uiview-ftanimation">UIView Extensions</a></li>
+            </ul>
+          </li>
+          <li><a href="/docs/api/">API Docs</a></li>
+        </ul>
       </div>
     </div>
+  	<div class="clear"></div>
+  </div>
+  <div id="footer" class="container_12">
+  
+    <div class="grid_9">
+      <div id="cclicense">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/us/88x31.png" /></a><br /><span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/Text" property="dc:title" rel="dc:type">FTUtils Documentation</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.freetimestudios.com/" property="cc:attributionName" rel="cc:attributionURL">Nathan Eror &amp; Free Time Studios</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-Share Alike 3.0 United States License</a>.
+      </div>
+    </div>
+    <div class="grid_3"><div id="links"></div></div>
+  </div>
 
-    <script type="text/javascript">
-    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-    var pageTracker = _gat._getTracker("UA-3769691-2");
-    pageTracker._initData();
-    pageTracker._trackPageview();
-    </script>
+  <!-- Clicky -->
+  <script src="http://static.getclicky.com/js" type="text/javascript"></script>
+  <script type="text/javascript">try{ clicky.init(66393107); }catch(err){}</script>
+  <noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66393107ns.gif" /></p></noscript>
+  <!-- End Clicky -->
+    
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  try {
+  var pageTracker = _gat._getTracker("UA-9080396-3");
+  pageTracker._trackPageview();
+  } catch(err) {}</script>
+  <script type="text/javascript">
+  var _sf_async_config={uid:3889,domain:"ftutils.com"};
+  (function(){
+    function loadChartbeat() {
+      window._sf_endpt=(new Date()).getTime();
+      var e = document.createElement('script');
+      e.setAttribute('language', 'javascript');
+      e.setAttribute('type', 'text/javascript');
+      e.setAttribute('src',
+         (("https:" == document.location.protocol) ? "https://s3.amazonaws.com/" : "http://") +
+         "static.chartbeat.com/js/chartbeat.js");
+      document.body.appendChild(e);
+    }
+    var oldonload = window.onload;
+    window.onload = (typeof window.onload != 'function') ?
+       loadChartbeat : function() { oldonload(); loadChartbeat(); };
+  })();
 
-  </body>
+  </script>
+</body>
 </html>

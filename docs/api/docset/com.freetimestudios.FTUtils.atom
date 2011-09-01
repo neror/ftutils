@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:docset="http://developer.apple.com/rss/docset_extensions" xml:lang="en">
+    <id>http://ftutils.com/docs/api/docset/com.freetimestudios.FTUtils.atom/20110312162206</id>
+    <title type="text">FTUtils Documentation</title>
+    <rights>Copyright © 2011 Free Time Studios, LLC. All rights reserved.</rights>
+    <link rel="self" href="http://ftutils.com/docs/api/docset/com.freetimestudios.FTUtils.atom"></link>
+    <docset:publisherName>Free Time Studios, LLC</docset:publisherName>
+    <docset:publisherID>com.freetimestudios.documentation</docset:publisherID>
+    <updated>2011-03-12T16:22:06-06:00</updated>
+    <entry>
+        <id>tag:ftutils.com,2011-03-12:com.freetimestudios.FTUtils/1.1.0</id>
+        <title type="text">FTUtils Documentation</title>
+        <updated>2011-03-12T16:22:06-06:00</updated>
+        <content type="text">FTUtils Documentation (v1.1.0)</content>
+        <link rel="enclosure" type="application/octet-stream" href="http://ftutils.com/docs/api/docset/com.freetimestudios.FTUtils-1.1.0.xar" length="68234"></link>
+        <docset:identifier>com.freetimestudios.FTUtils</docset:identifier>
+        <docset:version>1.1.0</docset:version>
+        <docset:minimumXcodeVersion>3.0.0</docset:minimumXcodeVersion>
+    </entry>
+</feed>
