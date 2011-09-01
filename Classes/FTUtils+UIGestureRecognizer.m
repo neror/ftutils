@@ -39,36 +39,36 @@ static char * kFTGestureDisabledKey = "ft_gestureDisabled";
 @implementation UIGestureRecognizer(FTBlockAdditions)
 
 + (id)recognizer {
-    return [self recognizerWithActionBlock:nil];
+  return [self recognizerWithActionBlock:nil];
 }
 
 + (id)recognizerWithActionBlock:(FTGestureActionBlock)action {
-    id me = [[self class] alloc];
-    me = [me initWithTarget:me action:@selector(handleAction:)];
-    [me setActionBlock:action];
-    return [me autorelease];
+  id me = [[self class] alloc];
+  me = [me initWithTarget:me action:@selector(handleAction:)];
+  [me setActionBlock:action];
+  return [me autorelease];
 }
 
 - (void)handleAction:(UIGestureRecognizer *)recognizer {
-    if(self.actionBlock && !self.disabled) {
-        self.actionBlock(recognizer);
-    }
+  if(self.actionBlock && !self.disabled) {
+    self.actionBlock(recognizer);
+  }
 }
 
 - (FTGestureActionBlock)actionBlock {
-    return objc_getAssociatedObject(self, kFTGestureActionKey);
+  return objc_getAssociatedObject(self, kFTGestureActionKey);
 }
 
 - (void)setActionBlock:(FTGestureActionBlock)actionBlock {
-    objc_setAssociatedObject(self, kFTGestureActionKey, actionBlock, OBJC_ASSOCIATION_COPY);
+  objc_setAssociatedObject(self, kFTGestureActionKey, actionBlock, OBJC_ASSOCIATION_COPY);
 }
 
 - (BOOL)disabled {
-    return [objc_getAssociatedObject(self, kFTGestureDisabledKey) boolValue];
+  return [objc_getAssociatedObject(self, kFTGestureDisabledKey) boolValue];
 }
 
 - (void)setDisabled:(BOOL)disabled {
-    objc_setAssociatedObject(self, kFTGestureDisabledKey, [NSNumber numberWithBool:disabled], OBJC_ASSOCIATION_COPY);
+  objc_setAssociatedObject(self, kFTGestureDisabledKey, [NSNumber numberWithBool:disabled], OBJC_ASSOCIATION_RETAIN);
 }
 
 @end

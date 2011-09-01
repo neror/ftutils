@@ -20,7 +20,7 @@
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
- */
+*/
 
 #if NS_BLOCKS_AVAILABLE
 
@@ -80,9 +80,11 @@ typedef void (^FTGestureActionBlock)(id recognizer);
 
 /**
  A property indicating that the block should *not* be called when
- the recognizer fires.  Useful if you need to temporarily disable an action
- but you still want the block to be around later on.
- */
+ the recognizer fires.
+ 
+ Useful if you need to temporarily disable an action but you still 
+ want the block to be around later on.
+*/
 @property (nonatomic, assign) BOOL disabled;
 
 @end
