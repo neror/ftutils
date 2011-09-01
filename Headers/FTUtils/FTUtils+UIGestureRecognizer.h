@@ -20,7 +20,7 @@
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
-*/
+ */
 
 #if NS_BLOCKS_AVAILABLE
 
@@ -34,7 +34,7 @@ typedef void (^FTGestureActionBlock)(id recognizer);
  [Event Handling Guide for iOS][1].
  
  [1]:http://developer.apple.com/library/ios/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/Introduction/Introduction.html
-*/
+ */
 @interface UIGestureRecognizer(FTBlockAdditions)
 
 #pragma mark - Creating a block based Gesture Recognizer
@@ -51,7 +51,7 @@ typedef void (^FTGestureActionBlock)(id recognizer);
  
  @return An instance of a `UIGestureRecognizer` subclass.
  @see actionBlock
-*/
+ */
 + (id)recognizer;
 
 /**
@@ -61,7 +61,7 @@ typedef void (^FTGestureActionBlock)(id recognizer);
  @return An instance of a `UIGestureRecognizer` subclass.
  @param action A block which will handle the gesture actions.
  @see actionBlock
-*/
+ */
 + (id)recognizerWithActionBlock:(FTGestureActionBlock)action;
 
 #pragma mark - Setting and getting the action handler blocks
@@ -72,11 +72,18 @@ typedef void (^FTGestureActionBlock)(id recognizer);
 
 /**
  A block to be executed when a `UIGestureRecognizer` action is fired. 
-
+ 
  The block is passed a single parameter which is the `UIGestureRecognizer`
  instance for this property.
-*/
+ */
 @property (copy) FTGestureActionBlock actionBlock;
+
+/**
+ A property indicating that the block should *not* be called when
+ the recognizer fires.  Useful if you need to temporarily disable an action
+ but you still want the block to be around later on.
+ */
+@property (nonatomic, assign) BOOL disabled;
 
 @end
 
